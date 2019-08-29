@@ -4,31 +4,46 @@
     <loc>http://tedwards_github.github.io/useR/index.html</loc>
   </url>
   <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0201-rmdIntro.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0202-rmdGetStarted.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0203-rmdBuildingBlocks.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0204-rmdKNIT.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0205-rmdGetCreative.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0206-rmdEmbedCode.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0207-rmdFinalExample.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0208-rmdAdditionalTopics.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0209-rmdPDFOutput.html</loc>
+  </url>
+  <url>
     <loc>http://tedwards_github.github.io/useR/articles/GetStarted.html</loc>
   </url>
   <url>
     <loc>http://tedwards_github.github.io/useR/articles/InstallJava.html</loc>
   </url>
   <url>
-    <loc>http://tedwards_github.github.io/useR/articles/InstallMAXENT.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/InstallPackages.html</loc>
-  </url>
-  <url>
     <loc>http://tedwards_github.github.io/useR/articles/InstallR-RStudio.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/IntroBasicsOfR.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/Introduction2Course.html</loc>
   </url>
   <url>
     <loc>http://tedwards_github.github.io/useR/articles/ObtainCourseMaterial.html</loc>
   </url>
   <url>
-    <loc>http://tedwards_github.github.io/useR/articles/PackagesFunctions.html</loc>
+    <loc>http://tedwards_github.github.io/useR/articles/rmdBasics.html</loc>
   </url>
   <url>
     <loc>http://tedwards_github.github.io/useR/articles/SomeBackground.html</loc>

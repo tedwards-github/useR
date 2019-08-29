@@ -16,6 +16,9 @@ reference:
 authors:
   name:  Thomas Edwards
 
+pkgdown:
+  as_is: true
+
 navbar:
   left:
     - icon: fa-home
@@ -40,10 +43,24 @@ navbar:
       icon: fas fa-book
 #      href: articles/schedule.html
       menu:
-        - text: "RMarkdown Basics"
-          href: articles/RMarkdownBasics.html
-        - text: "Get Creative with RMarkdown"
-          href: articles/RMarkdownCreative.html
+        - text: "RMarkdown: Introduction"
+          href: articles/0201-rmdIntro.html
+        - text: "Getting Started"
+          href: articles/0202-rmdGetStarted.html
+        - text: "RMarkdown Building Blocks"
+          href: articles/0203-rmdBuildingBlocks.html
+        - text: "KNIT the RMarkdown"
+          href: articles/0204-rmdKNIT.html
+        - text: "Building Creative Documents"
+          href: articles/0205-rmdGetCreative.html
+        - text: "Embed and Execute R Code"
+          href: articles/0206-rmdEmbedCode.html
+        - text: "EXAMPLE: Finalized Document"
+          href: articles/0207-rmdFinalExample.html
+        - text: "Some Additional Topics"
+          href: articles/0208-rmdAdditionalTopics.html
+        - text: "PDF Output from RMarkdown"
+          href: articles/0209-rmdPDFOutput.html
     - text: "baseR"
       icon: fas fa-book
 #      href: articles/sdmR.html
@@ -62,14 +79,36 @@ navbar:
           href: articles/Mod05.html
         - text: "Appendices"
           href: articles/Appendices.html
+        - text: "Supplemental: Date and Time"
+          href: articles/4001-SupplDateTime.html
+        - text: "Supplemental: ggplot2"
+          href: articles/4002-Supplggplot2.html
     - text: "sdhmR"
       icon: fas fa-book
 #      href: articles/schedule.html
       menu:
-        - text: "Introduction"
+        - text: "Introduction to SDHM"
           href: articles/sdhmR-Introduction.html
+        - text: "Establishing SDHM Goals"
+          href: articles/sdhmR-SetGoals.html
         - text: "Data Acquisition, Vetting, and Organization"
-          href: articles/DataAcqVetOrganize.html
+          href: articles/sdhmR-DataAcqVetOrganize.html
+        - text: "Model Construction"
+          href: articles/sdhmR-ModConstruct.html
+        - text: "Model Assessment"
+          href: articles/sdhmR-ModAssess.html
+        - text: "Ensemble SDHMs"
+          href: articles/sdhmR-Ensembles.html
+        - text: "Field Campaigns for SDHMs"
+          href: articles/sdhmR-FieldCampaigns.html
+        - text: "SDHM Implementation"
+          href: articles/sdhmR-ImplementSDHM.html
+    - text: "gistoolsR"
+      icon: fas fa-book
+#      href: articles/schedule.html
+      menu:
+        - text: "Introduction: GIS Using R"
+          href: articles/gisR-Intro.html
 
 #    - text: "Course Modules"
 #      icon: fa-file-pdf-o
