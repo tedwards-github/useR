@@ -1,0 +1,18 @@
+Package,Purpose,Functions Used
+raster,Manipulation of grids,"extent, raster, res, rasterize, values, writeRaster, cellFromXY, extract, resample, disaggregate, projectRaster, values, crop, stack, reclassify"
+rgdal,General spatial data manipulation,"gBuffer, readOGR, writeOGR"
+rgeos,Manipulation and querying of spatial geometries,
+maptools,Set of tools (wrappers) for manipulating geographic data,
+sp,Complex tools for dealing with raster and polygon data,"Polygon, Polygons, SpatialPolygons, SpatialPoints, coordinates"
+GISTools,Set of utilities for creating maps and manipulating spatial data,
+spocc,Interface to access web-based species databases,occ
+modeest,Estimation of mode,mvf
+PresenceAbsence,Accuracy metrics,"optimal.thresholds, presence.absence.accuracy, auc.roc.plot"
+DAAG,Generalized cross-validation,CVbinary
+car,Companion fucntions for applied regression,
+rJava,R interface to Java,
+stats (base R),R base generalized linear models,"glm, step, summary.glm, summary, predict"
+gam,Generalized additive models,step.gam
+dismo,"Utilities, wrappers, and functions for distribution modelling","maxent, evaluate, threshold, response"
+randomForest,Random forest models,"randomForest, varImpPlot, partialPlot"
+gbm,Generalized Boosted Regression Models (boosted trees),"gbm.step, gbm.plot, gbm.interactions, gbm.perspec"

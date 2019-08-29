@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://tedwards_github.github.io/useR/index.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/GetStarted.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/InstallJava.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/InstallMAXENT.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/InstallPackages.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/InstallR-RStudio.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/IntroBasicsOfR.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/Introduction2Course.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/ObtainCourseMaterial.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/PackagesFunctions.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/SomeBackground.html</loc>
+  </url>
+</urlset>

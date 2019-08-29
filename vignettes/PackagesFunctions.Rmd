@@ -1,0 +1,80 @@
+---
+title: "Refresher: Packages and Functions in R"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{PackagesFunctions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Packages in R
+
+Packages contain groupings of functions that perform analytical tasks.  `library(PackageName)` or the alternative `require(PackageName)` "loads" a package's functions into your R environment where they are then accessible.  A (minor) downside of using `library()` or `require()` is that multiple packages often have functions with identical names.  Consequently, the most recently loaded package "masks" out a previously loaded function(s) having the same name, which can lead to unpredictable errors if careful attention is not paid to library sequencing.  This issue is avoided by directly accessing a package--specific function using the `PackageName::FunctionName()` call.
+
+```{r, eval=F}
+# options for accessing package--associated functions
+library(PackageName) # loads entire package of functions into your r environment
+PackageName::FunctionName() # directly accesses a function in a package
+```
+
+It makes no analytical difference whatsoever which way you access a function -- loading the library and associated functions, or accessing the desired function from the library.  It is entirely your preference.
+
+### Course--related Packages
+
+The minimal set of packages containing functions used in **sdhmR** is below.  You are certainly free, however, to use any and all other packages that make **sdhmR** easier for your personal use.  
+
+```{r, echo=F}
+# kable of packages used
+d1 <- read.csv("data/packages_usedV2019.2.csv", header = T)
+knitr::kable(d1, col.names = c("Package", "Purpose", "Functions Used"), 
+             align = c("l", "l", "l"), 
+             caption = "Minimal set of packages and associated functions used in sdhmR")
+```
+
+### The `tidyverse` Environment
+
+Working in the `tidyverse` environment requires these additional packages as well.
+
+```{r, echo=F}
+# kable of packages used
+d2 <- read.csv("data/packages_tidyV2019.2.csv", header = T)
+knitr::kable(d2, col.names = c("Package", "Purpose", "Functions Used"), 
+             align = c("l", "l", "l"),
+             caption = "tidyverse and related packages and functions used in sdhmR")
+```
+
+These packages will have been installed on your CPU under **Getting $\rightarrow$ Course--required Packages to Install**.
+
+## Functions in R
+
+Functions are associated with packages and are the basis for analytical operations.  In the last several years of R's extended life history there has been dedicated effort to "simplify" what to many are the mysterious inner workings of R, especially in the realm of data management and manipulation.  Hence the [birth of `tidyverse`](https://www.tidyverse.org). 
+
+`tidyverse` is a collection of packages that mimic in a more simplified manner many of the so--called "base R" functions related to data management and manipulation.   It accomplishes this by working within a common design that facilitates analytical flow.  Many -- especially those new to R -- both use and strongly advocate a `tidyverse` approach to analysis.
+
+That said, if you are familiar with base R functions for managing and manipulating data, there is absolutely no need to invest time into converting from base R approaches to those of `tidyverse` unless you simply desire so.  With respect to this course, and the objective of organizing data for creation of species distribution and habitat models, it matters not one whit whether you emphasize one approach over the other, or develop a personalized hybrid.
+
+In the interest of course instruction, however, common base R and `tidyverse` functions used to organize data for SDHMs are both shown.  Work with whichever group helps you best accomplish the task -- development of SDHMs.
+
+### Course--related Functions in R
+
+Both canned R and custom functions are used for data management and manipulation in **sdhmR**. The more common for **sdhmR** are shown below.  Options for both base R and `tidyverse` are shown below.
+
+```{r, echo=F}
+# kable of packages used
+d3 <- read.csv("data/functions_baserVtidyV2019.2.csv", header = T)
+knitr::kable(d3, col.names = c("Operation", "base R", "tidyverse"), align = c("l", "l", "l"),
+             caption = "base R and tidyverse functions used in sdhmR")
+```
+
+You're done.
+
+
+
+

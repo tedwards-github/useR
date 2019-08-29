@@ -1,0 +1,90 @@
+title: useR
+
+url: http://tedwards_github.github.io/useR
+
+template:
+  params:
+    bootswatch: spacelab
+
+toc:
+  depth: 3
+
+fig_caption: yes
+
+reference:
+
+authors:
+  name:  Thomas Edwards
+
+navbar:
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Getting Started"
+      icon: fas fa-book
+#      href: articles/sdmR.html
+      menu:
+        - text: "README 1st: Some Background"
+          href: articles/SomeBackground.html
+        - text: "Getting Started"
+          href: articles/GetStarted.html
+        - text: "Install R and RStudio"
+          href: articles/InstallR-RStudio.html
+        - text: "Install 64--bit Java on Windows Systems"
+          href: articles/InstallJava.html
+        - text: "Obtain Course Material"
+          href: articles/ObtainCourseMaterial.html
+#        - text: "Course-required Packages to Install"
+#          href: articles/InstallR-RStudio.html
+    - text: "RMarkdown"
+      icon: fas fa-book
+#      href: articles/schedule.html
+      menu:
+        - text: "RMarkdown Basics"
+          href: articles/RMarkdownBasics.html
+        - text: "Get Creative with RMarkdown"
+          href: articles/RMarkdownCreative.html
+    - text: "baseR"
+      icon: fas fa-book
+#      href: articles/sdmR.html
+      menu:
+        - text: "Introduction"
+          href: articles/Intro.html
+        - text: "Module 1"
+          href: articles/Mod01.html
+        - text: "Module 2"
+          href: articles/Mod02.html
+        - text: "Module 3"
+          href: articles/Mod03.html
+        - text: "Module 4"
+          href: articles/Mod04.html
+        - text: "Module 5"
+          href: articles/Mod05.html
+        - text: "Appendices"
+          href: articles/Appendices.html
+    - text: "sdhmR"
+      icon: fas fa-book
+#      href: articles/schedule.html
+      menu:
+        - text: "Introduction"
+          href: articles/sdhmR-Introduction.html
+        - text: "Data Acquisition, Vetting, and Organization"
+          href: articles/DataAcqVetOrganize.html
+
+#    - text: "Course Modules"
+#      icon: fa-file-pdf-o
+#      menu:
+#        - text: "Module 1: Introduction to Species Distribution and Habitat Modelling"
+#          href: articles/modules/Lecture0.html
+#    - text: "More Stuff Here"
+#      icon: fas fa-desktop
+#      menu:
+#        - text: "Projects and directories"
+#          href: articles/projects_and_directories.html
+#        - text: "Introduction to R Markdown"
+#          href: articles/rmarkdown_intro.html
+#
+#
+#    - icon: fas fa-pencil-square-o
+#      text: "Assignments"
+#href: articles/homework.html

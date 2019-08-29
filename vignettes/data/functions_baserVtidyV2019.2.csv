@@ -1,0 +1,9 @@
+operation,base.r,tidy.r
+Extract df columns by number,"df[, c(1:2)","select(df, 1:2)"
+Extract df columns by name,"df[, c(""v1"", ""v2"")","select(df, v1, v2)"
+Extract df rows by v1 condition,"df[v1 == 1, ]","filter(df, v2 ==1"
+,"subset(df, v1 == 1)",
+Extract df rows by v2 condition in group v2,"subset(df, v1 == 1[v2 != 2])",
+Data summary v1,"aggregate(df[, c(""v1"")], FUN = mean)","summarize(df, v1.xbar = mean(v1))"
+Data summary v1 by group v2,"aggregate(df[, c(""v1"")], list(df$v2), FUN = mean)","summarize(df, v1.xbar = mean(v1))"
+Dataframe merging df1 and df2,"merge(df1, df2, by = ""common_name"")","inner_joint(df1, df2, by = ""common_name"")"

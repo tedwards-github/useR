@@ -1,0 +1,35 @@
+function,description,function,description
+install.packages(),Install a package using line command,object$variable,Link symbol between data object and specified variable
+update:packages(),Update packages to newer versions,"[rows,columns]",Access to specified row(s) and column(s)
+library(),Load a package into your R environment,"[,columns]","Access to specified columns; rows as wildcards (ie, all)"
+setwd(),Set your working directory,"[rows,]","Access to specified rows; columns as wildcards (ie, all)"
+getwd(),Determine what your working directory is,unique(),Returns all unique elements in a dataframe variable
+ls(),Show R objects in your current workspace,factor(),Returns all factor levels in a dataframe
+rm(),Remove (delete) an object in your workspace,which(),Returns observations meeting some specified criterion
+gc(),"Remove hanging file space (i.e., clear all memory)",,
+save(),Save 1 or more objects,,
+save.image(),Save your entire workspace,,
+load(),Load an externally saved object or workspace,,
+list(),"List creation for any form, or mixture of forms, of data",,
+list.files(),List of files in CPU working directory,,
+data.frame(),"Dataframe of for any form, or mixtures of forms, of data",,
+factor(),Create factor class of variable,,
+is./as.numeric(),Test for/convert to numeric class,,
+is./as.character(),Test for/convert to character class,,
+is./as.factor(),Test for/convert to factor class,,
+is.na(),Determine if R missing values are in data object,,
+na.omit(),Remove all R missing values from a data object,,
+read.csv(),Import comma-separated-values files,,
+read.dbf(),Import .dfb files: requires package foreign,,
+head(),Examine first 6 (default) lines of data object,,
+tail(),Examine last 6 (default) lines of data object,,
+dim(),"Dimension (# rows, # columns) of data object",,
+length(),Length (or N) of a column vector,,
+"names(), colnames()",Column names in a data object,,
+object$variable,Link symbol between data object and specified variable,,
+"[rows,columns]",Access to specified row(s) and column(s),,
+"[,columns]","Access to specified columns; rows as wildcards (ie, all)",,
+"[rows,]","Access to specified rows; columns as wildcards (ie, all)",,
+unique(),Returns all unique elements in a dataframe variable,,
+factor(),Returns all factor levels in a dataframe,,
+which(),Returns observations meeting some specified criterion,,

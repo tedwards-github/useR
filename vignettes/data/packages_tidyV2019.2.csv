@@ -1,0 +1,5 @@
+Package,Purpose,Functions Used
+tidyverse,Wrapper for packages in the tidyverse envrironment,"Packages::dplyr, tidyr, ggplot, stringr, purr, tibble, forcats"
+lubridate,Manipulation of dates,"mdy, ymd, dmy, year, month, day"
+readxl,"Import of .xlsx/.xls files, if you must …",read_excel
+xlsx,Export of .xlsx/.xls files,write.xlsx

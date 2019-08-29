@@ -1,0 +1,19 @@
+---
+title: "Obtain Course Material"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ObatinCourseMaterial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Obtain Course Material
+
+process(es) for obtaining course material via external links will go here

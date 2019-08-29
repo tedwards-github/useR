@@ -1,0 +1,64 @@
+---
+title: "Course--Required R Packages"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{InstallPackages}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Installing Course-required Packages
+
+This section is applicable to all workshop participants. Following the procedures below will install all the required packages and dependencies needed for the course.
+
+* Open RStudio or Vanilla R.
+* Copy the code for each STEP into a new R Script file (name it `InstallMyPackages.R`, that way you'll have a permanent R script), highlight the code by STEP, and run each STEP.
+
+### Step #1
+
+This Step creates a simple R function called `bulkpak` that loads course--required packages.
+
+```{r, eval=F}
+# build install fxn
+bulkpak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, repos = "http://cran.r-project.org", dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
+```
+
+There are a gazillion ways to install packages; this merely reflects one of those gazillion. Feel free to install each using the time--honored `install.packages()` function, or the RStudio--based Install GUI, if you prefer.
+
+### Step #2
+
+This STEP includes the bare minimum packages for **sdhmR-V2019.2**.  The `bulkpak` function above merely calls the packages in the object `packages` and installs them unless they already exist in your R library.
+
+```{r, eval=F}
+# call function bulkpak and install these listed packages
+packs_sdhmR <- c("raster","rgdal", "rgeos", "maptools", "sp", "GISTools", 
+                 "PresenceAbsence", "DAAG", "gam", "dismo", "randomForest", "gbm", 
+                 "spocc", "sf", "sampling")
+bulkpak(packs_sdhmR)
+```
+
+### Step #3
+
+If you prefer to work in a `tidyverse` rather than a base R environment, then you must install (or ensure are already installed) the following packages as well.  Note that although packages `readxl` and `lubridate` work with the `tidyverse` environment they must be installed separately.  
+
+For reasons beyond this mere mortal's understanding, the `tidyverse` environment does not export back to **.xlsx**/**.xls** formats.  You must instead use package `xlsx`.
+
+```{r, eval=F}
+# call function bulkpak and install these listed packages
+packs_tidy <- c("tidyverse","readxl", "lubridate", "xlsx")
+bulkpak(packs_tidy)
+```
+
+You're done.  Installation of Java is next.

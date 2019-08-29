@@ -1,0 +1,37 @@
+---
+title: "Introduction: Some R Basics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{IntroBasicsOfR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Getting Started on R
+
+**sdhmR** requires moderate to advanced working knowledge of R.  The drop--downs in **introduction: Some R Basics** provide some refresher hints on R specifically related to packages and functions used in **sdhmR**.  However, the drop--downs are **NOT** intended to teach you how to use R.
+
+**Bottom--line**:  If all you know about R is that R is the 18th letter of the alphabet, it is recommended you stop now and proceed no further in the **sdhmR** course.  You will get lost.
+
+### Recommendations for Learning R
+
+## Vanilla R vs. RStudio
+
+
+
+## Available Resources for R
+
+The amount of resources now available for R is over--whelming at this point.  In fact, you can get lost.  The web, of course, is your friend, and simple Google searches using phrases related to your R question inevitably lead to useful guidance.  
+
+You're done.
+
+
+
+
