@@ -7,7 +7,8 @@ template:
     bootswatch: spacelab
 
 toc:
-  depth: 3
+  depth: 2
+  float: yes
 
 fig_caption: yes
 
@@ -20,6 +21,7 @@ pkgdown:
   as_is: true
 
 navbar:
+  type: inverse
   left:
     - icon: fa-home
       href: index.html
@@ -28,15 +30,15 @@ navbar:
 #      href: articles/sdmR.html
       menu:
         - text: "README 1st: Some Background"
-          href: articles/SomeBackground.html
+          href: articles/0101-gsSomeBackground.html
         - text: "Getting Started"
-          href: articles/GetStarted.html
+          href: articles/0102-gsGetStarted.html
         - text: "Install R and RStudio"
-          href: articles/InstallR-RStudio.html
+          href: articles/0103-gsInstallR-RStudio.html
         - text: "Install 64--bit Java on Windows Systems"
-          href: articles/InstallJava.html
+          href: articles/0104-gsInstallJava.html
         - text: "Obtain Course Material"
-          href: articles/ObtainCourseMaterial.html
+          href: articles/0105-gsObtainCourseMaterial.html
 #        - text: "Course-required Packages to Install"
 #          href: articles/InstallR-RStudio.html
     - text: "RMarkdown"
@@ -65,19 +67,19 @@ navbar:
       icon: fas fa-book
 #      href: articles/sdmR.html
       menu:
-        - text: "Introduction"
+        - text: "XXIntroduction"
           href: articles/Intro.html
-        - text: "Module 1"
+        - text: "XXModule 1"
           href: articles/Mod01.html
-        - text: "Module 2"
+        - text: "XXModule 2"
           href: articles/Mod02.html
-        - text: "Module 3"
+        - text: "XXModule 3"
           href: articles/Mod03.html
-        - text: "Module 4"
+        - text: "XXModule 4"
           href: articles/Mod04.html
-        - text: "Module 5"
+        - text: "XXModule 5"
           href: articles/Mod05.html
-        - text: "Appendices"
+        - text: "XXAppendices"
           href: articles/Appendices.html
         - text: "Supplemental: Date and Time"
           href: articles/4001-SupplDateTime.html
@@ -87,27 +89,27 @@ navbar:
       icon: fas fa-book
 #      href: articles/schedule.html
       menu:
-        - text: "Introduction to SDHM"
+        - text: "XXIntroduction to SDHM"
           href: articles/sdhmR-Introduction.html
-        - text: "Establishing SDHM Goals"
+        - text: "XXEstablishing SDHM Goals"
           href: articles/sdhmR-SetGoals.html
-        - text: "Data Acquisition, Vetting, and Organization"
+        - text: "XXData Acquisition, Vetting, and Organization"
           href: articles/sdhmR-DataAcqVetOrganize.html
-        - text: "Model Construction"
+        - text: "XXModel Construction"
           href: articles/sdhmR-ModConstruct.html
-        - text: "Model Assessment"
+        - text: "XXModel Assessment"
           href: articles/sdhmR-ModAssess.html
-        - text: "Ensemble SDHMs"
+        - text: "XXEnsemble SDHMs"
           href: articles/sdhmR-Ensembles.html
-        - text: "Field Campaigns for SDHMs"
+        - text: "XXField Campaigns for SDHMs"
           href: articles/sdhmR-FieldCampaigns.html
-        - text: "SDHM Implementation"
+        - text: "XXSDHM Implementation"
           href: articles/sdhmR-ImplementSDHM.html
-    - text: "gistoolsR"
+    - text: "gisToolsR"
       icon: fas fa-book
 #      href: articles/schedule.html
       menu:
-        - text: "Introduction: GIS Using R"
+        - text: "XXIntroduction: GIS Using R"
           href: articles/gisR-Intro.html
 
 #    - text: "Course Modules"
