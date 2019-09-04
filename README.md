@@ -1,6 +1,6 @@
 # useR -- Tools for the Analysis of Ecological Data
 
-## Site Purpose
+## Site Purpose rufing me???
 
 A general access site for delivery of R--based courses used to instruct students and others in the application R to data associated with natural resources management and conservation issues.  This site is, of course, only one of many related to applications of R.  However, it does have specific focus on learning to use R for analyses related to natural resources, especially in the realms of fisheries, wildlife, and habitat management.
 
