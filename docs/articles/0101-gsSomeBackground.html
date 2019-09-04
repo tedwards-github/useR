@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting Started with RMarkdown • useR</title>
+<title>README1st: Some Background • useR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Getting Started with RMarkdown">
+<script src="../pkgdown.js"></script><meta property="og:title" content="README1st: Some Background">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -208,135 +208,73 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Getting Started with RMarkdown</h1>
+      <h1>README1st: Some Background</h1>
             
       
       
-      <div class="hidden name"><code>0202-rmdGetStarted.rmd</code></div>
+      <div class="hidden name"><code>0101-gsSomeBackground.rmd</code></div>
 
     </div>
 
     
     
-<!-- set root directory here
-
--->
 <p>Last update: 04 September 2019 (V2019.2)</p>
 <hr>
-<div id="introduction" class="section level2">
+<div id="what-is-r" class="section level2">
 <h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>We’re going to use features found in RStudio as the foundation for instruction in building RMarkdown documents. As we shall see, it has the advantage of some simple drop–downs for building, compiling, and editing the “code” used to build a RMarkdown document.</p>
-<p>Note, however, that all the RMarkdown code as shown below will also work perfectly well in Plain Vanilla R. So learn the RMarkdown coding process and worry later about how to compile the document.</p>
+<a href="#what-is-r" class="anchor"></a>What is R?</h2>
+<p>R is an ever–expanding set of analytical packages that has originated from a small group of programmers starting about the mid–1990’s. Urban Myth says they selected the letter “R” as coming from their first names as well as it being a play on the letter “S”, “S” being used to identify the S programming language. Somebody has to be first in line.</p>
+<p>R itself is freeware. On the positive side, it has wonderful analytical and plotting capabilities, and moderate data management capabilities. On the negative side, you get what you pay for, and since R and its associated packages are free there are many curious idiosyncrasies found in R you will experience.</p>
 </div>
-<div id="a-quick-overview-of-the-process-from-within-rstudio" class="section level2">
+<div id="how-does-r-relate-to-you-and-your-analytical-goals" class="section level2">
 <h2 class="hasAnchor">
-<a href="#a-quick-overview-of-the-process-from-within-rstudio" class="anchor"></a>A quick overview of the process from within RStudio</h2>
-<p>The steps below will help you build a simple RMarkdown document. There are many, many more options for creating RMarkdown documents, but the best approach to learning RMarkdown is to first learn how to build simple documents. You can then experiment with, and learn to apply, more sophisticated aspects of RMarkdown to your documents.</p>
-<p><strong>To build a Markdown document from within RStudio ….</strong></p>
-<ul>
-<li>Open RStudio
-<ul>
-<li>Create a new RMarkdown file, <strong>OR</strong>
-</li>
-<li>Open an existing RMarkdown file</li>
-</ul>
-</li>
-<li>Configure the document style using a YAML header</li>
-<li>Add some text, including formatting to:
-<ul>
-<li>Embed headers of different pitch (font size)</li>
-<li>Apply boldface, italics to phrases and words</li>
-<li>Use Blockquotes and lines as separators</li>
-</ul>
-</li>
-<li>Embed and execute R code</li>
-<li>Include some fancy document stuff …
-<ul>
-<li>Links to external web locations</li>
-<li>Embed pictures and videos</li>
-<li>Include tables</li>
-<li>Add mathematical symbols and equations</li>
-</ul>
-</li>
-<li>Save and compile (i.e., “Knit”) the RMarkdown document</li>
-</ul>
-<p><strong>NOTE</strong> that although we’re first learning how to build a RMarkdown document from within the RStudio editor, all the text and associated RMarkdown formatting could be entered into a basic text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a> for Windows 7/8/10 OS, <a href="https://macromates.com/">textmate</a> for MAC Os), or even as a MS WORD document. [<strong>NOTE:</strong> However, be careful using the latter; MS WORD carries special characters across depending on font (e.g., "" (quotes) in Times New Roman) that may not compile properly.]</p>
+<a href="#how-does-r-relate-to-you-and-your-analytical-goals" class="anchor"></a>How Does R Relate To You and Your Analytical Goals?</h2>
+<p>R has become the primary tool for data analysis in the broadly defined fields of ecology and conservation, as well as many others. For better or worse, as of 04 September 2019 there are about 14800 packages<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> in R designed around particular analytical tools or processes. Many of these tools have direct relevance to the data you analyze in ecology and conservation. Many, unfortunately, do not, or are so trivial in scope they simply are not that useful to your analytical objectives.</p>
+<p>The trick to R is finding those packages that are useful.</p>
+<p>I cannot, by any stretch of imagination, instruct you in even a small subset of the available R packages in this course. You have to develop a personal, web–based search pattern to ferret out a package that is relevant to the analyses you wish to perform. Or better yet, learn how to write your own code to solve your analytical problems. Nonetheless, you will need to invest some measure of personal time above and beyond these courses to learn R.</p>
+</div>
+<div id="so-how-will-you-learn-r" class="section level2">
+<h2 class="hasAnchor">
+<a href="#so-how-will-you-learn-r" class="anchor"></a>So How Will You Learn R?</h2>
+<p><strong>baseR</strong> is one of 11 different workshops I have developed for the analysis of ecological and conservation data within the R environment. <strong>baseR</strong> – the first of these – consists of five modules that introduce you to the basics of R, ranging from how to find and load R onto your personal computer, to data management and manipulation, and ending with basic graphs. There 22 exercises associated with these modules that can help you master R.</p>
+<p>If you work through the <strong>baseR</strong> modules, and do the exercises, you will have an excellent start on how to use R in your research. I am, of course, available for consultation on sticky R issues if you are taking any of these courses for credit, and you will encounter many a sticky issue. I myself do quite regularly. What I have done personally is develop a “Zen and the Art of R” sense that allows me to rapidly find clues for how to resolve a data management or statistical issue in R. This can only be learned by experimentation on your part; there is no “spoon-fed” answer to any aspect of R.</p>
+</div>
+<div id="where-to-start" class="section level2">
+<h2 class="hasAnchor">
+<a href="#where-to-start" class="anchor"></a>Where to Start</h2>
+<p>Once you acquire and download a modular ZIP file, say that for <strong>baseR</strong>, unpack the ZIP at any location you prefer on your CPU. Absent a specific location for this course (and other courses you might be taking), I recommend that you place the file at the \Users\YourUserName\Documents level on a W7/8/10 CPU, or /Users/YourUserName in a MAC, where YourUserName is your W7/8/10 or MAC user name.</p>
+<p>Use the navigation links to move around the workshop. Pretty self–explanatory.</p>
+</div>
+<div id="i-am-an-experienced-r-user" class="section level2">
+<h2 class="hasAnchor">
+<a href="#i-am-an-experienced-r-user" class="anchor"></a>I Am an Experienced R User …</h2>
+<p>Great!</p>
+<p>Then please skim the exercises (or ignore them!) as you see fit based on your personal level of experience. There may be some tricks you can learn if you look the exercises over. And if you have some R tricks you wish to share with me, please feel free to do so. I make no claim to be the Guru of R. You may also find yourself in the role of helping others in your circle of colleagues.</p>
+</div>
+<div id="i-want-to-use-my-already-configured-system-with-my-preferred-r-guiideeditor" class="section level2">
+<h2 class="hasAnchor">
+<a href="#i-want-to-use-my-already-configured-system-with-my-preferred-r-guiideeditor" class="anchor"></a>I Want To Use My Already Configured System with My Preferred R GUI/IDE/Editor …</h2>
+<p>Great again.</p>
+<p>Work with whatever OS or GUI/IDE/Editor you prefer. Learning R is indifferent to the underlying OS or GUI/IDE/Editor. That said, it is clear that <a href="https://www.rstudio.com/">RStudio</a> provides the best current environment for use of R, and if you are a self–defined “newbie” in R I strongly suggest you start there.</p>
+<p>Even Old Curmudgeonly, Command–line, Vanilla R Dinosaurs like myself now incorporate RStudio and its many strengths into analytical processes.</p>
+</div>
+<div id="all-i-know-about-r-is-that-r-is-the-18th-letter-of-the-alphabet" class="section level2">
+<h2 class="hasAnchor">
+<a href="#all-i-know-about-r-is-that-r-is-the-18th-letter-of-the-alphabet" class="anchor"></a>All I Know About R Is that R Is the 18th Letter of the Alphabet</h2>
+<p>I’m not going to pretend this is simple for everyone.</p>
+<p>Many of you – especially students – have been brought up in a MS EXCEL world. That is not the world of scientific analysis. You can, of course, try to analyze your research data within MS EXCEL, and there are many a statistics books based on the use MS EXCEL for what I would define as simple analyses. There are even several books related to the interplay of MS EXCEL and R. However, most of you will eventually be doing complex analyses well beyond the capabilities of MS EXCEL.</p>
+<p>So learn to useR.</p>
+</div>
+<div id="i-am-taking-a-workshop-for-credit" class="section level2">
+<h2 class="hasAnchor">
+<a href="#i-am-taking-a-workshop-for-credit" class="anchor"></a>I Am Taking a Workshop for Credit</h2>
+<p>Please read the file !README4creditAtUtahState_baseRV2019.2-15Aug2019.pdf as soon as you unzip the baseR-V2019.1.zip file. It outlines your responsibilities to obtain credit.</p>
+</div>
+<div class="footnotes">
 <hr>
-</div>
-<div id="create-a-new-rmarkdown-document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#create-a-new-rmarkdown-document" class="anchor"></a>Create a New RMarkdown Document</h2>
-<p>Open RStudio. You will first need to install the R package <a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><code>rmarkdown</code></a> and dependencies. Note that your version of R must be <span class="math inline">\(\geqq\)</span> 3.0. You should install the most current of RStudio as well, as it has recent features related to RMarkdown.</p>
-<p>From the upper left of the RStudio window</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>New File</strong> =&gt;</li>
-<li>Click <strong>R Markdown</strong>
-</li>
-</ul>
-<!-- set figures directory here 
-#![](figures/md01.png)
-#<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" height="320px" width="480px" />
---><!-- set figures directory here 
-NOTE;  out.extra not working in PDF / TeX output
-<div class="figure" style="text-align: center">
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document" width="75%" style="background-color: #ffffff; padding:10px; display: inline-block;" />
-<p class="caption">GUI dropdown for creating a new RMarkdown document</p>
-</div>
---><div class="figure" style="text-align: center">
-<img src="figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-GUI dropdown for creating a new RMarkdown document.
-</p>
-</div>
-<p>This will open a GUI dialog box (Fig. @ref(fig:f01)) asking which of the three basic RMarkdown documents types (i.e., HTML, PDF, MS WORD) you’d like to build. It also shows dialog boxes for <strong>Title</strong> and <strong>Author</strong>. For now, change the <strong>Title</strong> to <strong><em>Homework 1</em></strong> and <strong>Author</strong> to <strong><em>Your Name</em></strong>. Next, make sure the Document button on the upper left side is highlighted (blue color) and click on document type <strong>HTML</strong> (Fig. @ref(fig:f02)). This will open a default RStudio RMarkdown document destined to be compiled in HTML format. The <strong>date</strong> of the document defaults to the date when the document is first opened.</p>
-<!-- set figures directory here 
-#![](figures/md02.png)
-#<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md02.png" height="320px" width="480px" />
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md02.png" alt="GUI dropdown for selecting document style and setting a few parameters." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-GUI dropdown for selecting document style and setting a few parameters.
-</p>
-</div>
-<p>For now ignore the text in the default document. Merely highlight and delete the parts shown in blue (Fig. @ref(fig:f03)), much as you would in MS WORD document.</p>
-<!-- set figures directory here 
-![](figures/md03.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.png" height="359px" width="480px" />
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md03.png" alt="Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines.
-</p>
-</div>
-<p>Once the deletion is done,</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>Save As</strong> =&gt;</li>
-</ul>
-<p>and name the file something like <strong>hmwk1.rmd</strong>, where the <strong>.rmd</strong> file extension identifies the file as a R markdown document. (<strong>NOTE</strong> that RStudio may default to a <strong>.Rmd</strong> extension - it matters not.)</p>
-<p>Close RStudio. You’ve now created and saved a RMarkdown template.</p>
-</div>
-<div id="open-an-existing-rmarkdown-document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#open-an-existing-rmarkdown-document" class="anchor"></a>Open an existing RMarkdown document</h2>
-<p>Pretty simple:</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>Open File</strong> =&gt;</li>
-</ul>
-<p>and navigate to directory and open the file. Use the <strong>hmwk1.rmd</strong> we saved from above. It will appear as:</p>
-<!-- set pics directory here 
-![](pics/md04.png)
-<img src="pics/md04.png" height="359px" width="480px" />
-out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md04.png" alt="The backbone of an HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-The backbone of an HTML document.
-</p>
-</div>
-<p>You now have the backbone template of a RMarkdown document (Fig. @ref(fig:f04)).</p>
+<ol>
+<li id="fn1"><p>Varies somewhat by CRAN site.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
   </div>
 
@@ -345,10 +283,14 @@ The backbone of an HTML document.
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li><a href="#a-quick-overview-of-the-process-from-within-rstudio">A quick overview of the process from within RStudio</a></li>
-      <li><a href="#create-a-new-rmarkdown-document">Create a New RMarkdown Document</a></li>
-      <li><a href="#open-an-existing-rmarkdown-document">Open an existing RMarkdown document</a></li>
+<li><a href="#what-is-r">What is R?</a></li>
+      <li><a href="#how-does-r-relate-to-you-and-your-analytical-goals">How Does R Relate To You and Your Analytical Goals?</a></li>
+      <li><a href="#so-how-will-you-learn-r">So How Will You Learn R?</a></li>
+      <li><a href="#where-to-start">Where to Start</a></li>
+      <li><a href="#i-am-an-experienced-r-user">I Am an Experienced R User …</a></li>
+      <li><a href="#i-want-to-use-my-already-configured-system-with-my-preferred-r-guiideeditor">I Want To Use My Already Configured System with My Preferred R GUI/IDE/Editor …</a></li>
+      <li><a href="#all-i-know-about-r-is-that-r-is-the-18th-letter-of-the-alphabet">All I Know About R Is that R Is the 18th Letter of the Alphabet</a></li>
+      <li><a href="#i-am-taking-a-workshop-for-credit">I Am Taking a Workshop for Credit</a></li>
       </ul>
 </div>
       </div>

@@ -53,19 +53,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/SomeBackground.html">README 1st: Some Background</a>
+      <a href="../articles/0101-gsSomeBackground.html">README 1st: Some Background</a>
     </li>
     <li>
-      <a href="../articles/GetStarted.html">Getting Started</a>
+      <a href="../articles/0102-gsGetStarted.html">Getting Started</a>
     </li>
     <li>
-      <a href="../articles/InstallR-RStudio.html">Install R and RStudio</a>
+      <a href="../articles/0103-gsInstallR-RStudio.html">Install R and RStudio</a>
     </li>
     <li>
-      <a href="../articles/InstallJava.html">Install 64--bit Java on Windows Systems</a>
+      <a href="../articles/0104-gsInstallJava.html">Install 64--bit Java on Windows Systems</a>
     </li>
     <li>
-      <a href="../articles/ObtainCourseMaterial.html">Obtain Course Material</a>
+      <a href="../articles/0105-gsObtainCourseMaterial.html">Obtain Course Material</a>
     </li>
   </ul>
 </li>
@@ -221,11 +221,11 @@
 <!-- set root directory here
 
 -->
-<p>Last update: 30 August 2019 (V2019.2)</p>
+<p>Last update: 04 September 2019 (V2019.2)</p>
 <hr>
-<div id="its-really-quite-simple" class="section level2">
-<h2 class="hasAnchor">
-<a href="#its-really-quite-simple" class="anchor"></a>It’s really quite simple …</h2>
+<div id="section" class="section level2">
+<h2></h2>
+<p>It’s really quite simple …</p>
 <p>So far we’ve seen how to develop a basic RMarkdown document. However, we’ve not yet seen how to actually build the desired document type from the code. So how is it done?</p>
 <p>The process of converting the RMarkdown text to the preferred document type (e.g., HTML, PDF, MS WORD) involves several steps. The process first involves the function <code>render</code> from within package <code>rmarkdown</code>, which feeds the <strong>.rmd</strong> file (what we’re now learning how to build) to package <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>. <code>knitr</code> creates a new markdown output <strong>.md</strong> which is converted to the desired document type using the function <code>pandoc</code> from package <code>knitr</code>.</p>
 <p>Whew! Probably too much detail, right?</p>
@@ -233,33 +233,33 @@
 <p>From within RStudio open the <strong>hmwk1.rmd</strong> template saved at the beginning. For now it should only show the YAML. Add some headers and text, some boldface and italics, a list, and even a blockquote if desired. Something similar to that shown in Fig. @ref(fig:f05) will work.</p>
 <!-- set figures directory here 
 ![](figures/md05.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.PNG" height="359px" width="480px" />
+<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.png" height="359px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md05.PNG" alt="Some simple text for a RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
+<img src="figures/md05.png" alt="Some simple text for a RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 Some simple text for a RMarkdown document.
 </p>
 </div>
 <p>Once that is done, click the <span class="math inline">\(\blacktriangledown\)</span> (carrot) by <strong>Knit</strong> and select the type of document desired. For now select <strong>HTML</strong> (Fig. @ref(fig:f06)).</p>
 <!-- set figures directory here 
 ![](figures/md06.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md06.PNG" height="172px" width="480px" />
+<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md06.png" height="172px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md06.PNG" alt='GUI dropdown for "kniting" the document.' width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
+<img src="figures/md06.png" alt='GUI dropdown for "kniting" the document.' width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for “kniting” the document.
 </p>
 </div>
 <p>The <strong>R Markdown</strong> panel (lower left of your RStudio panels) will scroll through output, and a new window will popup with the <strong>knitted</strong> document. Assuming no errors (we’ll deal with those in a while …) you now have a completed HTML document that can be opened in any browser. The HTML document will also be saved in your default working directory.</p>
 <!-- set figures directory here 
 ![](figures/md07.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md07.PNG" height="239px" width="480px" />
+<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md07.png" height="239px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md07.PNG" alt="A completed RMarkdown HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
+<img src="figures/md07.png" alt="A completed RMarkdown HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 A completed RMarkdown HTML document.
 </p>
 </div>
@@ -272,7 +272,7 @@ A completed RMarkdown HTML document.
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#its-really-quite-simple">It’s really quite simple …</a></li>
+<li><a href="#section"></a></li>
       </ul>
 </div>
       </div>

@@ -4,6 +4,21 @@
     <loc>http://tedwards_github.github.io/useR/index.html</loc>
   </url>
   <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0101-gsSomeBackground.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0102-gsGetStarted.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0103-gsInstallR-RStudio.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0104-gsInstallJava.html</loc>
+  </url>
+  <url>
+    <loc>http://tedwards_github.github.io/useR/articles/0105-gsObtainCourseMaterial.html</loc>
+  </url>
+  <url>
     <loc>http://tedwards_github.github.io/useR/articles/0201-rmdIntro.html</loc>
   </url>
   <url>
@@ -37,21 +52,6 @@
     <loc>http://tedwards_github.github.io/useR/articles/4002-Supplggplot2.html</loc>
   </url>
   <url>
-    <loc>http://tedwards_github.github.io/useR/articles/GetStarted.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/InstallJava.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/InstallR-RStudio.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/ObtainCourseMaterial.html</loc>
-  </url>
-  <url>
     <loc>http://tedwards_github.github.io/useR/articles/rmdBasics.html</loc>
-  </url>
-  <url>
-    <loc>http://tedwards_github.github.io/useR/articles/SomeBackground.html</loc>
   </url>
 </urlset>

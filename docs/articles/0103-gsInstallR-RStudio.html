@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting Started with RMarkdown • useR</title>
+<title>Install R and RStudio • useR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Getting Started with RMarkdown">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Install R and RStudio">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -208,135 +208,33 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Getting Started with RMarkdown</h1>
+      <h1>Install R and RStudio</h1>
             
       
       
-      <div class="hidden name"><code>0202-rmdGetStarted.rmd</code></div>
+      <div class="hidden name"><code>0103-gsInstallR-RStudio.rmd</code></div>
 
     </div>
 
     
     
-<!-- set root directory here
-
--->
 <p>Last update: 04 September 2019 (V2019.2)</p>
 <hr>
-<div id="introduction" class="section level2">
+<div id="important-caveat-agencyowned-cpus" class="section level2">
 <h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>We’re going to use features found in RStudio as the foundation for instruction in building RMarkdown documents. As we shall see, it has the advantage of some simple drop–downs for building, compiling, and editing the “code” used to build a RMarkdown document.</p>
-<p>Note, however, that all the RMarkdown code as shown below will also work perfectly well in Plain Vanilla R. So learn the RMarkdown coding process and worry later about how to compile the document.</p>
+<a href="#important-caveat-agencyowned-cpus" class="anchor"></a>IMPORTANT Caveat: Agency–owned CPUs</h2>
+<p>If you are using a Federally– or state–owned CPU please contact your appropriate IT person before proceeding further. Installation of R and RStudio, as well the appropriate version of Java, require that you have Administrator privileges on your CPU.</p>
 </div>
-<div id="a-quick-overview-of-the-process-from-within-rstudio" class="section level2">
+<div id="install-r-and-rstudio" class="section level2">
 <h2 class="hasAnchor">
-<a href="#a-quick-overview-of-the-process-from-within-rstudio" class="anchor"></a>A quick overview of the process from within RStudio</h2>
-<p>The steps below will help you build a simple RMarkdown document. There are many, many more options for creating RMarkdown documents, but the best approach to learning RMarkdown is to first learn how to build simple documents. You can then experiment with, and learn to apply, more sophisticated aspects of RMarkdown to your documents.</p>
-<p><strong>To build a Markdown document from within RStudio ….</strong></p>
+<a href="#install-r-and-rstudio" class="anchor"></a>Install R and RStudio</h2>
+<p>Installation of both R and RStudio onto your CPU is pretty straightforward. Merely follow the links provided below. After clicking on the links follow the instructions for your particular CPU OS, be it Windows, MAC, or one of the Linux builds.</p>
+<p>It is strongly advised you work with the most current version of both R and RStudio, unless otherwise notified by myself or one of the other instructors.</p>
 <ul>
-<li>Open RStudio
-<ul>
-<li>Create a new RMarkdown file, <strong>OR</strong>
-</li>
-<li>Open an existing RMarkdown file</li>
+<li><a href="https://www.r-project.org/">Install R</a></li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/">Install RStudio</a></li>
 </ul>
-</li>
-<li>Configure the document style using a YAML header</li>
-<li>Add some text, including formatting to:
-<ul>
-<li>Embed headers of different pitch (font size)</li>
-<li>Apply boldface, italics to phrases and words</li>
-<li>Use Blockquotes and lines as separators</li>
-</ul>
-</li>
-<li>Embed and execute R code</li>
-<li>Include some fancy document stuff …
-<ul>
-<li>Links to external web locations</li>
-<li>Embed pictures and videos</li>
-<li>Include tables</li>
-<li>Add mathematical symbols and equations</li>
-</ul>
-</li>
-<li>Save and compile (i.e., “Knit”) the RMarkdown document</li>
-</ul>
-<p><strong>NOTE</strong> that although we’re first learning how to build a RMarkdown document from within the RStudio editor, all the text and associated RMarkdown formatting could be entered into a basic text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a> for Windows 7/8/10 OS, <a href="https://macromates.com/">textmate</a> for MAC Os), or even as a MS WORD document. [<strong>NOTE:</strong> However, be careful using the latter; MS WORD carries special characters across depending on font (e.g., "" (quotes) in Times New Roman) that may not compile properly.]</p>
-<hr>
-</div>
-<div id="create-a-new-rmarkdown-document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#create-a-new-rmarkdown-document" class="anchor"></a>Create a New RMarkdown Document</h2>
-<p>Open RStudio. You will first need to install the R package <a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><code>rmarkdown</code></a> and dependencies. Note that your version of R must be <span class="math inline">\(\geqq\)</span> 3.0. You should install the most current of RStudio as well, as it has recent features related to RMarkdown.</p>
-<p>From the upper left of the RStudio window</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>New File</strong> =&gt;</li>
-<li>Click <strong>R Markdown</strong>
-</li>
-</ul>
-<!-- set figures directory here 
-#![](figures/md01.png)
-#<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" height="320px" width="480px" />
---><!-- set figures directory here 
-NOTE;  out.extra not working in PDF / TeX output
-<div class="figure" style="text-align: center">
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document" width="75%" style="background-color: #ffffff; padding:10px; display: inline-block;" />
-<p class="caption">GUI dropdown for creating a new RMarkdown document</p>
-</div>
---><div class="figure" style="text-align: center">
-<img src="figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-GUI dropdown for creating a new RMarkdown document.
-</p>
-</div>
-<p>This will open a GUI dialog box (Fig. @ref(fig:f01)) asking which of the three basic RMarkdown documents types (i.e., HTML, PDF, MS WORD) you’d like to build. It also shows dialog boxes for <strong>Title</strong> and <strong>Author</strong>. For now, change the <strong>Title</strong> to <strong><em>Homework 1</em></strong> and <strong>Author</strong> to <strong><em>Your Name</em></strong>. Next, make sure the Document button on the upper left side is highlighted (blue color) and click on document type <strong>HTML</strong> (Fig. @ref(fig:f02)). This will open a default RStudio RMarkdown document destined to be compiled in HTML format. The <strong>date</strong> of the document defaults to the date when the document is first opened.</p>
-<!-- set figures directory here 
-#![](figures/md02.png)
-#<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md02.png" height="320px" width="480px" />
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md02.png" alt="GUI dropdown for selecting document style and setting a few parameters." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-GUI dropdown for selecting document style and setting a few parameters.
-</p>
-</div>
-<p>For now ignore the text in the default document. Merely highlight and delete the parts shown in blue (Fig. @ref(fig:f03)), much as you would in MS WORD document.</p>
-<!-- set figures directory here 
-![](figures/md03.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.png" height="359px" width="480px" />
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md03.png" alt="Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines.
-</p>
-</div>
-<p>Once the deletion is done,</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>Save As</strong> =&gt;</li>
-</ul>
-<p>and name the file something like <strong>hmwk1.rmd</strong>, where the <strong>.rmd</strong> file extension identifies the file as a R markdown document. (<strong>NOTE</strong> that RStudio may default to a <strong>.Rmd</strong> extension - it matters not.)</p>
-<p>Close RStudio. You’ve now created and saved a RMarkdown template.</p>
-</div>
-<div id="open-an-existing-rmarkdown-document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#open-an-existing-rmarkdown-document" class="anchor"></a>Open an existing RMarkdown document</h2>
-<p>Pretty simple:</p>
-<ul>
-<li>Click <strong>File</strong> =&gt;</li>
-<li>Click <strong>Open File</strong> =&gt;</li>
-</ul>
-<p>and navigate to directory and open the file. Use the <strong>hmwk1.rmd</strong> we saved from above. It will appear as:</p>
-<!-- set pics directory here 
-![](pics/md04.png)
-<img src="pics/md04.png" height="359px" width="480px" />
-out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
--->
-<div class="figure" style="text-align: center">
-<img src="figures/md04.png" alt="The backbone of an HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
-The backbone of an HTML document.
-</p>
-</div>
-<p>You now have the backbone template of a RMarkdown document (Fig. @ref(fig:f04)).</p>
+<p>You’re done here. Next, ensure you have the proper version of Java. This is mostly an issue for Windows–based CPUs.</p>
 </div>
   </div>
 
@@ -345,10 +243,8 @@ The backbone of an HTML document.
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li><a href="#a-quick-overview-of-the-process-from-within-rstudio">A quick overview of the process from within RStudio</a></li>
-      <li><a href="#create-a-new-rmarkdown-document">Create a New RMarkdown Document</a></li>
-      <li><a href="#open-an-existing-rmarkdown-document">Open an existing RMarkdown document</a></li>
+<li><a href="#important-caveat-agencyowned-cpus">IMPORTANT Caveat: Agency–owned CPUs</a></li>
+      <li><a href="#install-r-and-rstudio">Install R and RStudio</a></li>
       </ul>
 </div>
       </div>

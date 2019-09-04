@@ -47,7 +47,7 @@ out.extra='style="background-color: #ffffff; padding:10px; display: inline-block
 --> 
 
 ```{r f05, echo=FALSE, fig.cap="Some simple text for a RMarkdown document.", out.width = '50%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}
-knitr::include_graphics("figures/md05.PNG")
+knitr::include_graphics("figures/md05.png")
 ```
 
 Once that is done, click the $\blacktriangledown$ (carrot) by **Knit** and select the type of document desired.  For now select **HTML** (Fig. \@ref(fig:f06)).
