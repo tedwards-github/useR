@@ -27,8 +27,7 @@ Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
 
 ---
 
-##
-It's really quite simple ...
+## It's really quite simple ...
 
 So far we've seen how to develop a basic RMarkdown document.  However, we've not yet seen how to actually build the desired document type from the code.  So how is it done?
 
