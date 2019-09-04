@@ -1,0 +1,38 @@
+
+---
+title: "EXAMPLE: A Finalized Document"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{0204-rmdFinalExample}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+<!-- set root directory here
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/markdownR/markdown_html")
+knitr::opts_chunk$set(warning=FALSE, fig.align="center")
+```
+-->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "##"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## What You Can Expect !!
+
+Assume you have been instructed to complete a formal analysis and write--up of prey capture by male and female osprey using the data from above.  The write--up would include a list of objectives, the R code used for analysis, the output, and some measure of interpretation.  
+
+One possible rendition of this homework assignment in HTML format is [here](https://maddoor1.nr.usu.edu:45231/sharing/cJ2gXlNlH).
+
+You're done!  You should now be able build a RMarkdown document that integrates R coding and analysis directly into a HTML document.
+
+P.S. The cheatsheet *.Rmd file that built this [can be accesssed from here]().

@@ -1,0 +1,33 @@
+---
+title: "Getting Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GetStarted}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Some Beginning Steps
+
+The **Getting Started** drop--down menu consists of several steps you need to implement to prepare your computer for use of R in general and **useR** as it relates to the course content found there.  All steps must be implemented.  Because many of you already use R, you will likely have various parts of the **Getting Started** steps already up and running.  Nonetheless, please ensure that the steps listed below are up and properly running in R on your computer.
+
+The steps to implement include:
+
+* Install R and RStudio
+* Ensure You Have Both 32-- and 64--Bit Java Installed
+
+Last, pick a menu item related to a course and follow the process to obtain course material.
+
+* Obtain Course Material
+
+This steps, *Obtain Course Material*, differs slightly depending on which of the modular--based courses you select.  However, all steps to obtain course material are similarly constructed.  
+
+Again, pretty self--explanatory.

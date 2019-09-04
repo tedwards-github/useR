@@ -1,0 +1,341 @@
+---
+title: "Supplemental: ggplot2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{4002-baseSupplggplot2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<!--
+---
+title: "ggplot2: An Alternative to R Base Plots"
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    toc: false
+    toc_depth: 3
+    keep_tex: TRUE
+    number_sections: yes
+  bookdown::html_document2:
+    fig_caption: yes
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+urlcolor: blue
+---
+-->
+
+<!-- set root directory here --> 
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/baseR_ALLversions/baseR_ggplot")
+knitr::opts_chunk$set(warning=FALSE)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Purpose of this Vignette
+
+This vignette describes how to use the package `ggplot2` to build four basic types of graphs commonly used in biological reports:
+
+* Scatterplots
+    * Relate an x to a y, as in correlation or regression
+* Line plots
+    * Relate change in y per change in x
+    * Typically used to show change in a y over some steps in x, as in a time series plot; Think "connect the dots" plots
+* Bar charts
+    * A response in y where x is discrete, as in frequencies of observations by classes
+* Histograms
+    * A response in y where a continuous x 
+    * x is binned during histogram construction, as in frequencies of observations by bin
+
+The code below mimics code using base plot in R and is designed as a Supplemental to Module 5, baseR.
+
+**Bypass the Webpage:**
+
+* Click here to [download and obtain a PDF](https://maddoor1.nr.usu.edu:45231/sharing/dT62HxRgE) of this vignette.
+
+* Click here to [download and obtain a PDF](https://maddoor1.nr.usu.edu:45231/sharing/dT62HxRgE) of this vignette.
+
+## Introduction to Package `ggplot2`
+
+The package [`ggplot2`](https://ggplot2.tidyverse.org/) is an alternative to the base plotting functions described in Module 5, baseR.  `ggplot` is based on so--called "grammar of graphics," a phrase coined by L. Wilkinson and subsequently incorporated into the `ggplot2` package by Wickham and others.  It relies on three core layers of information beginning with the data, a second labeled aesthetics, which essentially is how the coded data will be portrayed, and last a set of geometries, which defines the properties of the lines, bars, and points used in the graph.
+
+To many, `ggplot2` plot defaults are more "eye pleasing" and, in the case of complex plots, often requires simpler coding to construct the graph.  
+
+Advantages notwithstanding, `ggplot2` still draws on may of the same plot symbologies found in R base plots, containing analogs to `pch`, `col`, `cex`, and well as others.  In short, if you can conceptualize and build a graph using R base plots you can also build a graph using `ggplot2`.  Which you use is a matter of personal choice only.  
+
+Irrespective of the desired plotting approach -- R base graphics, `ggplot`, or others such as `lattice` --  plot construction still requires careful thinking of how the information is to be presented in a graphical format.  After that it merely a matter of coding.
+
+### Some Base Elements of `ggplot2`
+
+The library `ggplot2` is required.  An important option to consider when using `ggplot2` is `ggthemes`, a set of canned backgrounds that can be applied to `ggplot2`--based graphs.  The "grammar of graphics" approach is based on the addition of layers of information that are individually plotted and when combined create the graph.  Each of these layers is connected by the `+` (plus) symbol.
+
+The examples below show the corresponding `ggplot2` code that mimic, to a large extent, the graphs constructed using R base plots, Module 5.  
+
+---
+
+## The `ggplot2` Scatterplot
+
+### The Data and Rationale for Graph
+
+Data used for a basic scatterplot is found in **sculpin_eggs.csv**.  These data represent the number of eggs produced in relation to the weight of female sculpin Cabezon, *Scorpaenichthys marmoratus* (Ayres).  The objective of the graph is to show the relationship between the two variables, and add both a straight line through the points, as well as a locally weighted scatterplot smoother (LOWESS) line. Data characteristics are shown below.
+
+```{r ch0505.r01, echo=3:4}
+# import cabezon egg data
+s1 <- read.csv("ggplot_html/data/sculpin_eggs.csv", header = T)
+str(s1)  # examine characteristics
+head(s1, 2)  # examine observations
+```
+
+### Building the Graph
+
+`aea` is a central call to `ggplot2`.  The `aes` sets the plot relationship, while `geom_point` defines how the points are plotted.  Note that although `ggplot2` uses `size =` and `shape =` for point characteristics, these are identical to the `pch =` and `cex =` symbology.  In fact, the latter two can used in place of `size` and `shape`.  `labs())` simply places the `ylab` and `xlab` commands inside a single call.  Again, `labs()` can be replaced with separate `xlab` and `ylab` calls.  The `geom_smooth` options are analogous to `lines` and `abline`.  Note the `se=` TRUE or FALSE option.  The `theme` call is used to add plot titles.
+
+Figure output is below (Fig. \@ref(fig:f01)).
+
+```{r f01, fig.cap="Basic scatterplot.", out.width = '75%', fig.align="center"}
+# simple scatterplot
+library(ggplot2)
+ggplot(s1, aes(x = weight, y = eggs)) +
+ geom_point(size = 2, shape = 16) +  
+ labs(x = "No. Eggs", y = "Weight (g)") +  
+ ggtitle("No. Eggs in Relation to Weight") +
+ theme(plot.title = element_text(hjust = 0.5, size = 14)) +
+ geom_smooth(method = lm, se = F, color = "black") +  
+ geom_smooth(se = F, color = "black", linetype = 2)  
+```
+
+---
+
+## The `ggplot2` Line Graph 1
+
+### The Data and Rationale for Graph
+
+Data for generating a line graph represent counts of male greater sage-grouse *Centrocercus urophasianus* at numerous lek sites in western North America over the course of several years.  Leks are locations where females gather and males compete for females through a variety of complex behavioral displays.  Objective of the graph is to display raw counts of males over time (year) by different leks.  Thus, multiple lines representing unique lek locations will all be plotted together.  The data, **grouse_lekmales.csv**, are imported as object **g1**.  Note that the data contain missing values as blanks in the **.csv** file; consequently the option `na.strings = ""` is invoked during data import.  Data characteristics are shown below.  
+
+```{r ch0505.r05, echo=3:4}
+# import grouse count by year by lek complex dataset
+g1 <- read.csv("ggplot_html/data/grouse_lekmales.csv", na.strings = "", header = T)
+str(g1)  # examine characteristics
+head(g1, 2)  # examine observations
+```
+
+### Building the Graph
+
+Like R base plots, `ggplot2` allows for data subsetting within the `ggplot()` call.  Here we subset a group of factor levels from the variable `complex`, and specify a `group =` option.  This breaks the plotting into levels as characterized by the variable `complex`.  Note that `geom_line` and `geom_point` use the group values to automatically assign point and line types.  A quirk of `ggplot2` is that integers plot as numeric even if the variable R class is integer; if the intent is portray integers as as discrete levels (e.g., year) on an axis then coerce them to class Factor.
+
+Legends, like plot titles, are constructed using `theme`.  The options `legend.direction` and `legend.justification` position the legend.   `scale_shape_discrete` and `scale_linetype_discrete` plot the legend symbology.  Both are required in plots where points are combined with lines. Running only one of these will result in two separate legends being plotted.
+
+Check out the graph (Fig. \@ref(fig:f02)).
+
+```{r f02, fig.cap="Basic line graph with multiple lines.", out.width = '75%', fig.align="center"}
+# line graph
+ggplot(data=subset(g1,g1$complex %in% c("DM","BM","SS","HH")), 
+  aes(x = as.factor(year), y = males, group = complex)) +
+ labs(x = "Year", y = "Number of Males") +
+ geom_line(aes(linetype = complex)) +  
+ geom_point(aes(shape = complex)) +   
+ theme(legend.direction = "horizontal", legend.position = "top", 
+  legend.box = "horizontal") +
+ theme(legend.justification=c(.5,1), legend.position=c(.5,1)) + 
+ scale_shape_discrete(name="Complex") +  
+ scale_linetype_discrete(name="Complex") 
+```
+
+---
+
+## The `ggplot2` Line Graph 2
+
+### The Data and Rationale for Graph
+
+Two age classes (old, young) of penned coyotes were given one of three possible drug treatments (A, B, C) designed to reduce stress under penned circumstances.  Stress was measured as blood enzyme levels.  Objective of the graph is to plot treatment blood enzyme means in relation to age class, and provide a visualization of whether interaction effects exist.  Data come from **coyote_drugs.csv** and are imported as **c1**.  Data characteristics are then examined as precursors to building the graph.
+
+Although possible to extract the mean values from an ANOVA output for direct incorporation into the plot, we calculate means here using `aggregate()`.  Next, floor and ceiling of the response range is determined, and will then be used to set the *y*--axis limits.  Different line types and symbols are applied to the two age classes.
+
+Data modes are correct as Factor with appropriate levels for the variables **drugtype** and **age**, while blood enzyme measures **bloodlev** are numeric.
+
+```{r ch0505.r09, echo=3:4}
+# import grouse count by year by lek complex dataset
+c1 <- read.csv("ggplot_html/data/coyote_drugs.csv", na.strings = "", header = T)
+str(c1)  # examine characteristics
+head(c1, 2)  # examine observations
+```
+
+Next, calculate the means and determine the floor and ceiling.
+
+```{r ch0505.r10}
+# determine means of treatment combos
+c2 <- aggregate(c1$bloodlev, by = list(age = c1$age, 
+ drugtype = c1$drugtype), FUN = "mean")
+# determine range (as integers) of means for use in plot
+resp.r <- range(min(floor(c2$x)), max(ceiling(c2$x)))
+```
+
+### Building the Graph
+
+This plot uses many of the `ggplot2` plot elements shown above for Fig. \@ref(fig:f02).  The first of these is assigning labels to the *x*---axis.  Other modification show how to manually assign point shape and line type, a title to the legend, and labels to the legend elements.  This is accomplished using the `scale_shape_manual` and `scale_linetype_manual` options (Fig. \@ref(fig:f03)).
+
+```{r f03, fig.cap="Basic line graph for a simple ANOVA.", out.width = '75%', fig.align="center"}
+# plot of factorial experiment; line plot w/age=old
+ggplot(c2, aes(x = drugtype, y = x, group = age)) +
+ geom_line(aes(linetype = age)) +
+ geom_point(aes(shape = age), size = 2) + 
+ labs(x = "Treatment", y = "Mean Blood Enzyme Level") +
+ scale_x_discrete(labels = c("A", "B", "C")) +
+ scale_shape_manual(name="Age", values = c(15, 17), 
+  labels = c("Old", "Young")) +
+ scale_linetype_manual(name = "Age", values = c(1, 2),
+  labels = c("Old", "Young")) +
+ theme(legend.background = element_rect(fill = "gray90")) +
+ theme(legend.justification = c(.25, 1), 
+  legend.position = c(.25, 1))
+```
+
+---
+
+## The `ggplot2` Bar Chart 1
+
+### The Data and Rationale for Graph
+
+Male and female osprey *Pandion halieatus* were observed foraging at a lake, with an objective of determining the frequency three separate fish species groups were captured by each sex.  Although multiple fish species comprised each group, identification to the species levels was difficult and it was determined that group at eh genus level was sufficient.  Objective of the graph is to show the capture frequencies cross--classified by sex within fish species groups.  The actual counts by each of the six bars (two sexes $\times$ three fish groups) was to be included on the top of each bar in the graph.  Data come from **ospreypreybysex.csv** and are imported as **f1**.  Data characteristics are then examined as precursors to building the graph. 
+
+Data as imported are already in a matrix format, with the counts by the six possible levels already determined.  Thus, no cross--tabulation (i.e., `table()` call) to generate the counts is required.  Data are also properly configured with appropriate class of Factor for both osprey sex (**ospreysex**) and fish species group (**fishspp**). **count**, the number of captures, is of class integer.
+
+```{r ch0505.r12, echo=3:4}
+# import fish species group captures by osprey sex dataset
+f1 <- read.csv("ggplot_html/data/ospreyprey_bysex.csv", na.strings = "", header = T)
+str(f1)  # data characteristics
+f1  # examine data matrix
+```
+
+### Building the Graph
+
+Bar charts are built using `geom_bar`.  It defaults to counts and should not be used to plot continuous data.  Similar to data organization required for construction of Figure FIG 050505, data for a bar chart needs to be summarized into a column of counts with the associated Factor levels.  The `aes(fishspp, count, fill = ospreysex)` configures the plot as **ospreysex** within the levels of **fishspp**.  Reversing the **fishspp** and **ospreysex** within the `aes()` plots levels of **fishspp** within **ospreysex**.  An alternative to `geom_bar` is `geom_col`.  The call `scale_fill_manual` manually assigns legend title and color to the legend elements.  One new addition is the`geom_text`.  This call adds the numeric values (here, the variable `count`) to the bars in the plot.  `vjust =` as a positive or negative value places the numeric values above or within the bar, respectively (Fig. \@ref(fig:f04)).
+
+```{r f04, fig.cap="Basic bar chart of fish species captures by osprey sex.", out.width = '75%', fig.align="center"}
+# plot everything
+ggplot(f1, aes(fishspp, count, fill = ospreysex)) +
+ geom_bar(aes(fill = ospreysex), position = "dodge", 
+  stat="identity") +
+ labs(x = "Osprey Sex", y = "Capture Frequency (n)") +
+ scale_fill_manual(name = "Fish Species", 
+  values = c("grey60", "grey40")) +
+ theme(legend.background = element_rect(fill = "gray90")) +
+ theme(legend.justification = c(0, 1), 
+  legend.position = c(0, 1)) +
+ geom_text(aes(label = count), position = position_dodge(0.9), 
+  vjust = -.5)
+```
+
+---
+
+## The `ggplot2` Bar Chart 2
+
+### The Data and Rationale for Graph
+
+Six conifer species comprise the bulk of tree species in the pinon--juniper woodlands of western North America, including two pines, *Pinus edulis*, *P. monosperma*, and four junipers, *Juniperous deppeana*, *J. monosperma*, *J. occidentalis*, and *J. osteosperma*.  As part of a larger study exploring potential climate change effects on the distributions of the species and woodlands they constitute, data on presence -- absence locations of the tree species in relation to current annual temperature was required.  These location data were then used to extract annual temperature from a GIS--based map of temperatures.  Data from **conifer_anntemps.csv** are to be imported as t1 and a bar chart constructed showing mean annual temperature by presence -- absence location within each tree species.  Error bars (standard deviation) are to be added to the bar chart as well.  The imported data object is examined prior to constructing the graph.
+
+Data as imported already contain mean (**xbar**), n (**n**), and standard deviation (**sd**) and error (**se**) values.  Note that variable **presab** is of class integer.  For the plot to be built, **presab** must be coerced to `class=factor`, either during data import or by use of `as.factor()` during the grpah construction.  The example below coerces using the `as.factor()` call.
+
+```{r ch0505.r16, echo=3:4}
+# import conifer climate dataset
+t1 <- read.csv("ggplot_html/data/conifer_anntemps.csv", na.strings = "", header = T)
+str(t1)  # data characteristics
+head(t1, 2)  # examine observations
+```
+
+The formula `xbar ~ presab + spp` within `xtabs()` configures the data as tree species presence -- absence by each tree species. The response **xbar** will become the plot value for the y--axis.  You could easily swap out any of the other numeric values (e.g., **sd**) in the original **t1** dataframe in place of **xbar**.
+
+```{r ch0505.r17}
+# reconfigure data matrix using xtabs
+t2.xbar <- as.data.frame(xtabs(xbar ~ presab + spp, t1)) 
+head(t2.xbar, 2)  # compare t2 format with t1
+str(t2.xbar) # examine
+```
+
+### Building the Graph
+
+We used `geom_bar` in the `ggplot2` above, but that is restricted to count data.  Use `geom_col` if the response data (i.e., *y*--axis) are of continuous scale.  the `position="dodge"` options creates hsitgrams by groups, whihc in this example are based on the two levels [0,1] in the varibale **presabs**. Note also the inclusion of the `expression()` call in `labs()`.  Thus, `ggplot2` affords the same option to include mathematical and special character symbols in plot axes labels.  Error bars are added using `geom_errorbar`, where the `ymin` and `ymax` values are the mean $\pm$ the desired measure of dispersion.  `width =` determines the width of the error bar.  Output is below (Fig. \@ref(fig:f05)).
+
+```{r f05, fig.cap="Basic bar chart climate relations for six tree species", out.width = '75%', fig.align="center"}
+ggplot(t1, aes(x = spp, y = xbar, fill = as.factor(presab))) + 
+ geom_col(aes(fill = as.factor(presab)), position = "dodge") +
+ labs(x = "Tree Species Code", 
+  y = expression("Mean Annual Temperature ( " * degree * "C)")) +
+ scale_fill_manual(name = "Species Status", 
+  values = c("grey60", "grey40"), 
+  labels = c("Present", "Absent")) +
+ scale_x_discrete(labels = c("JUDE", "JUMO", "JUOC", "JUOS", 
+                             "PIED", "PIMO")) +
+ theme(legend.background = element_rect(fill = "gray90")) +
+ theme(legend.justification = c(.5,1), 
+  legend.position = c(.5, 1)) +
+ geom_errorbar(aes(ymin = xbar-se, ymax = xbar+se), width = .2, 
+  position = position_dodge(.9))
+```
+
+---
+
+## The `ggplot2` Complex Stack
+
+### The Data and Rationale for Graph
+
+As part of an analysis to determine if morphometric measurements differed between sexes in the common western jumping mouse *Zapus princeps princeps*, skull measurements from museum specimens were measured.  One of these measurements was the incisive foramina width, which is a measure of the width of a canal behind the incisors on the roof of the mouth.  Blood vessels and nerves pass through this canal.  A histogram of the widths by sex was requested.  
+
+For ease of interpretation, the two histograms are to be stacked on one another, sharing a common *x*--axis representing the maximum and minimum measurements irrespective of sex.  Data come from **zapusmorph_bysex.csv** and are imported as **z1**.  The incisive foramina width is coded as **ifwid**.
+
+The imported dataframe contains numerous other morphometric variables and identifying variables.  
+
+```{r ch0505.r20A, echo=3}
+# import Zapus morphological dataset
+z1 <- read.csv("ggplot_html/data/zapusmorph_bysex.csv", na.strings = ".", header = T)
+names(z1)  # data names
+```
+
+The two required variables **sex** and **ifwid**, are the appropriate `class=` (`factor` and `numeric`, respectively) for the constructing the histogram.  
+
+```{r ch0505.r20B}
+head(z1[c("sex", "ifwid")], 2) # examine onservations
+str(z1[c("sex", "ifwid")])
+class(z1$ifwid)
+```
+
+Potential modification to the histograms include a stacking process that results in less whitespace between the two histograms, common *x*-- and *y*--axes, and inclusion of "smoother" lines fitted to the data.
+
+### Building the Graph
+
+`ggplot2` is simpler than R base plots for stacking plots with common *x*-- and *y*--axis labels, with the exception of labeling the subplots.  Calling `facet_grid` creates multiple plots (i.e., facets) based on factor levels where `sex ~ .` relates the levels of sex to the `aes(x = )` call.  `scales = "fixed"` ensures axis values are identical on the separate plots.  
+
+Surprisingly there is no simple away to change facet labels; they default to the data coding, which is of class Factor.  While complex processes exist within `ggplot2` to change labels, the simplest approach is to re--label the factor levels in the data, as shown below.  These new labels are then applied to the facets using the `labeller=label_value` option.  Facet labels obviate the need for a legend so it is suppressed by setting `guides(fill=F)`.
+
+Output is below (Fig. \@ref(fig:f06)).
+
+```{r f06, fig.cap="Complex stack of histograms.", out.width = '75%', fig.align="center"}
+z1$sex <- factor(z1$sex, labels = c("Female", "Male"))
+# stacked histograms for variable ifwid with common axis labels
+ggplot(z1, aes(x=ifwid, fill=sex)) + 
+ geom_histogram(bins = 9) +
+ facet_grid(sex ~ ., scales = "fixed", labeller=label_value) +
+ labs(x = "IFWID length (mm)", y = "Frequency") +
+ scale_fill_manual(name = "Sex", values = c("grey60", "grey40"),
+  labels=c("Female", "Male")) +
+ guides(fill=F)
+```
+
+## Some Concluding Thoughts
+
+How you construct plots in R is entirely up to you.  If you are "new" to R, it might be best to begin with `ggplot2`, mostly because many of the graph examples you will find on the Web were built with `ggplot2`.
+
+However, in the grand scheme of research and reprt writing it matters not one whit how you construct plots, as long as they look professional and are repeatable. From my perspective as an instructor for this and other courses I teach, I care only that the plot has been correctly built and the intended message is clear.  
+
+How you build it is left up to you.  That's what cool about R -- you decide what to use to meet your analytical goals.
+
+
+
+
+ 

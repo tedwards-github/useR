@@ -1,0 +1,237 @@
+
+---
+title: "RMarkdown Building Blocks"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{0203-rmdBuildingBlocks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+<!-- set root directory here
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/markdownR/markdown_html")
+knitr::opts_chunk$set(warning=FALSE, fig.align="center")
+```
+-->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Overview
+
+The minimalist RMarkdown document consists of three parts:
+
+* A YAML; and
+* Formatted text.
+
+With these first two parts you could write a simple text letter using RMarkdown.  However, this ignores the power of RMarkdown, which in the world of analysis allows us to next:
+
+* Embed R code for execution.
+
+These three elements -- the YAML, formatted text, and executable R code -- constitute the basic RMarkdown document.  Once this document is built, it can be "knit," resulting a document not that not only includes explanatory and interpretative text but also provides a metadocument of all analytical code and output.
+
+## The Basic Structure - The YAML Header
+
+All RMarkdown documents begin with a **YAML header**, which originally meant "Yet Another Markup Language," but has since morphed to mean "YAML Ain't Markup Language."  The YAML header controls the format of the RMarkdown document.  A basic YAML for a HTML document generated from within RStudio looks like the one found in our **hmwk1.rmd** file:
+
+```
+#### What a basic YAML looks like
+---
+title: "Homework 1"
+author: "Student R. Me"
+date: "August 15, 2019"
+output: html_document
+---
+```
+
+Of the four YAML elements shown above, only the **output:** is truly needed.  This YAML requests output be a **html_document**.  Some possible, but by no means all, RMarkdown output types include:
+
+* **output: pdf_document** (Adobe PDF)
+* **output: word_document** (MS WORD)
+* **output: beamer_presentation** (Adobe PDF slideshow)
+* **output: ioslides_presentation** (HTML slideshow)
+
+A more complete list of RMarkdown formats can be found [here](https://rmarkdown.rstudio.com/formats.html).
+
+Other document control features, such as a CSS file that controls HTML output, or a MS WORD document template to control MS WORD output, can be added to the YAML.  More on that a bit later. 
+
+## The Basic Structure -- The Text
+
+```
+####  Nothing special about adding text
+This is text.  Just type away to your heart's content .... 
+
+Use two hard returns to separate paragraphs (blocks) of text.
+```
+
+Click [here internal link](https://tedwards-github.github.io/useR/articles/InstallR-RStudio.html) [here external link](https://maddoor1.nr.usu.edu:45231/sharing/PTyR9X6nf) [last]("vignettes/rmd-files/markdown_basics01.html")to see what the output looks like.  We'll learn more about how to configure text for bold, italics, and other text formatting features next.
+
+## The Basic Structure -- Horizontal Line Separators
+
+The most common use of horizontal separators is to distinguish among document sections.  You can add one, two, or any number of line separators.  Note a hard return and blank line is required after the first separator to generate two lines !!
+
+```
+#### Coding for line separators
+The sequence of --- (three hyphens) adds a line separator to the document.
+
+---
+
+The sequence two sets of --- (three hyphens) separated by a blank line
+
+---
+
+---
+
+adds two lines of separators.  
+```
+
+## The Basic Structure -- Text Headers
+
+Headers can be up to 6 levels, with each level preceded by the number of `#` (pound or hashtag) symbols representing the header level.
+
+```
+#### Adding different levels of headers
+# Header1
+## Header2
+### Header3
+#### Header4
+##### Header5
+###### Header6
+```
+
+Examine the [output](https://maddoor1.nr.usu.edu:45231/sharing/gnYc1CSgD), showing both headers and line separators.  Note that by the time you've reached **Header6** the font is quite small relative to the text.  You can create headers with greater than 6 `#`; however, at some point headers $>$ 6 revert to the base pitch.
+
+## The Basic Structure -- Bold, Italics, Blockquotes, and Lines As Separators
+
+Words and phrases can be emphasized using **Bold**, _Italics_, and _**Combinations**_ of each.  There's even a **Blockquote** option which allows for (pithy?) phrases or paragraphs to be highlighted.
+
+```
+#### Boldface and Italics
+Encapsulate a word with ** (two asterik) or __ (two underscores) 
+to **Bold** or __Bold__ text. 
+
+For italics, use a * (single asterisk) or _ (single underscore) 
+for *emphasis* or _emphasis_. 
+
+Use a sequence of *** (three astrik) or ___ (three underscores) 
+to create ***bolded, italicized words***. 
+
+There should be no spaces betwen the first and last characters of the 
+word or phrase to be bolded or italicized.
+
+#### The Blockquote
+Use the > (greater than) symbol to create a
+
+> Blockquote of (typically pithy) text.
+```
+
+Our RMarkdown [document so far](https://maddoor1.nr.usu.edu:45231/sharing/DWt5dEMMC) includes basic text, line separators and headers to distinguish among document sections, and boldface and italics.  There's even formatting to add blockquotes that highlight text sections.
+
+Let's next add lists.
+
+## The Basic Structure -- The List
+
+Lists use the `*` (asterisk) or `+` (plus) or `-` (hyphen) for an unordered list; simply add a hard return and another `*` or `+` or `-` to create the second item in the list.  For indenting, use either a tab or at least four spaces.
+
+A numbered list begins with the desired number, say 1, and followed with successive numbers.
+
+Note that RMarkdown has some limitations for classical numeric listing of 1, then 1.1, then 1.1.1, etc.  These are better controlled using a CSS template from within the YAML.
+
+```
+#### Unordered Lists
+* Build an unordered Markdown list using the * (asterisk)
+* Add a second list element
+    * at least 4 spaces (or a tab) before the * results in indenting
+    
+#### Ordered Lists
+1. Build an ordered Markdown list using numbers
+2. Add a second list element
+    1. at least 4 spaces (or a tab) before an ordered sub-list
+```
+
+Click [here](https://maddoor1.nr.usu.edu:45231/sharing/Emz20Obhu) to see what list output looks like.
+
+## The Basic Structure -- Embedding R Code
+
+Any R--based coding operations can be embedded into a RMarkdown document and resultant output displayed.  This means if you've crazy complex R code you can run that code from a RMarkdown document and create a report containing all code, its output, plus whatever King's English you wish to include. 
+
+However, at this stage in learning how to use RMarkdown, we'll keep the R coding simple  until we've learned how to build a basic RMarkdown document.  More complex operations -- complete with fully formed examples -- are shown below.
+
+Specifically, we will:
+
+* Learn about the **chunk** for embedding code
+* Embed and control execution of R code within a RMarkdown document
+
+### What is the **chunk** in a RMarkdown document?
+
+**chunk** is the term that refers to R code to be rendered in a RMarkdown document.  A **chunk** can include one or more lines of R code implemented as a block of code, or a **chunk** can be executed inline and directly from within text constituting a sentence.  **chunk**'s can be embedded directly by typing into the document, or by using the drop-down **chunk** icon on the toolbar. 
+
+The basic block **chunk** begins with ` ```{r}` (three backticks ` ``` ` then `{r}` with no spacing), follows with a hard returns for each line of code in the block, and ends with ` ``` ` (three backticks).
+
+An inline **chunk** of code begins with `` `r ``, follows with a single blank space, then the executable R code `Code2Execute`, and ends with `` ` ``.  
+
+    #### The basic R Markdown chunk as a block of code 
+    ```{r}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ```
+    #### The basic R Markdown chunk as inline, executed R code
+    blah blah text `r`r ''` Code2Execute` more blah blah text
+
+The default execution of a block **chunk** returns the R code plus results of the code, while an inline **chunk** returns a value and embeds it directly into a sentence.
+
+### Setting local chunk options
+
+Common options to modify output to the RMarkdown document include: 
+
+* Naming a **chunk**, which is useful when searching for errors;
+* Return results but not the code; 
+* Return the code, or some part of the code, but not the results; 
+* Having all or some portion of the R code echoed back during execution.  
+
+These options can be set locally within a **chunk**, or set globally for all **chunk**'s.  Within a **chunk** options appear inline within the `{r}` syntax.  Multiple options can be set, with each separated by a `,`.  Although RStudio shows some of the [available **chunk** options](http://rmarkdown.rstudio.com/authoring_rcodechunks.html), a more comprehensive discussion of possible **chunk** options is found within the [**knitr** homepage](http://yihui.name/knitr/options/).
+
+    #### Naming a chunk
+    ```{r ChunkName}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ```
+    #### Return the results but not the code
+    ```{r echo=F}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ````
+    #### Return the results, and only lines 4:7 of the code
+    ```{r echo=4:7}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ```
+    #### Return the code but do not evaluate
+    ```{r eval=F}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ```
+    #### Naming a chunk, and supressing return of code
+    ```{r ChunkName, echo=F}`r ''`
+    CODE TO EXECUTE GOES HERE
+    ```
+
+### Setting global chunk options
+
+Global options set **chunk** options throughout the entire document, such as the suppression of R messages and warnings.  Global options should be inserted after the YAML, and before the document text begins. 
+
+Two common global options are shown below: the first suppresses (the sometimes truly obnoxious R) warnings and messages, while the second sets a global working directory for the RMarkdown document.  **NOTE** that whatever `root.dir` is set to requires all subsequent operations, e.g., access to data files to input, any output directories, be nested underneath that directory.  Access this small vignette on changing directories within a RMarkdown document if you wish to learn more.
+
+    #### Setting global options 
+    ```{r global options}`r ''`
+    knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+    knitr::opts_knit$set(root.dir = "~/MyRMarkdownDocumentDirectory")
+    ```
+
+Check out what an RMarkdown document with code [looks like](https://maddoor1.nr.usu.edu:45231/sharing/3P3IJnJct).
+

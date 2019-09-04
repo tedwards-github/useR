@@ -1,0 +1,85 @@
+---
+title: "Install Java"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{InstallJava}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Why is Java Required?
+
+Several R packages used (e.g., `xlsx`, a common package used for importing MS EXCEL files) require package `rJava`, which in turn requires your computer have Java installed.  Consequently a Java interpreter must be installed in your W7/8/10 CPU.  
+
+In most Windows systems 32--bit Java is installed along with your browser.  However, most computers now use the 64--bit version of R, necessitating a 64--bit version of Java also be installed.  
+
+## IMPORTANT Caveat: Agency--owned CPUs
+
+If you are using a Federally-- or state--owned CPU please contact your appropriate IT person before proceeding further.  Installation of Java, as well R and RStudio as we saw previously, require that you have Administrator privileges on your CPU.
+
+## Windows 7/8/10
+
+These steps allow you to check to see if both 32-- and 64--bit Java versions are installed on your computer.  
+
+1. To determine if Java is installed on your Windows CPU go to:
+
+    **Computer → Local Disk (C:) → Program Files** 
+
+    This your 64--bit Program Files folder.  If Java is installed you will see a folder \Java.  Go into the folder and see if any other folders are present.  If so, write these down.  
+
+2. Repeat this process for: 
+
+    **Computer → Local Disk (C:) → Program Files (x86)**
+
+    This is your 32--bit folder.
+
+    If folders are present under each of the Java folders go to Step 4.  If not, Download and install the latest Java executables from:
+
+    http://www.java.com/en/download/manual.jsp
+
+    Note there are 32--bit and 64--bit versions.  You will need to install both versions.   
+
+    Click the Instructions for each Offline version, which provide a step-by-step process for downloading and installing Java.  Follow the instructions.
+
+    After installation, repeat Step #1 to ensure folders are present  The Java files are named something like jreXXX, where XXX is a naming convention specific to the Java version.  The most current Java as of 24 April 2019 is jre-8u211.
+
+3.	You may, or may not, have to activate Java each time you open a Windows session.  This can vary among CPU's.  To be safe, check the configuration in what is called the PATH statement to see if Windows can "find" the Java interpreter.  
+
+4.	Test Java.
+
+    Open command prompt by going to:
+    
+    **Start → Search Programs and Files → Type “cmd” → Click cmd.exe**
+    
+    **Type:  java -version**
+	  
+    If no error message is returned, java is correctly installed.  
+    
+## MAC OS X and Linux
+
+Java is (usually) pre--installed with MAC OS and Linux builds.  
+
+1. To test if Java is present and active, open terminal a window and:
+
+    **Type:  java –version**
+
+    If an error message is returned, follow instructions above for accessing Java and select the appropriate download for your MAC OS X or Linux build.
+
+    If no error message is received, Java is correctly installed.
+    
+You're done.
+
+
+
+

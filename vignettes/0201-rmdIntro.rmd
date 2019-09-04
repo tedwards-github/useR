@@ -1,0 +1,77 @@
+
+---
+title: "RMarkdown: Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{0201-rmdIntro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+<!-- set root directory here
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/markdownR/markdown_html")
+knitr::opts_chunk$set(warning=FALSE, fig.align="center")
+```
+-->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Purpose of this Vignette
+
+This vignette describes how to build RMarkdown documents and output in a variety of different formats.  In fact, this is a RMarkdown document built within RStudio.
+
+Expected outputs include RMarkdown files containing proper syntax for constructing documents, and conversion of the syntax into HTML, PDF, and MS WORD formats.
+
+**Bypass the Webpage:**
+
+* Click here to [download and obtain a PDF](https://maddoor1.nr.usu.edu:45231/sharing/ElEsCNhRV) of this vignette.
+
+---
+
+## What is Markdown?
+
+Markdown is a form of [document markup language](https://en.wikipedia.org/wiki/Markup_language).  A document markup language is a way to distinguish basic text from other document elements, such as those that occur during an editorial review.  For example, by clicking the "REVIEW" tab on a MS WORD document you initiate a "markup" process where a reviewer's comments and editorial suggestions are shown on the document. 
+
+[Markdown](https://en.wikipedia.org/wiki/Markdown) still involves embedding additional elements into a document, but has a slightly different purpose.  It evolved as means to embed formatting syntax into a document and have it rapidly and easily converted to a desired format.  You "markdown" text, including, for example, document formatting such as boldface, headers, lists, and mathematical symbols and equations, pictures, links to other files or webpages -- in short, just about anything you see on a webpage, journal article, or book, can be constructed using Markdown.  Formats are fairly flexible, including output in HTML format for browsers or many different text formats.
+
+In the case of R, and Markdown as an example of a document Markdown language, it provides a means to embed - and actually run -- R code from within a single document, all using simple syntax coding.  This is addition to the text formatting mentioned above.
+
+Cool!  Right?
+
+Think about this for a moment in your role as a scientist:  By using Markdown you can fully replicate the analytical processes that underlay your research, showing the code you employ, the output it generates, be it numeric or graphical, plus text explanations about the analytical processes of your work.  It can be, for all intent and purpose, your research metadata.
+
+Although not a necessary requirement, it is easiest to configure and generate Markdown output from within [RStudio](https://www.rstudio.com/).  However, command--line code from [Plain Vanilla R](https://www.r-project.org/), which is still used by Curmudgeonly Dinosaurs like me, can also be used to generate Markdown documents.  From this point forward I'll call documents integrating R coding RMarkdown documents so as to distinguish them from other types of Markdown documents.
+
+---
+
+## What Does the Output Look Like?
+
+The most common outputs are HTML, MS WORD, PDF, or LaTeK.  RMarkdown is quite powerful, and there exists an ever--expanding list of [customized Markdown templates](https://blog.rstudio.org/2016/03/21/r-markdown-custom-formats/) including, for example, a template for all journals published by Elsevier.  You can also build a [book](https://bookdown.org/yihui/bookdown/), a [webpage](http://rmarkdown.rstudio.com/rmarkdown_websites.html), or just about any form of [document](http://rmarkdown.rstudio.com/formats.html) you can imagine.
+
+But you should probably start simple.  And that's what this vignette is all about.
+
+---
+
+## Why Should I Learn to Use It?
+
+Hopefully some of the advantages as outlined above answer this question.  
+
+But another, pragmatic reason relates to classes, especially mine.  Historically, I've accepted just about any format for answers to exercises, quizzes, and tests in courses I teach.  MS PowerPoint or WORD have been the most common.  However, I now require RMarkdown as the means for evaluating coursework.
+
+This is for two reasons.  A first reason is that as you begin your R programming adventures, you'll quickly learn that no "right" answer for implementing R code to meet an analysis objective exists.  You, as a student and researcher, will find a personal solution.  Other students and colleagues, one of them being perhaps more clever, might find a more efficient approach to a R coding issue.  Because one of the easiest ways for you to learn R is to see examples, RMarkdown documents provide a great way for me to post -- and you to see -- "clever" answers to R coding problems.
+
+The second reason is one of convenience for me as the instructor, and you as the student.  I get a consistent, easy--to--read and evaluate document that includes your R code, the results of that code, as well as the rationale for your R analytical pathway, and your interpretation of your results.  You, the student, get a fully documented process by which you performed an analysis for future reference, a metaphorical trail of breadcrumbs by which you can answer the time--honored question all analysts eventually face:  
+
+"How the \*\*\*\* did I actually do ***that*** analysis??!!??"
+

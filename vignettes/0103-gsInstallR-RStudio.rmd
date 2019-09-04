@@ -1,0 +1,38 @@
+---
+title: "Install R and RStudio"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{PackagesFunctions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## IMPORTANT Caveat: Agency--owned CPUs
+
+If you are using a Federally-- or state--owned CPU please contact your appropriate IT person before proceeding further.  Installation of R and RStudio, as well the appropriate version of Java, require that you have Administrator privileges on your CPU.
+
+## Install R and RStudio
+
+Installation of both R and RStudio onto your CPU is pretty straightforward.  Merely follow the links provided below. After clicking on the links follow the instructions for your particular CPU OS, be it Windows, MAC, or one of the Linux builds.
+
+ It is strongly advised you work with the most current version of both R and RStudio, unless otherwise notified by myself or one of the other instructors.
+
+* [Install R](https://www.r-project.org/)
+* [Install RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+You're done here.  Next, ensure you have the proper version of Java.  This is mostly an issue for Windows--based CPUs.
+
+
+
+

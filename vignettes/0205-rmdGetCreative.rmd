@@ -1,0 +1,271 @@
+
+---
+title: "Building Creative Documents"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{0205-rmdGetCreative}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+<!-- set root directory here
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/markdownR/markdown_html")
+knitr::opts_chunk$set(warning=FALSE, fig.align="center")
+```
+-->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Some Creative Options
+
+So far we've built a basic RMarkdown document and exported it as a HTML format.  Next, let's consider some more creative aspects of RMarkdown documents, including:
+
+* Links to external websites and files;
+* Incorporation of pictures and videos;
+* Data and other informative tables; and
+* Use of mathematical symbols and equations
+
+## Links to external websites and files
+
+Linking websites and existing files involves two coding symbologies: the `[]` (two square brackets) followed immediately by `()` (left right parentheses) as in `[]()`.  Do **not** place a blank space between the `[]` and `()` symbol sets.  Content inside the `[]` becomes the highlighted text for the link, while text inside the `()` is the actual http:// or https:// website location.
+
+```
+#### Coding a link to a website
+[LinkText](WebAddress)
+
+You can make links explicit, as in "Click [here](https://www.rstudio.com/) to access RStudio."  
+[here] becomes the highlighted link to click. 
+The actual link, enclosed by the (), is not visible in the RMarkdown document.
+
+Or, you can highlight entire phrases, such as 
+"The [R-project homepage](https://www.r-project.org/) is the starting location to learn about R."
+In this example, the [R-project homepage] phrase is the highlighted link to click.
+```
+
+Files can be a bit trickier, mostly because of file pathnames.  For now, we'll assume everything is nested under your OS home directory.
+
+```
+#### Coding to link to a file
+This is how to link a file, such as a file called [MyPDF](NameOfFile.pdf).
+```
+
+Let's see what links look like in a [finalized Markdown document](https://maddoor1.nr.usu.edu:45231/sharing/l3QRGgWpq) displayed in a browser.
+
+## Links to external pictures and video
+
+Coding for pictures and video is not too different from that for files, subject only only to some file--type constraints.  Although work--arounds do exist, pictures embedded in RMarkdown should be bitmap-- rather than vector--based.  Common bitmap image formats include **.png**, **.jpg**, **.gif**, **.tif**, and **.bmp**.  In general, **.png** are considered excellent for web-based output (small file size, no loss in quality), although **.jpg** can do better for photographs, especially those rich in color.  **.tif** formats are equally good for rich colors, but suffer from large file size.
+
+You can convert among the many different image formats using an image editor.  Some great freeware image editors include [IrfanView](http://www.irfanview.com/), [InkScape](https://inkscape.org/en/), [ImageMagick](http://imagemagick.org/script/index.php), or [GIMP](http://www.gimp.org/). 
+
+### Embedding a picture
+
+Code to embed a picture can be of one of three types, a RMarkdown-based linkage, a [HTML--based](http://www.w3schools.com/tags/tag_img.asp) linkage, or from within a **chunk** using [`knitr`](https://cran.r-project.org/web/packages/knitr/index.html).  
+
+Two cautionary notes:
+
+* When adjusting picture size based on pixels, make sure you re--scale both the width and height simultaneously.
+* It is common courtesy, as well as a potentially legal requirement, to reference any picture(s) "borrowed" from the web.
+
+#### The RMarkdown version 
+
+Coding for insertion of a picture is below.  The `!` indicates an image, the `[]` can be used for a caption or reference for the picture, and the `()` the picture filename. **NOTE** that although a picture caption can be added, it is not required.
+
+```
+#### RMarkdown coding with a picture caption
+![PictureCaption](PictureFilename.Type)
+![Source: http://mikemclin.net/markdown-syntax-language/](markdown_image1.png)
+
+#### RMarkdown coding without a picture caption
+![](PictureFilename.Type)
+```
+
+#### The HTML version 
+
+The HTML version merely uses the HTML `<img />` code.  If you wish to control the number of pixels presented (i.e., make the picture bigger or smaller) then use HTML coding.  Alternatively, use one of the image editors noted above and create the desired picture size in pixels, and then use the RMarkdown linkage.
+
+Results using HTML coding will be the same as Markdown coding.  Note that any caption -- here, the source of the picture -- must be added as a line of text below the picture.  You can control the size of the picture using `height=` and `width=` options in the `<img />` tag.  Options for the HTML `<img />` tag can be found [here](http://www.w3schools.com/tags/tag_img.asp).
+
+```
+#### HTML coding with defult size (pixels) of picture
+<img src="PictureFilename.Type" />
+<img src="markdown_image1.png" /> 
+
+Source: http://mikemclin.net/markdown-syntax-language/ 
+
+#### HTML coding with specified width and height in pixels
+<img src="markdown_image1.png" height="67px" width="100px" /> 
+
+Source: http://mikemclin.net/markdown-syntax-language/
+```
+
+#### The `knitr` option
+
+Use of `knitr` to embed provides more control over picture characteristics.  It also provides more flexibility to move among different document formats, such as **LaTeX**.  The picture is called from within the **chunk** using `knitr::include_graphics("PictureFilename.Type")`.  Here, we use the **chunk** to add a caption (`fig.cap=""`), control the size of the picture using `out.width=""`, and make the picture centered using `fig.align="center"`. 
+
+`out.extra=''` allows for CSS control of a picture using `style="CSS formating here"`.  One nice trick is to "pad" a picture with a small white (or any color) border based on pixels, i.e. `padding:10px` in this example.  This elimintaes the "squished" look of HTML's where pictures appear too close to the text above and below.  **NOTE** that while `out.extra=` works fine in HTML formats, it does not always render correctly in PDF documents.
+
+    #### knitr coding with 
+    ```{r echo=FALSE, fig.cap="Source: http://mikemclin.net/markdown-syntax-language/", out.width = '75%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}`r ''`
+    knitr::include_graphics("figures/markdown_image1.png")
+    ```
+
+Check out the [updated homwork](https://maddoor1.nr.usu.edu:45231/sharing/3kasBhbb0) file with embedded pictures!
+
+### Embedding video
+
+Video within Markdown is restricted as of now to [YouTube](https://www.youtube.com/) only. This will undoubtedly change over time (for example see: package [`vembedr`](https://cran.r-project.org/web/packages/vembedr/vignettes/services.html)).  You will need to establish a **YouTube** account, and upload video into your personal **My Channel**. After uploading to **My Channel** you will receive the video's unique identifier.
+
+**NOTE**, however, that if you have recorded video served from elsewhere, you can simply attach a link that opens the video in your browser, much in the same way access a picture.  The code below embeds a picture (often a screen--shot of the first frame of a video) that when "clicked" opens the video in your browser.  This is perhaps the simplest approach to linking video to a RMarkdown document.
+
+```
+#### RMarkdown code for a left--justified clickable image that links to a video 
+####   width= set to X%
+[![](Path/picture.type){width=X%}](https://VideoLink)
+
+#### To center the video use HTML tag <div>
+#### CAUTION: Must have line breaks (hard returns) before and after link
+<div style="text-align:center">
+
+[![](Path/picture.type){width=X%}](https://VideoLink)
+
+</div>
+```
+
+<!--
+option 1
+
+<center>
+
+![Just for laughs ...](figures/Tom-screen-shot.jpg){width=50%}
+
+[Click on picture for video](https://fws.rev.vbrick.com/#/videos/1c9e0ee4-132a-4c89-85a0-ed9565be9a91)
+
+</center>
+
+Option 2
+<div style="text-align:center">
+
+[![](figures/Tom-screen-shot.jpg){width=50%}](https://fws.rev.vbrick.com/#/videos/1c9e0ee4-132a-4c89-85a0-ed9565be9a91 "Just for Laughs")
+
+</div>
+-->
+
+See this [excellent blog by Sergei Sviridov](http://sviridovserg.com/2017/05/22/embed-youtube-to-markdown/) for more details.
+
+## Data and Other Informative Tables
+
+Construction of data and text tables in RMarkdown can be frustrating and irritating, as well as visually unappealing when output, principally because RMarkdown does not actually support tables *per se*.  All forms of table construction allow for inclusion of a table description.  By default they extend across the entire webpage width when in HTML format.
+
+Several variations of types of tables exist.  The examples here are for simple tables only; additional methods for constructing tables based on R packages will be illustrated below when we begin to embed code into RMarkdown documents. Note also that the table output from even the simple code show below will change if different CSS output control files are attached to the RMarkdown document.
+
+We will explore the different options for table constricton below, and examone ouptut from each at the end of this section.
+
+---
+
+### The Pipe Table
+
+The simplest table code to implement is the so--called **pipe** table.  The term **pipe** refers to the `|` (vertical bar) symbol, which is used to separate among cells and the information each cell contains.  It requires column headers, either as text or blank, separators based on `--` (hyphens) between the header and the cells, and as noted above, the `|` (vertical bar) pipe symbol.  Default is left alignment; the `:` (colon) is used to change alignment as shown below.  A hard return, followed by a `:` (colon) symbol and text creates a table description.  The description defaults to above the table information when the table is output.
+
+```
+#### Coding a simple pipe table.
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+|     12  |  34  |  56   |    78  |
+|    901  |  234 |  567  |   890  |
+|      1  |    2 |    3  |     4  |
+
+: Table 1.  Demonstration of pipe table syntax.
+```
+
+
+There's [a reasonably friendly website](http://www.tablesgenerator.com/markdown_tables) for building pipe tables, too.  It handles .csv files as well.
+
+You can "force" pipe tables to wrap text by altering the relative widths of the first (header), second (demarcation), and third through *n* (table information) rows.  In the example below the width of text plus space in the header (1st) row in Column 1 of the table is identical to the width of the demarcation (2nd) row.  In Column 2, the width of the 2nd row is greater than the header width **and** the text in the table information row is greater as well.  This forces a wrap--around.
+
+```
+#### Coding a pipe table with wrap-around.
+| Column 1 | Column 2 | Column 3 | Column 4 |
+|:---------|:-----------|:-----------|:----------|
+| Some | This is an exceedingly verbose sentence that should wrap around  | It wraps around | The |
+| column 1 | in | because the pipe length in the 2nd row  | last column |
+| text | Column 2 | is greater than the pipe length in the 1st row. | is 4 |
+```
+
+### The line table
+
+An alternative is the **line** table.  Here, the top row (blue color in RStudio) in the table consists of multiple `-`'s (hyphen) in a row.  The second, header row consists of the column names.  The third row (red color in RStudio), also a sequence of `-`'s, sets the widths of the columns, and determines column alignment based on the location of the column names relative to width of the `-`'s.  Default alignment is left.  To control left alignment, the column header aligns on the left of the `-`'s; right aligns with the right side of the `-` sequence.  Centering occurs when there is an extra `-` on either side of the column name.
+
+Unlike a **pipe** table, absolute width in a **line** table can be controlled by the combined length of the third row of `-`'s.  In the first example, the table is a "minimal width" table where just enough third row `-`'s are added to control column alignment.  The second has a longer sequence of `-`.  This will expand the column width.
+
+```
+#### Line table of minimal width
+-----------------------------
+Default Left   Right  Center
+------- ----- ------ --------
+12      34      56   78 
+
+901     234    567   890 
+
+1       2        3   4
+----------------------------
+
+#### Line table of expanded width in column 4
+-----------------------------
+Default Left   Right  Center
+------- ----- ------ ---------------------
+12      34      56   78 
+
+901     234    567   890 
+
+1       2        3   4
+----------------------------
+```
+
+Compare the [different table configurations](https://maddoor1.nr.usu.edu:45231/sharing/mGwgPPugn) arising from the **pipe** and **line** table coding.  In particular, note the wrap-around text in the **pipe** table, and the expansion of column 4 width in the **line** table.  Realistically, I've never been able to get a RMarkdown table "correct" in the first try, let alone the first several tries.  It often requires playing around with different width configurations until you obtain output that is visually appealing.
+
+## Embedding Mathematical Symbols and Equations
+
+One of the more powerful aspects of RMarkdown is the ability to use mathematical symbols and build (even complex) mathematical equations, and have those portrayed in the final RMarkdown document.  Mathematical symbols and equations in RMarkdown use TeX math, which although it relies on LaTeX syntax for the symbol or equation, is a bit different in implementation.  
+
+The difference is that Tex math uses the `$` (dollar sign) symbol to start and stop various mathematical symbols used in isolation or as part of an equation while LaTeX uses the `\` (left slash) only.  The implementation difference is that the `\` (left slash) symbol is an escape character in RMarkdown.  Within RMarkdown, the first `$` must be followed by a character (not a blank space), while the last `$` requires a character on its left.  The closing `$` **cannot** be followed by a digit.  
+
+Consider the following examples: 
+
+* Sample $\bar{x}$ temperature ($\pm$ 2-SD) was 11.8 (2.3) $^\circ$C
+* Pythagorean's theorem is $x^2 + y^2 = z^2$
+* The simple linear regression equation is: $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$
+
+They represent in--line embedding of symbols and equations.  
+
+```
+#### LaTex coding for the in-line examples above
+* Sample $\bar{x}$ temperature ($\pm$ 2-SD) was 11.8 (2.3) $^\circ$C
+* Pythagorean's theorem is $x^n + y^n = z^n$
+* The simple linear regression equation is: $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$
+``` 
+
+More complex equations, designed to be represented as stand--alone lines in a document, can also be constructed, as with the sample variance example shown next.
+
+The equation for sample variance is: 
+$$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ 
+
+In this example, the equation is centered rather than left--aligned.  This was accomplished using two `$$` (dollar sign) symbols at the beginning and end of the equation rather than one `$`.
+
+```
+#### LaTex coding for a centered, stand-alone equation 
+The equation for sample variance is: 
+$$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ 
+```
+
+The code to embed mathematical symbols and build equations relies on LaTex syntax.  One of the better websites for LaTex coding syntax is the [AoPS (Art of Problem Solving) Wiki](https://www.artofproblemsolving.com/wiki/index.php/LaTeX:Symbols), while a convenient two-page "cheatsheet" built by Winston Chang and licensed by [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/3.0/) can be accessed from [here](https://wch.github.io/latexsheet/).

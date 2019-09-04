@@ -1,0 +1,264 @@
+
+---
+title: "Embed and Execute R Code"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{0204-rmdEmbedCode}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<!-- set root directory here
+```{r global_options, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/words/classes/markdownR/markdown_html")
+knitr::opts_chunk$set(warning=FALSE, fig.align="center")
+```
+-->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
+
+---
+
+## Embedding and Implementing R Code into a RMarkdown Document
+
+In the first part we learned how add R code -- the **chunk** -- to a RMarkdown document.  Now we'll see some examples of how to embed R code into the document, and control the execution and output of the code depending on the desired final RMarkdown document.
+
+## EXAMPLE \#1: Embedding and Executing R Code
+
+Let's execute R code embedded in a RMarkdown document.  For an example we will use a small cross--classified data structure examining fish selection by males and females of the piscivorous osprey ***Pandion haliaetus***.  Three types of fish -- bass, shad, and sunfish -- were available.  A simple contingency analysis will be applied to the data.
+
+This first **chunk** example imports a `.csv` file and examines the resulting dataframe structure.  Note that output lines are preceded with `##` (two pound symbols); this helps distinguish code from output.  All **chunk**'s in this example accept the default and return both the R code being evaluated and the output.  This is so you can understand the **chunk** rendering process in RMarkdown.
+
+```{r}
+# import data and examine dataframe characteristics
+  f1 <- read.csv("data/ospreypreybysex.csv", header = T)
+  str(f1)  # examine dataframe structure
+```
+
+Next, examine the cross--classified table of fish species captured by each sex.  
+
+```{r}
+# cross-tabluation of captures by fish spp and osprey sex
+  f2 <- xtabs(count ~ ospreysex + fishspp, data = f1)  # cross-tab the data
+  f2  # cross-tab output
+```
+
+Last, apply the $\chi^2$ test to the data, write the output to the object `f3`, and see what output parameters are available from `f3`.  We'll explain why we did this in Example \#2.
+
+```{r}
+# chi-sq test of cross-tab data
+  f3 <- chisq.test(f2)  # chisq test
+  f3  # chi-sq output
+  ls(f3)  # available output parameters from the chi-sq analysis
+```
+
+**NOTE** that all three **chunks** include comments explaining the code actions.  
+
+---
+
+## EXAMPLE \#2:  Converting the Analysis to King's English
+
+If this were a classroom exercise, I -- an instructor -- would most likely wish to see all the code and output as shown in Example \#1.  That way I could evaluate your work and grade the exercise.
+
+However, consider other circumstances where you wish to render the various **chunk** outputs into a sentence (or paragraph) of plain Ol' King's English.  That sentence might be something like:
+
+> A $\chi^2$ analysis indicates that male and female ospreys differentially selected fish species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`, *p* = `r round(f3$p.value, 3)`, *df* = `r f3$parameter`).
+
+Wow!  
+
+The analytical "answers" were (somehow) directly incorporated into the sentence.  How was the coding that resulted in that sentence written?  
+
+First, examine the output of the $\chi^2$ analysis from above.  **NOTE** the sentence has captured the output $\chi^2$ statistic, the degrees of freedom (*df*), and the *p*--value, and incorporated those values directly into the sentence using inline **chunk** code.  The code that generated the sentence looks like this:
+
+    #### chunk code as inline
+    A $\chi^2$ analysis indicates that male and female ospreys differentially selected fish 
+    species while foraging ($\chi^2$ = `r`r ''` round(f3$statistic, 3)`, 
+    *p* = `r`r ''` round(f3$p.value, 3)`, *df* = `r`r ''` f3$parameter`).
+
+We first embedded mathematical syntax to print the symbology $\chi^2$.  Next notice how inline **chunk** coding was used three times to extract specified information from the output of the $\chi^2$ analysis, the object `f3` we created earlier.  The `ls(f3)` call had returned the output objects of the analysis, of which `statistic`, `p.value`, and `parameter` represent, respectively, the values of the $\chi^2$, *p*-value, and *df*'s.  (**NOTE**: Selection of correct output objects by name assumes working knowledge of R analysis and outputs.)  These values were extracted using standard R coding, such as `f3$statistic`.  We also applied the `round()` function to the extracted values to reduce the number of significant digits carried over into the sentence.  
+
+There is nothing fancy here:  these are basic R operations for extracting information from an analysis.  We've merely used RMarkdown syntax to extract these values and embed them into a document.
+
+Just imagine how useful this could be when writing reports !! (And your homework ...)
+
+---
+
+## EXAMPLE \#3:  Extracting and Presenting Tabular Information
+
+A repeat of something stated above regarding tables in RMarkdown:  
+
+> "*Construction of data and text tables in RMarkdown can be frustrating and irritating, as well as visually unappealing when output, principally because RMarkdown does not actually support tables **per se**.*" 
+
+Solutions do exist, but before we can produce more visually appealing tables in RMarkdown, some basic understanding of format control in a RMarkdown document is needed.  
+
+Control of RMarkdown output -- and tables the document contains -- can occur at two separate levels.  The first is default RMarkdown syntax that controls the final rendering of the document.  Thus far we've only implemented HTML output, as specified in the YAML.  Consequently, output is converted to table coding conventions associated with HTML.  It is a minimalist approach.
+
+A second approach is to control output of the entire RMarkdown document by using [CSS control](http://www.w3schools.com/css/css_intro.asp).  Use of CSS control for RMarkdown output is discussed in detail below under Advanced RMarkdown topics, so it won't be discussed here.  Instead we'll focus on ways to apply some R packages to create tables.  
+
+(**Full Disclosure:** I've been cheating thus far; this document has CSS control, while the output you've clicked on and followed is RMarkdown default `HTML` without any CSS control.)
+
+### Use of R Packages for Table Control
+
+There are several packages in R that provide control over table construction.  These include the function `kable` within package [`knitr`](https://cran.r-project.org/web/packages/knitr/index.html), and the packages [`pander`](https://cran.r-project.org/web/packages/pander/index.html) and [`xtable`](https://cran.r-project.org/web/packages/xtable/index.html).  Here we'll explore how these packages improve how tables looks visually, as well as how these packages and their functions can directly work with basic R code to generate tables.
+
+We will use the osprey data set (`f1`) from above.  The data in the R dataframe look like this:
+
+```{r echo=F}
+# examine dataframe f1
+  f1
+```
+
+### Build a Table Using the `kable` Function from Package `knitr`
+
+Assuming your data are in a standard R dataframe, one method to build a table is to load the library `knitr` and apply the function `kable` to the data frame, here `f1`.  Important options to consider including are `col.names=`, where more "readable" labels can be used as table column headers, `digits=`, which applies a specified rounding to table output, and a vector of data alignment using `align=`. The `caption=` option allows for inclusion of a table description.
+
+    #### build a table using fxn kable from package knitr
+    ```{r}`r ''`
+      library(knitr)  # load library: knitr
+      kable(f1, col.names = c("Sex", "Fish Species", "Frequency"), align = c("l", "c", "r"),
+       caption = "Fish capture freqeuncy by osprey sex")
+    ```
+
+The output `kable` table from the code above [looks like this](https://maddoor1.nr.usu.edu:45231/sharing/EnHiSS0KH).  As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.
+
+### Build a Table Using the Package `xtable`
+
+`xtable` has many of the same output options as the `kable` function, but also allows for more control of table output.  A necessary option to include within the **chunk** for a `xtable` is `results="asis"`, which renders the results into text.  Otherwise `xtable` [returns the code](https://maddoor1.nr.usu.edu:45231/sharing/HnRYDbeL6) for HTML, or other formats such as LaTex.  
+
+Consequently modify the **chunk** as:
+
+    #### chunk code to portray the rendered table
+    ```{r, results="asis"}`r ''`
+    ````
+
+`xtable` also requires a `print()` wrapper or the default output is returned as LaTex code rather than text.  The option `type=` specifies the form of the output, as in HTML.  As with `kable`, some available formatting options include digits, alignments, and captions.  Row numbers are printed by default; use `include.rownames = F` to turn them off.
+
+    #### build a table using xtable
+    ```{r, results="asis"}`r ''`
+      library(xtable)
+    # xtable(f1)  NOT RUN: would return a default table of LaTex code
+      print(xtable(f1), type="html", include.rownames = F)  # rendered table in html format
+    ```
+ 
+**NOTE** that [basic `xtable` output](https://maddoor1.nr.usu.edu:45231/sharing/KseBcOj8j)  includes `|` (vertical bar) as a separator between table cells, and that the data seem "squished" in appearance.  This appearance, as well as many other aspects of table appearance, can be controlled from within `xtable`.  The [xtable Gallery](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf) is an excellent PDF vignette full of examples on how to format tables.
+
+Assume you wish to change the sequential cell alignment to left, center, right.  This is the option `align=` where `r`, `l`, and `c` represent right, left, and center, respectively.  Assign the desired option with the initial `xtable` call and save it as an object (here, `tab1`).  The apply the `print()` wrapper to the object.  An oddity to note:  `xtable` automatically includes row numbers and you must format for that column, even if your intention is to suppress row numbers the final rendering of the text with `print()`.
+
+Adding "readable" column names can be done within `xtable`, but it can be ponderous.  Because output from `xtable` inherits the original dataframe, it is easier to apply `names()` to the `xtable` object prior to rendering using `print()`.
+
+One consideration regarding formatting in `xtable`.  Above, the `print()` wrapper was placed outside the `xtable()` call and all table syntax rendered in a single line of code.  For reason(s) I cannot fully figure out, format control seemingly works best if applied and saved as an `xtable` object, and then having the object rendered from inside the `print()` wrapper.  Attempting all formatting operations within a single call often fails.
+
+    #### a xtable with alignment, new column names, and suppressed row names
+    ```{r, results="asis"}`r ''`
+    # add format:  alignment
+      library(xtable)
+    # xtable(f1)  NOT RUN: would return a default table of LaTex code
+      tab1 <- xtable(f1, align = "llrc")  # formatting outside print() wrapper
+      names(tab1) <- c("Sex", "Fish Species", "Frequency")  # rename columns
+      print(tab1, type="html", include.rownames = F)  # rendered table in html format
+    ```
+
+[Compare the two outputs](https://maddoor1.nr.usu.edu:45231/sharing/3tyzaFNSV) -- one without `results="asis"` and the other with some minimal formatting.
+
+### Build a Table Using the Package `pander`
+
+Package `pander` is another means of formatting tables for output.  An added benefit of`pander` (as well as `xtable`, actually) is that it can access results of a statistical analysis and print a table of those results.  
+
+As with `xtable`, it is simply easier to create "readable" column names outside the `pander()` call; here, the variables were renamed before the rendering.  `justify=` controls alignment, and a `caption=` can be added if desired.   A large variety of other [pander options](https://rdrr.io/cran/pander/man/pandoc.table.return.html) are available as well.
+
+    #### built a table using pander
+    ```{r}`r ''`
+      library(pander)
+      names(f1)=c("Sex", "Fish Species", "Frequency")  # rename columns
+      pander(f1, caption = "Fish capture frequency by osprey sex", 
+       justify = c("right", "center", "center"))  # rendered table in html format
+    ```
+
+Recall from above we accessed the results of the $\chi^2$ analysis (object `f3`) on osprey foraging, and used inline **chunk** code to present the results as text.  Assume instead you wish for a table of those results.  Simply call the saved analytical object, here `f3`, from inside `pander()`.  Note you can even embed mathematical symbols in the caption.
+
+    #### render statistical output as a table: chi-sq test from above
+    ```{r}`r ''`
+      library(pander)
+      pander(f3, caption = "$\\chi^2$ test of fish capture frequency by osprey sex")
+    ```
+
+You can see the `pander` table outputs [here](https://maddoor1.nr.usu.edu:45231/sharing/wjZ0kzOwT).
+
+A (mostly complete) list of statistical analyses that `pander` can render as tables is found by loading the `pander` library and invoking `methods(pander)`.  Current offerings include:  
+
+```{r echo=F}
+# r analytical functions amenable to pander tables
+  library(pander)
+  methods(pander)  # returns available methods for pander
+```
+
+`pander` covers the bulk of traditional statistical analyses, but quoting directly from the [pander: An R Pandoc Writer](http://rapporter.github.io/pander/) site:
+
+> *"If you think that pander lacks support for any other R class(es), please feel free to [open a ticket](https://github.com/Rapporter/pander/pulls) suggesting a new feature or [submit a pull request](https://github.com/Rapporter/pander/issues) and we will be happy to extend the package."*
+
+In short, the site is open to suggestions for additional forms of statistical analysis to be rendered with `pander`.  In addition, you could create your own function if desired by emulating one of the other functions -- that's where some of the true power of R comes into play!
+
+---
+
+## EXAMPLE \#4: Constructing Figures in a RMarkdown Document
+
+Embedding a R--generated figure or plot still uses **chunk** code, but with different options for configuration.  Beginning simple, consider a barplot of the frequencies of the three groups of fish captured by male and female ospreys and represented in our previous data object `f1`.  Note there are no **chunk** options; just the R code for a barplot is embedded in the **chunk**.  Default figure placement is left justification. 
+
+    #### basic chunk code for embedding a figure
+    ```{r}`r ''`
+    # embed a plot
+      PLOT CODE HERE ....
+    ```
+Here's some example code ...
+
+    #### basic barplot inserted as figure in RMarkdown document
+    ```{r}`r ''`
+    # embed a barplot; assumes object f1 & f2 from above
+      freq.r <- range(0, signif(max(f1$count), 1) + 10)  # use raw data for ylim= range
+      bplot1 <- barplot(f2, ylim = freq.r, xlab = "Fish Species", 
+       ylab = "Capture Frequency (n)", space = c(0, 0.5), col = c("black", "grey"), beside = T)
+      abline(h = 0)  # add line to bottom of plot
+      
+    # add legend
+      legend("topleft", c("Female", "Male"), fill = c("black", "grey"), bty = "n", cex = 1.25)
+      title(main = "Fish Species Capture Frequency by Osprey Sex")
+      text(x = bplot1, y = c(f2[1:6]), labels = c(f2[1:6]), pos = 3)  # adds f2 counts above bars
+    ```
+
+... and a resultant [barplot of the osprey fish captures by males and females](https://maddoor1.nr.usu.edu:45231/sharing/VhYjDf5oE) introduced above.
+
+### Some Options for RMarkdown Figures
+
+Two common figure **chunk** options are to specify figure width and height, and create an outfile version of the figure.  Default figure size reflects R conventions; 480 $\times$ 480 pixels at 72dpi for bitmap-based output (i.e., **.png**), which translates into an approximate 6.7 $\times$ 6.7 inch size.  The option `fig.path="PATH/"`, where `PATH` followed by a `/` (right slash) indicates the directory for the figure.  
+
+**IMPORTANT**: The specified directory path is from the default directory for the RMarkdown document.  Otherwise a full path must be represented.
+
+    #### set fig size as 4X4 & establish file outfile path
+    ```{r, fig.width=4, fig.height=4, fig.path="outfigs/"}`r ''`
+    ```
+
+It may be beneficial to simultaneously plot a vector-based plot (i.e., **.pdf**, **.eps**) for archiving along with a bitmap-based (i.e., **.png**) plot for the document.  Simply suppress the R code and output using the **chunk** option `include=F`, and outfile the figure to the desired directory.
+
+    #### suppress all output, & build PDF figure for output
+    ```{r, include=F, fig.width=4, fig.height=4}`r ''`
+    # create a duplicate of figure in pdf outfile
+      pdf("PATH4FILE/FIGURENAME.pdf") 
+    # plot code would follow here
+      CODE CODE CODE ....
+      dev.off()
+    ```
+    
+**NOTE** there exists potential to alter figure placement by using the option `align="center"`, which uses HTML tag `<img />` rather than the RMarkdown `![]()` syntax.  However, alignment other than left justified is not supported within HTML5, so it is best to not use alignments other than the default in HTML documents.  See the CSS HTML site for details on `<img />` [tag control](http://www.w3schools.com/tags/tag_img.asp).
+
+Be careful with sizing as it sometimes clips figure output unless the width:height ratio is considered.  This, however, is the same issue faced with any plot in R.  If you wish global control over figure characteristics, such as a desire for all figures to be of same width and height, or a common outfile directory, these can be inserted as options under the `{r global_options}`, much as shown for **warnings** above.
+
+Last, do not forget it is R coding that determines characteristics of your RMarkdown figure.  This means any type of plot that is possible in R can be embedded into your document.  [Check out results](https://maddoor1.nr.usu.edu:45231/sharing/OLpY3nL8p) of the options for figures we discussed here.
+
+The [`knitr` website](http://yihui.name/knitr/) lists all available **chunk** [options for plots and figures](http://yihui.name/knitr/options/), including figure control for documents other than HTML output. 
