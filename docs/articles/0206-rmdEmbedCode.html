@@ -221,7 +221,7 @@
 <!-- set root directory here
 
 -->
-<p>Last update: 04 September 2019 (V2019.2)</p>
+<p>Last update: 10 September 2019 (V2019.2)</p>
 <hr>
 <div id="embedding-and-implementing-r-code-into-a-rmarkdown-document" class="section level2">
 <h2 class="hasAnchor">
@@ -299,13 +299,14 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
 <a href="#use-of-r-packages-for-table-control" class="anchor"></a>Use of R Packages for Table Control</h3>
 <p>There are several packages in R that provide control over table construction. These include the function <code>kable</code> within package <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>, and the packages <a href="https://cran.r-project.org/web/packages/pander/index.html"><code>pander</code></a> and <a href="https://cran.r-project.org/web/packages/xtable/index.html"><code>xtable</code></a>. Here we’ll explore how these packages improve how tables looks visually, as well as how these packages and their functions can directly work with basic R code to generate tables.</p>
 <p>We will use the osprey data set (<code>f1</code>) from above. The data in the R dataframe look like this:</p>
-<pre><code>#&gt;   ospreysex fishspp count
-#&gt; 1      Male Sunfish    59
-#&gt; 2    Female Sunfish    72
-#&gt; 3      Male    Bass    14
-#&gt; 4    Female    Bass    21
-#&gt; 5      Male    Shad   189
-#&gt; 6    Female    Shad   138</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">  f1 <span class="co"># examine dataframe f1</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt;   ospreysex fishspp count</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; 1      Male Sunfish    59</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; 2    Female Sunfish    72</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; 3      Male    Bass    14</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; 4    Female    Bass    21</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; 5      Male    Shad   189</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; 6    Female    Shad   138</span></a></code></pre></div>
 </div>
 <div id="build-a-table-using-the-kable-function-from-package-knitr" class="section level3">
 <h3 class="hasAnchor">
@@ -318,13 +319,13 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   kable(f1, col.names = c("Sex", "Fish Species", "Frequency"), align = c("l", "c", "r"),
    caption = "Fish capture freqeuncy by osprey sex")
 ```</code></pre>
-<p>The output <code>kable</code> table from the code above <a href="https://maddoor1.nr.usu.edu:45231/sharing/EnHiSS0KH">looks like this</a>. As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.</p>
+<p>The output <code>kable</code> table from the code above <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics09.html">looks like this</a>. As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.</p>
 </div>
 <div id="build-a-table-using-the-package-xtable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#build-a-table-using-the-package-xtable" class="anchor"></a>Build a Table Using the Package <code>xtable</code>
 </h3>
-<p><code>xtable</code> has many of the same output options as the <code>kable</code> function, but also allows for more control of table output. A necessary option to include within the <strong>chunk</strong> for a <code>xtable</code> is <code>results="asis"</code>, which renders the results into text. Otherwise <code>xtable</code> <a href="https://maddoor1.nr.usu.edu:45231/sharing/HnRYDbeL6">returns the code</a> for HTML, or other formats such as LaTex.</p>
+<p><code>xtable</code> has many of the same output options as the <code>kable</code> function, but also allows for more control of table output. A necessary option to include within the <strong>chunk</strong> for a <code>xtable</code> is <code>results="asis"</code>, which renders the results into text. Otherwise <code>xtable</code> <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics10.html">returns the code</a> for HTML, or other formats such as LaTex.</p>
 <p>Consequently modify the <strong>chunk</strong> as:</p>
 <pre><code>#### chunk code to portray the rendered table
 ```{r, results="asis"}
@@ -336,7 +337,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
 # xtable(f1)  NOT RUN: would return a default table of LaTex code
   print(xtable(f1), type="html", include.rownames = F)  # rendered table in html format
 ```</code></pre>
-<p><strong>NOTE</strong> that <a href="https://maddoor1.nr.usu.edu:45231/sharing/KseBcOj8j">basic <code>xtable</code> output</a> includes <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code> (vertical bar) as a separator between table cells, and that the data seem “squished” in appearance. This appearance, as well as many other aspects of table appearance, can be controlled from within <code>xtable</code>. The <a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable Gallery</a> is an excellent PDF vignette full of examples on how to format tables.</p>
+<p><strong>NOTE</strong> that <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html">basic <code>xtable</code> output</a> includes <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code> (vertical bar) as a separator between table cells, and that the data seem “squished” in appearance. This appearance, as well as many other aspects of table appearance, can be controlled from within <code>xtable</code>. The <a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable Gallery</a> is an excellent PDF vignette full of examples on how to format tables.</p>
 <p>Assume you wish to change the sequential cell alignment to left, center, right. This is the option <code>align=</code> where <code>r</code>, <code>l</code>, and <code>c</code> represent right, left, and center, respectively. Assign the desired option with the initial <code>xtable</code> call and save it as an object (here, <code>tab1</code>). The apply the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper to the object. An oddity to note: <code>xtable</code> automatically includes row numbers and you must format for that column, even if your intention is to suppress row numbers the final rendering of the text with <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>.</p>
 <p>Adding “readable” column names can be done within <code>xtable</code>, but it can be ponderous. Because output from <code>xtable</code> inherits the original dataframe, it is easier to apply <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> to the <code>xtable</code> object prior to rendering using <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>.</p>
 <p>One consideration regarding formatting in <code>xtable</code>. Above, the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper was placed outside the <code>xtable()</code> call and all table syntax rendered in a single line of code. For reason(s) I cannot fully figure out, format control seemingly works best if applied and saved as an <code>xtable</code> object, and then having the object rendered from inside the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper. Attempting all formatting operations within a single call often fails.</p>
@@ -349,7 +350,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   names(tab1) &lt;- c("Sex", "Fish Species", "Frequency")  # rename columns
   print(tab1, type="html", include.rownames = F)  # rendered table in html format
 ```</code></pre>
-<p><a href="https://maddoor1.nr.usu.edu:45231/sharing/3tyzaFNSV">Compare the two outputs</a> – one without <code>results="asis"</code> and the other with some minimal formatting.</p>
+<p><a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html">Compare the two outputs</a> – one without <code>results="asis"</code> and the other with some minimal formatting, including renaming of variables.</p>
 </div>
 <div id="build-a-table-using-the-package-pander" class="section level3">
 <h3 class="hasAnchor">
@@ -370,7 +371,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   library(pander)
   pander(f3, caption = "$\\chi^2$ test of fish capture frequency by osprey sex")
 ```</code></pre>
-<p>You can see the <code>pander</code> table outputs <a href="https://maddoor1.nr.usu.edu:45231/sharing/wjZ0kzOwT">here</a>.</p>
+<p>You can see the <code>pander</code> table outputs <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics12.html">here</a>.</p>
 <p>A (mostly complete) list of statistical analyses that <code>pander</code> can render as tables is found by loading the <code>pander</code> library and invoking <code><a href="https://rdrr.io/r/utils/methods.html">methods(pander)</a></code>. Current offerings include:</p>
 <pre><code>#&gt;  [1] pander.anova*           pander.aov*            
 #&gt;  [3] pander.aovlist*         pander.Arima*          
@@ -440,7 +441,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   title(main = "Fish Species Capture Frequency by Osprey Sex")
   text(x = bplot1, y = c(f2[1:6]), labels = c(f2[1:6]), pos = 3)  # adds f2 counts above bars
 ```</code></pre>
-<p>… and a resultant <a href="https://maddoor1.nr.usu.edu:45231/sharing/VhYjDf5oE">barplot of the osprey fish captures by males and females</a> introduced above.</p>
+<p>… and a resultant <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics13.html">barplot of the osprey fish captures by males and females</a> introduced above.</p>
 <div id="some-options-for-rmarkdown-figures" class="section level3">
 <h3 class="hasAnchor">
 <a href="#some-options-for-rmarkdown-figures" class="anchor"></a>Some Options for RMarkdown Figures</h3>
@@ -460,7 +461,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
 ```</code></pre>
 <p><strong>NOTE</strong> there exists potential to alter figure placement by using the option <code>align="center"</code>, which uses HTML tag <code>&lt;img /&gt;</code> rather than the RMarkdown <code>![]()</code> syntax. However, alignment other than left justified is not supported within HTML5, so it is best to not use alignments other than the default in HTML documents. See the CSS HTML site for details on <code>&lt;img /&gt;</code> <a href="http://www.w3schools.com/tags/tag_img.asp">tag control</a>.</p>
 <p>Be careful with sizing as it sometimes clips figure output unless the width:height ratio is considered. This, however, is the same issue faced with any plot in R. If you wish global control over figure characteristics, such as a desire for all figures to be of same width and height, or a common outfile directory, these can be inserted as options under the <code>{r global_options}</code>, much as shown for <strong>warnings</strong> above.</p>
-<p>Last, do not forget it is R coding that determines characteristics of your RMarkdown figure. This means any type of plot that is possible in R can be embedded into your document. <a href="https://maddoor1.nr.usu.edu:45231/sharing/OLpY3nL8p">Check out results</a> of the options for figures we discussed here.</p>
+<p>Last, do not forget it is R coding that determines characteristics of your RMarkdown figure. This means any type of plot that is possible in R can be embedded into your document. <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics14.html">Check out results</a> of the options for figures we discussed here.</p>
 <p>The <a href="http://yihui.name/knitr/"><code>knitr</code> website</a> lists all available <strong>chunk</strong> <a href="http://yihui.name/knitr/options/">options for plots and figures</a>, including figure control for documents other than HTML output.</p>
 </div>
 </div>

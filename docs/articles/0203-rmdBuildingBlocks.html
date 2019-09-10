@@ -221,7 +221,7 @@
 <!-- set root directory here
 
 -->
-<p>Last update: 04 September 2019 (V2019.2)</p>
+<p>Last update: 10 September 2019 (V2019.2)</p>
 <hr>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
@@ -269,7 +269,7 @@ output: html_document
 This is text.  Just type away to your heart's content .... 
 
 Use two hard returns to separate paragraphs (blocks) of text.</code></pre>
-<p>Click <a href="https://tedwards-github.github.io/useR/articles/InstallR-RStudio.html">here internal link</a> <a href="https://maddoor1.nr.usu.edu:45231/sharing/PTyR9X6nf">here external link</a> <a href="%22vignettes/rmd-files/markdown_basics01.html%22">last</a>to see what the output looks like. We’ll learn more about how to configure text for bold, italics, and other text formatting features next.</p>
+<p>Click <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics01.html">here to see what the text output looks like</a>. We’ll learn more about how to configure text for bold, italics, and other text formatting features next.</p>
 </div>
 <div id="the-basic-structure-horizontal-line-separators" class="section level2">
 <h2 class="hasAnchor">
@@ -299,7 +299,7 @@ adds two lines of separators.  </code></pre>
 #### Header4
 ##### Header5
 ###### Header6</code></pre>
-<p>Examine the <a href="https://maddoor1.nr.usu.edu:45231/sharing/gnYc1CSgD">output</a>, showing both headers and line separators. Note that by the time you’ve reached <strong>Header6</strong> the font is quite small relative to the text. You can create headers with greater than 6 <code>#</code>; however, at some point headers <span class="math inline">\(&gt;\)</span> 6 revert to the base pitch.</p>
+<p><a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics02.html">Examine the header output</a>, showing both headers and line separators. Note that by the time you’ve reached <strong>Header6</strong> the font is quite small relative to the text. You can create headers with greater than 6 <code>#</code>; however, at some point headers <span class="math inline">\(&gt;\)</span> 6 revert to the base pitch.</p>
 </div>
 <div id="the-basic-structure-bold-italics-blockquotes-and-lines-as-separators" class="section level2">
 <h2 class="hasAnchor">
@@ -322,7 +322,7 @@ word or phrase to be bolded or italicized.
 Use the &gt; (greater than) symbol to create a
 
 &gt; Blockquote of (typically pithy) text.</code></pre>
-<p>Our RMarkdown <a href="https://maddoor1.nr.usu.edu:45231/sharing/DWt5dEMMC">document so far</a> includes basic text, line separators and headers to distinguish among document sections, and boldface and italics. There’s even formatting to add blockquotes that highlight text sections.</p>
+<p>Our <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics03.html">RMarkdown document so far</a> includes basic text, line separators and headers to distinguish among document sections, and boldface and italics. There’s even formatting to add blockquotes that highlight text sections.</p>
 <p>Let’s next add lists.</p>
 </div>
 <div id="the-basic-structure-the-list" class="section level2">
@@ -340,7 +340,7 @@ Use the &gt; (greater than) symbol to create a
 1. Build an ordered Markdown list using numbers
 2. Add a second list element
     1. at least 4 spaces (or a tab) before an ordered sub-list</code></pre>
-<p>Click <a href="https://maddoor1.nr.usu.edu:45231/sharing/Emz20Obhu">here</a> to see what list output looks like.</p>
+<p>Click <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics04.html">here to see what list output looks like</a>.</p>
 </div>
 <div id="the-basic-structure-embedding-r-code" class="section level2">
 <h2 class="hasAnchor">
@@ -402,13 +402,14 @@ CODE TO EXECUTE GOES HERE
 <h3 class="hasAnchor">
 <a href="#setting-global-chunk-options" class="anchor"></a>Setting global chunk options</h3>
 <p>Global options set <strong>chunk</strong> options throughout the entire document, such as the suppression of R messages and warnings. Global options should be inserted after the YAML, and before the document text begins.</p>
-<p>Two common global options are shown below: the first suppresses (the sometimes truly obnoxious R) warnings and messages, while the second sets a global working directory for the RMarkdown document. <strong>NOTE</strong> that whatever <code>root.dir</code> is set to requires all subsequent operations, e.g., access to data files to input, any output directories, be nested underneath that directory. Access this small vignette on changing directories within a RMarkdown document if you wish to learn more.</p>
+<p>Two common global options are shown below: the first suppresses (the sometimes truly obnoxious R) warnings and messages, while the second sets a global working directory for the RMarkdown document. <strong>NOTE</strong> that whatever <code>root.dir</code> is set to requires all subsequent operations, e.g., access to data files to input, any output directories, be nested underneath that directory.</p>
 <pre><code>#### Setting global options 
 ```{r global options}
 knitr::opts_chunk$set(warning=FALSE, message=FALSE)
 knitr::opts_knit$set(root.dir = "~/MyRMarkdownDocumentDirectory")
 ```</code></pre>
-<p>Check out what an RMarkdown document with code <a href="https://maddoor1.nr.usu.edu:45231/sharing/3P3IJnJct">looks like</a>.</p>
+<p>You can change to a different directory within a chunk to access data at locations other than your specified default. However, setting a path different from the default works <strong>only</strong> in the chunk where the path is changed. Once you leave that chunk, the directory defaults to the one initially specified as shown above.</p>
+<p>Check out what a <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics05.html">RMarkdown document with embedded code</a> looks like.</p>
 </div>
 </div>
   </div>

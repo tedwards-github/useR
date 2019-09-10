@@ -221,7 +221,7 @@
 <!-- set root directory here
 
 -->
-<p>Last update: 04 September 2019 (V2019.2)</p>
+<p>Last update: 10 September 2019 (V2019.2)</p>
 <hr>
 <div id="some-creative-options" class="section level2">
 <h2 class="hasAnchor">
@@ -251,7 +251,7 @@ In this example, the [R-project homepage] phrase is the highlighted link to clic
 <p>Files can be a bit trickier, mostly because of file pathnames. For now, we’ll assume everything is nested under your OS home directory.</p>
 <pre><code>#### Coding to link to a file
 This is how to link a file, such as a file called [MyPDF](NameOfFile.pdf).</code></pre>
-<p>Let’s see what links look like in a <a href="https://maddoor1.nr.usu.edu:45231/sharing/l3QRGgWpq">finalized Markdown document</a> displayed in a browser.</p>
+<p>Let’s see <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics06.html">what links look like in a finalized Markdown document</a> displayed in a browser.</p>
 </div>
 <div id="links-to-external-pictures-and-video" class="section level2">
 <h2 class="hasAnchor">
@@ -300,10 +300,11 @@ Source: http://mikemclin.net/markdown-syntax-language/</code></pre>
 <p>Use of <code>knitr</code> to embed provides more control over picture characteristics. It also provides more flexibility to move among different document formats, such as <strong>LaTeX</strong>. The picture is called from within the <strong>chunk</strong> using <code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">knitr::include_graphics("PictureFilename.Type")</a></code>. Here, we use the <strong>chunk</strong> to add a caption (<code>fig.cap=""</code>), control the size of the picture using <code>out.width=""</code>, and make the picture centered using <code>fig.align="center"</code>.</p>
 <p><code>out.extra=''</code> allows for CSS control of a picture using <code>style="CSS formating here"</code>. One nice trick is to “pad” a picture with a small white (or any color) border based on pixels, i.e. <code>padding:10px</code> in this example. This elimintaes the “squished” look of HTML’s where pictures appear too close to the text above and below. <strong>NOTE</strong> that while <code>out.extra=</code> works fine in HTML formats, it does not always render correctly in PDF documents.</p>
 <pre><code>#### knitr coding with 
-```{r echo=FALSE, fig.cap="Source: http://mikemclin.net/markdown-syntax-language/", out.width = '75%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}
-knitr::include_graphics("figures/markdown_image1.png")
-```</code></pre>
-<p>Check out the <a href="https://maddoor1.nr.usu.edu:45231/sharing/3kasBhbb0">updated homwork</a> file with embedded pictures!</p>
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="figures/markdown_image1.png" alt="Source: http://mikemclin.net/markdown-syntax-language/" width="75%" style="background-color: #ffffff; padding:10px; display: inline-block;" /&gt;
+&lt;p class="caption"&gt;Source: http://mikemclin.net/markdown-syntax-language/&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>Check out the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics07.html">updated homwork file with embedded pictures</a></p>
 </div>
 </div>
 <div id="embedding-video" class="section level3">
@@ -397,7 +398,7 @@ Default Left   Right  Center
 
 1       2        3   4
 ----------------------------</code></pre>
-<p>Compare the <a href="https://maddoor1.nr.usu.edu:45231/sharing/mGwgPPugn">different table configurations</a> arising from the <strong>pipe</strong> and <strong>line</strong> table coding. In particular, note the wrap-around text in the <strong>pipe</strong> table, and the expansion of column 4 width in the <strong>line</strong> table. Realistically, I’ve never been able to get a RMarkdown table “correct” in the first try, let alone the first several tries. It often requires playing around with different width configurations until you obtain output that is visually appealing.</p>
+<p>Compare the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics08.html">different table configurations</a> arising from the <strong>pipe</strong> and <strong>line</strong> table coding. In particular, note the wrap-around text in the <strong>pipe</strong> table, and the expansion of column 4 width in the <strong>line</strong> table. Realistically, I’ve never been able to get a RMarkdown table “correct” in the first try, let alone the first several tries. It often requires playing around with different width configurations until you obtain output that is visually appealing.</p>
 </div>
 </div>
 <div id="embedding-mathematical-symbols-and-equations" class="section level2">
@@ -419,8 +420,7 @@ Default Left   Right  Center
 * Pythagorean's theorem is $x^n + y^n = z^n$
 * The simple linear regression equation is: $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$</code></pre>
 <p>More complex equations, designed to be represented as stand–alone lines in a document, can also be constructed, as with the sample variance example shown next.</p>
-<p>The equation for sample variance is: <span class="math display">\[s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}\]</span></p>
-<p>In this example, the equation is centered rather than left–aligned. This was accomplished using two <code>$$</code> (dollar sign) symbols at the beginning and end of the equation rather than one <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>.</p>
+<p>The equation for sample variance is: <span class="math display">\[s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}\]</span> In this example, the equation is centered rather than left–aligned. This was accomplished using two <code>$$</code> (dollar sign) symbols at the beginning and end of the equation rather than one <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>.</p>
 <pre><code>#### LaTex coding for a centered, stand-alone equation 
 The equation for sample variance is: 
 $$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ </code></pre>

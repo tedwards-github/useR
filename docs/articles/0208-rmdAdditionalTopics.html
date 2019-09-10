@@ -221,7 +221,7 @@
 <!-- set root directory here
 
 -->
-<p>Last update: 04 September 2019 (V2019.2)</p>
+<p>Last update: 10 September 2019 (V2019.2)</p>
 <hr>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
@@ -281,7 +281,7 @@ knitr::opts_chunk$set(warning=FALSE)
 <div id="adding-stylistic-control-from-within-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#adding-stylistic-control-from-within-rstudio" class="anchor"></a>Adding stylistic control from within RStudio</h3>
-<p>Open and <a href="https://maddoor1.nr.usu.edu:45231/sharing/cJ2gXlNlH">examine the final RMarkdown document</a> in your browser. Keep it there; it will serve as a reference as we add some stylistic control options and render different HTML documents. Next, from within RStudio <a href="https://maddoor1.nr.usu.edu:45231/sharing/A967Otm1k">open the <strong>.rmd</strong> file</a> that built the HTML output you have open in your browser. Note that it includes, at the end of its filename, <code>01</code>. This is because we’ll be making different versions of this using different stylistic formats, and the <code>01</code> will be a counter.</p>
+<p>Open and <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.html">examine the final RMarkdown document</a> in your browser. Keep it there; it will serve as a reference as we add some stylistic control options and render different HTML documents. Next, <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.rmd">download the <strong>.rmd</strong> file</a> that built the HTML output you have open in your browser. (Where this file downloads is contingent on your browser.) Note that it includes, at the end of its filename, <code>01</code>. This is because we’ll be making different versions of this using different stylistic formats, and the <code>01</code> will be a counter.</p>
 <p>Stylistic control is added in the YAML. To embed stylistic control, click the <span class="math inline">\(\blacktriangledown\)</span> (carrot) to the right of the tool symbol, and navigate the drop-down to <strong>Output Options</strong> (light blue color) (Fig. @ref(fig:f08)):</p>
 <!--
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md08A.png" height="178px" width="576px" />
@@ -307,24 +307,35 @@ GUI dropdown for selecting highlight and theme options.
 ---
 title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
-date: 'September 04, 2019'
+date: 'September 10, 2019'
 output: 
   html_document: 
     highlight: haddock
 ---</code></pre>
-<p>Last, save the document as <code>02</code> version, and then knit. <a href="https://maddoor1.nr.usu.edu:45231/sharing/qlSHxRTUc">Open the version</a> <code>02</code> HTML in your browser and compare to the <code>01</code> HTML version. The first (and only) difference is the code syntax, and it is colored.</p>
-<p>Next, pick a theme (I chose cerulean, liking deep sky blues) and save the change with your chosen theme as version <code>03</code>. Once again, the YAML will change - <code>theme: cerulean</code> has been added - as will the <a href="https://maddoor1.nr.usu.edu:45231/sharing/lXb4vGt7o">knited document</a>. Once again, it differs. In this example, the YAML <code>output: html_document:</code> will now also include a <code>theme: cerulean</code>.</p>
+<p>Last, save the document as <code>02</code> version, and then knit. <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL02.html">Open the <code>02</code> HTML version</a> in your browser and compare to the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.html"><code>01</code> HTML version</a>. The first (and only) difference is the code syntax, and it is colored.</p>
+<p>Next, pick a theme (I chose cerulean, liking deep sky blues) and save the change with your chosen theme as version <code>03</code>. Once again, the YAML will change - <code>theme: cerulean</code> has been added - as will the knited document. Once again, it differs. In this example, the YAML <code>output: html_document:</code> will now also include a <code>theme: cerulean</code>.</p>
+<pre><code>#### YAML now includes RStudio highlight and theme options
+---
+title: "A Final RMarkdown Document in HTML Format"
+author: "Student R. Me"
+date: 'September 10, 2019'
+output: 
+  html_document: 
+    highlight: haddock
+    theme: cerulean
+---</code></pre>
 <p>Try as many highlights and themes as you wish.</p>
 </div>
 <div id="adding-css-control-from-within-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#adding-css-control-from-within-rstudio" class="anchor"></a>Adding CSS control from within RStudio</h3>
 <p>Much like <code>highlight:</code> and <code>theme:</code>, the <code>css:</code> call is placed within the the YAML <code>output: html_document:</code> section. An example would be <code>css: FILENAME.css</code>. <strong>NOTE</strong> you must set <code>theme: null</code> or the render will crash.</p>
-<pre><code>#### YAML now includes css: option that explicitly links to a CSS file
+<pre><code>
+#### YAML now includes css: option that explicitly links to a CSS file
 ---
 title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
-date: 'September 04, 2019'
+date: 'September 10, 2019'
 output: 
   html_document: 
     css: FILENAME.css
@@ -352,13 +363,13 @@ GUI dropdown for PDF and MS WORD outputs.
 <h3 class="hasAnchor">
 <a href="#ms-word-format" class="anchor"></a>MS WORD Format</h3>
 <p>To convert the RMarkdown document to a MS WORD format simply click the <code>Knit to Word</code> on the dropdown shown above. That’s all there is to it.</p>
-<p>The <a href="https://maddoor1.nr.usu.edu:45231/sharing/kPJA8JZHv">doucment returned</a> is typically “Read–Only,” and might require saving or changing the View (i.e., View =&gt; Edit Document) so that it can be edited if desired. This is largely system dependent and can only be determined by experimentation on your part.</p>
+<p>The <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.docx">MS WORD document returned</a> is typically “Read–Only,” and might require saving or changing the View (i.e., View =&gt; Edit Document) so that it can be edited if desired. This is largely system dependent and can only be determined by experimentation on your part.</p>
 <p>The <code>Knit</code> process does a reasonably good job of converting most figures, although occasionally you may have to return to your R code and rescale some of the plot elements, such as the <code>cex =</code> used in text labels or legends. Note below how the YAML in a <code>Knit to Word</code> document looks; output has changed from <code>html_document</code> to <code>word_document</code>.</p>
 <pre><code>#### Basic MS WORD YAML 
 ---
 title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
-date:  'September 04, 2019'
+date:  'September 10, 2019'
 output: 
   word_document: default
 --- </code></pre>
@@ -409,7 +420,7 @@ Selecting a section of MS WORD and applying a style.
 ---
 title: "A Final RMarkdown Document in MS WORD Format"
 author: "Student R. Me"
-date:  'September 04, 2019'
+date:  'September 10, 2019'
 output: 
   word_document:
     reference_docx: word-styles-reference-01.docx
