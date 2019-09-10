@@ -37,6 +37,10 @@ Expected outputs include RMarkdown files containing proper syntax for constructi
 
 * Click here to [download and obtain a PDF](https://maddoor1.nr.usu.edu:45231/sharing/ElEsCNhRV) of this vignette.
 
+* Click here to [download and obtain a PDF](https://tedwards-github.github.io/useRfiles/rmd-files/RMarkdown_PDF-V2019.2.pdf) of this vignette from github.
+
+
+
 ---
 
 ## What is Markdown?

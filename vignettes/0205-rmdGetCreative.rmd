@@ -60,7 +60,7 @@ Files can be a bit trickier, mostly because of file pathnames.  For now, we'll a
 This is how to link a file, such as a file called [MyPDF](NameOfFile.pdf).
 ```
 
-Let's see what links look like in a [finalized Markdown document](https://maddoor1.nr.usu.edu:45231/sharing/l3QRGgWpq) displayed in a browser.
+Let's see [what links look like in a finalized Markdown document](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics06.html) displayed in a browser.
 
 ## Links to external pictures and video
 
@@ -116,11 +116,11 @@ Use of `knitr` to embed provides more control over picture characteristics.  It 
 `out.extra=''` allows for CSS control of a picture using `style="CSS formating here"`.  One nice trick is to "pad" a picture with a small white (or any color) border based on pixels, i.e. `padding:10px` in this example.  This elimintaes the "squished" look of HTML's where pictures appear too close to the text above and below.  **NOTE** that while `out.extra=` works fine in HTML formats, it does not always render correctly in PDF documents.
 
     #### knitr coding with 
-    ```{r echo=FALSE, fig.cap="Source: http://mikemclin.net/markdown-syntax-language/", out.width = '75%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}`r ''`
+    ```{r echo=FALSE, fig.cap="Source: http://mikemclin.net/markdown-syntax-language/", out.width = '75%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}
     knitr::include_graphics("figures/markdown_image1.png")
     ```
 
-Check out the [updated homwork](https://maddoor1.nr.usu.edu:45231/sharing/3kasBhbb0) file with embedded pictures!
+Check out the [updated homwork file with embedded pictures](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics07.html)
 
 ### Embedding video
 
@@ -188,7 +188,6 @@ The simplest table code to implement is the so--called **pipe** table.  The term
 : Table 1.  Demonstration of pipe table syntax.
 ```
 
-
 There's [a reasonably friendly website](http://www.tablesgenerator.com/markdown_tables) for building pipe tables, too.  It handles .csv files as well.
 
 You can "force" pipe tables to wrap text by altering the relative widths of the first (header), second (demarcation), and third through *n* (table information) rows.  In the example below the width of text plus space in the header (1st) row in Column 1 of the table is identical to the width of the demarcation (2nd) row.  In Column 2, the width of the 2nd row is greater than the header width **and** the text in the table information row is greater as well.  This forces a wrap--around.
@@ -232,7 +231,7 @@ Default Left   Right  Center
 ----------------------------
 ```
 
-Compare the [different table configurations](https://maddoor1.nr.usu.edu:45231/sharing/mGwgPPugn) arising from the **pipe** and **line** table coding.  In particular, note the wrap-around text in the **pipe** table, and the expansion of column 4 width in the **line** table.  Realistically, I've never been able to get a RMarkdown table "correct" in the first try, let alone the first several tries.  It often requires playing around with different width configurations until you obtain output that is visually appealing.
+Compare the [different table configurations](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics08.html) arising from the **pipe** and **line** table coding.  In particular, note the wrap-around text in the **pipe** table, and the expansion of column 4 width in the **line** table.  Realistically, I've never been able to get a RMarkdown table "correct" in the first try, let alone the first several tries.  It often requires playing around with different width configurations until you obtain output that is visually appealing.
 
 ## Embedding Mathematical Symbols and Equations
 
@@ -259,7 +258,6 @@ More complex equations, designed to be represented as stand--alone lines in a do
 
 The equation for sample variance is: 
 $$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ 
-
 In this example, the equation is centered rather than left--aligned.  This was accomplished using two `$$` (dollar sign) symbols at the beginning and end of the equation rather than one `$`.
 
 ```
@@ -269,3 +267,4 @@ $$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$
 ```
 
 The code to embed mathematical symbols and build equations relies on LaTex syntax.  One of the better websites for LaTex coding syntax is the [AoPS (Art of Problem Solving) Wiki](https://www.artofproblemsolving.com/wiki/index.php/LaTeX:Symbols), while a convenient two-page "cheatsheet" built by Winston Chang and licensed by [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/3.0/) can be accessed from [here](https://wch.github.io/latexsheet/).
+

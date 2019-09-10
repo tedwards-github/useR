@@ -110,9 +110,8 @@ There are several packages in R that provide control over table construction.  T
 
 We will use the osprey data set (`f1`) from above.  The data in the R dataframe look like this:
 
-```{r echo=F}
-# examine dataframe f1
-  f1
+```{r}
+  f1 # examine dataframe f1
 ```
 
 ### Build a Table Using the `kable` Function from Package `knitr`
@@ -126,11 +125,11 @@ Assuming your data are in a standard R dataframe, one method to build a table is
        caption = "Fish capture freqeuncy by osprey sex")
     ```
 
-The output `kable` table from the code above [looks like this](https://maddoor1.nr.usu.edu:45231/sharing/EnHiSS0KH).  As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.
+The output `kable` table from the code above [looks like this](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics09.html).  As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.
 
 ### Build a Table Using the Package `xtable`
 
-`xtable` has many of the same output options as the `kable` function, but also allows for more control of table output.  A necessary option to include within the **chunk** for a `xtable` is `results="asis"`, which renders the results into text.  Otherwise `xtable` [returns the code](https://maddoor1.nr.usu.edu:45231/sharing/HnRYDbeL6) for HTML, or other formats such as LaTex.  
+`xtable` has many of the same output options as the `kable` function, but also allows for more control of table output.  A necessary option to include within the **chunk** for a `xtable` is `results="asis"`, which renders the results into text.  Otherwise `xtable` [returns the code](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics10.html) for HTML, or other formats such as LaTex.  
 
 Consequently modify the **chunk** as:
 
@@ -147,7 +146,7 @@ Consequently modify the **chunk** as:
       print(xtable(f1), type="html", include.rownames = F)  # rendered table in html format
     ```
  
-**NOTE** that [basic `xtable` output](https://maddoor1.nr.usu.edu:45231/sharing/KseBcOj8j)  includes `|` (vertical bar) as a separator between table cells, and that the data seem "squished" in appearance.  This appearance, as well as many other aspects of table appearance, can be controlled from within `xtable`.  The [xtable Gallery](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf) is an excellent PDF vignette full of examples on how to format tables.
+**NOTE** that [basic `xtable` output](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html)  includes `|` (vertical bar) as a separator between table cells, and that the data seem "squished" in appearance.  This appearance, as well as many other aspects of table appearance, can be controlled from within `xtable`.  The [xtable Gallery](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf) is an excellent PDF vignette full of examples on how to format tables.
 
 Assume you wish to change the sequential cell alignment to left, center, right.  This is the option `align=` where `r`, `l`, and `c` represent right, left, and center, respectively.  Assign the desired option with the initial `xtable` call and save it as an object (here, `tab1`).  The apply the `print()` wrapper to the object.  An oddity to note:  `xtable` automatically includes row numbers and you must format for that column, even if your intention is to suppress row numbers the final rendering of the text with `print()`.
 
@@ -165,7 +164,7 @@ One consideration regarding formatting in `xtable`.  Above, the `print()` wrappe
       print(tab1, type="html", include.rownames = F)  # rendered table in html format
     ```
 
-[Compare the two outputs](https://maddoor1.nr.usu.edu:45231/sharing/3tyzaFNSV) -- one without `results="asis"` and the other with some minimal formatting.
+[Compare the two outputs](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html) -- one without `results="asis"` and the other with some minimal formatting, including renaming of variables.
 
 ### Build a Table Using the Package `pander`
 
@@ -189,7 +188,7 @@ Recall from above we accessed the results of the $\chi^2$ analysis (object `f3`)
       pander(f3, caption = "$\\chi^2$ test of fish capture frequency by osprey sex")
     ```
 
-You can see the `pander` table outputs [here](https://maddoor1.nr.usu.edu:45231/sharing/wjZ0kzOwT).
+You can see the `pander` table outputs [here](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics12.html).
 
 A (mostly complete) list of statistical analyses that `pander` can render as tables is found by loading the `pander` library and invoking `methods(pander)`.  Current offerings include:  
 
@@ -232,7 +231,7 @@ Here's some example code ...
       text(x = bplot1, y = c(f2[1:6]), labels = c(f2[1:6]), pos = 3)  # adds f2 counts above bars
     ```
 
-... and a resultant [barplot of the osprey fish captures by males and females](https://maddoor1.nr.usu.edu:45231/sharing/VhYjDf5oE) introduced above.
+... and a resultant [barplot of the osprey fish captures by males and females](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics13.html) introduced above.
 
 ### Some Options for RMarkdown Figures
 
@@ -259,6 +258,6 @@ It may be beneficial to simultaneously plot a vector-based plot (i.e., **.pdf**,
 
 Be careful with sizing as it sometimes clips figure output unless the width:height ratio is considered.  This, however, is the same issue faced with any plot in R.  If you wish global control over figure characteristics, such as a desire for all figures to be of same width and height, or a common outfile directory, these can be inserted as options under the `{r global_options}`, much as shown for **warnings** above.
 
-Last, do not forget it is R coding that determines characteristics of your RMarkdown figure.  This means any type of plot that is possible in R can be embedded into your document.  [Check out results](https://maddoor1.nr.usu.edu:45231/sharing/OLpY3nL8p) of the options for figures we discussed here.
+Last, do not forget it is R coding that determines characteristics of your RMarkdown figure.  This means any type of plot that is possible in R can be embedded into your document.  [Check out results](https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics14.html) of the options for figures we discussed here.
 
 The [`knitr` website](http://yihui.name/knitr/) lists all available **chunk** [options for plots and figures](http://yihui.name/knitr/options/), including figure control for documents other than HTML output. 
