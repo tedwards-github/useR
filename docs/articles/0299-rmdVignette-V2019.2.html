@@ -227,8 +227,13 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <div id="purpose-of-this-vignette" class="section level1">
 <h1 class="hasAnchor">
 <a href="#purpose-of-this-vignette" class="anchor"></a>Purpose of this Vignette</h1>
-<p>This vignette describes how to build <strong>R</strong>Markdown documents and output in a variety of different formats. In fact, this is a <strong>R</strong>Markdown document built within RStudio.</p>
-<p>Expected outputs include <strong>R</strong>Markdown files containing proper syntax for constructing documents, and conversion of the syntax into HTML, PDF, and MS WORD formats.</p>
+<p>This vignette describes how to build RMarkdown documents and output in a variety of different formats. In fact, this is a RMarkdown document built within RStudio.</p>
+<p>Expected outputs include RMarkdown files containing proper syntax for constructing documents, and conversion of the syntax into HTML, PDF, and MS WORD formats.</p>
+<p><strong>Bypass the Webpage:</strong></p>
+<ul>
+<li><p>Click here to <a href="https://maddoor1.nr.usu.edu:45231/sharing/ElEsCNhRV">download and obtain a PDF</a> of this vignette.</p></li>
+<li><p>Click here to <a href="https://tedwards-github.github.io/useRfiles/rmd-files/RMarkdown_PDF-V2019.2.pdf">download and obtain a PDF</a> of this vignette from github.</p></li>
+</ul>
 <hr>
 </div>
 <div id="what-is-markdown" class="section level1">
@@ -239,12 +244,12 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <p>In the case of R, and Markdown as an example of a document Markdown language, it provides a means to embed - and actually run – R code from within a single document, all using simple syntax coding. This is addition to the text formatting mentioned above.</p>
 <p>Cool! Right?</p>
 <p>Think about this for a moment in your role as a scientist: By using Markdown you can fully replicate the analytical processes that underlay your research, showing the code you employ, the output it generates, be it numeric or graphical, plus text explanations about the analytical processes of your work. It can be, for all intent and purpose, your research metadata.</p>
-<p>Although not a necessary requirement, it is easiest to configure and generate Markdown output from within <a href="https://www.rstudio.com/">RStudio</a>. However, command–line code from <a href="https://www.r-project.org/">Plain Vanilla R</a>, which is still used by Curmudgeonly Dinosaurs like me, can also be used to generate Markdown documents. From this point forward I’ll call documents integrating R coding <strong>R</strong>Markdown documents so as to distinguish them from other types of Markdown documents.</p>
+<p>Although not a necessary requirement, it is easiest to configure and generate Markdown output from within <a href="https://www.rstudio.com/">RStudio</a>. However, command–line code from <a href="https://www.r-project.org/">Plain Vanilla R</a>, which is still used by Curmudgeonly Dinosaurs like me, can also be used to generate Markdown documents. From this point forward I’ll call documents integrating R coding RMarkdown documents so as to distinguish them from other types of Markdown documents.</p>
 <hr>
 <div id="what-does-the-output-look-like" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what-does-the-output-look-like" class="anchor"></a>What Does the Output Look Like?</h2>
-<p>The most common outputs are HTML, MS WORD, PDF, or LaTeK. <strong>R</strong>Markdown is quite powerful, and there exists an ever–expanding list of <a href="https://blog.rstudio.org/2016/03/21/r-markdown-custom-formats/">customized Markdown templates</a> including, for example, a template for all journals published by Elsevier. You can also build a <a href="https://bookdown.org/yihui/bookdown/">book</a>, a <a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html">webpage</a>, or just about any form of <a href="http://rmarkdown.rstudio.com/formats.html">document</a> you can imagine.</p>
+<p>The most common outputs are HTML, MS WORD, PDF, or LaTeK. RMarkdown is quite powerful, and there exists an ever–expanding list of <a href="https://blog.rstudio.org/2016/03/21/r-markdown-custom-formats/">customized Markdown templates</a> including, for example, a template for all journals published by Elsevier. You can also build a <a href="https://bookdown.org/yihui/bookdown/">book</a>, a <a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html">webpage</a>, or just about any form of <a href="http://rmarkdown.rstudio.com/formats.html">document</a> you can imagine.</p>
 <p>But you should probably start simple. And that’s what this vignette is all about.</p>
 <hr>
 </div>
@@ -252,8 +257,8 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <h2 class="hasAnchor">
 <a href="#why-should-i-learn-to-use-it" class="anchor"></a>Why Should I Learn to Use It?</h2>
 <p>Hopefully some of the advantages as outlined above answer this question.</p>
-<p>But another, pragmatic reason relates to classes, especially mine. Historically, I’ve accepted just about any format for answers to exercises, quizzes, and tests in courses I teach. MS PowerPoint or WORD have been the most common. However, I now require <strong>R</strong>Markdown as the means for evaluating coursework.</p>
-<p>This is for two reasons. A first reason is that as you begin your R programming adventures, you’ll quickly learn that no “right” answer for implementing R code to meet an analysis objective exists. You, as a student and researcher, will find a personal solution. Other students and colleagues, one of them being perhaps more clever, might find a more efficient approach to a R coding issue. Because one of the easiest ways for you to learn R is to see examples, <strong>R</strong>Markdown documents provide a great way for me to post – and you to see – “clever” answers to R coding problems.</p>
+<p>But another, pragmatic reason relates to classes, especially mine. Historically, I’ve accepted just about any format for answers to exercises, quizzes, and tests in courses I teach. MS PowerPoint or WORD have been the most common. However, I now require RMarkdown as the means for evaluating coursework.</p>
+<p>This is for two reasons. A first reason is that as you begin your R programming adventures, you’ll quickly learn that no “right” answer for implementing R code to meet an analysis objective exists. You, as a student and researcher, will find a personal solution. Other students and colleagues, one of them being perhaps more clever, might find a more efficient approach to a R coding issue. Because one of the easiest ways for you to learn R is to see examples, RMarkdown documents provide a great way for me to post – and you to see – “clever” answers to R coding problems.</p>
 <p>The second reason is one of convenience for me as the instructor, and you as the student. I get a consistent, easy–to–read and evaluate document that includes your R code, the results of that code, as well as the rationale for your R analytical pathway, and your interpretation of your results. You, the student, get a fully documented process by which you performed an analysis for future reference, a metaphorical trail of breadcrumbs by which you can answer the time–honored question all analysts eventually face:</p>
 <p>“How the **** did I actually do <strong><em>that</em></strong> analysis??!!??”</p>
 <hr>
@@ -262,19 +267,19 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <div id="get-started-and-build-a-rmarkdown-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#get-started-and-build-a-rmarkdown-document" class="anchor"></a>Get Started and Build a RMarkdown Document…</h1>
-<p>We’re going to use features found in RStudio as the foundation for instruction in building <strong>R</strong>Markdown documents. As we shall see, it has the advantage of some simple drop–downs for building, compiling, and editing the “code” used to build a <strong>R</strong>Markdown document.</p>
-<p>Note, however, that all the <strong>R</strong>Markdown code as shown below will also work perfectly well in Plain Vanilla R. So learn the <strong>R</strong>Markdown coding process and worry later about how to compile the document.</p>
+<p>We’re going to use features found in RStudio as the foundation for instruction in building RMarkdown documents. As we shall see, it has the advantage of some simple drop–downs for building, compiling, and editing the “code” used to build a RMarkdown document.</p>
+<p>Note, however, that all the RMarkdown code as shown below will also work perfectly well in Plain Vanilla R. So learn the RMarkdown coding process and worry later about how to compile the document.</p>
 <div id="a-quick-overview-of-the-process-from-within-rstudio" class="section level2">
 <h2 class="hasAnchor">
 <a href="#a-quick-overview-of-the-process-from-within-rstudio" class="anchor"></a>A quick overview of the process from within RStudio</h2>
-<p>The steps below will help you build a simple <strong>R</strong>Markdown document. There are many, many more options for creating <strong>R</strong>Markdown documents, but the best approach to learning <strong>R</strong>Markdown is to first learn how to build simple documents. You can then experiment with, and learn to apply, more sophisticated aspects of <strong>R</strong>Markdown to your documents.</p>
+<p>The steps below will help you build a simple RMarkdown document. There are many, many more options for creating RMarkdown documents, but the best approach to learning RMarkdown is to first learn how to build simple documents. You can then experiment with, and learn to apply, more sophisticated aspects of RMarkdown to your documents.</p>
 <p><strong>To build a Markdown document from within RStudio ….</strong></p>
 <ul>
 <li>Open RStudio
 <ul>
-<li>Create a new <strong>R</strong>Markdown file, <strong>OR</strong>
+<li>Create a new RMarkdown file, <strong>OR</strong>
 </li>
-<li>Open an existing <strong>R</strong>Markdown file</li>
+<li>Open an existing RMarkdown file</li>
 </ul>
 </li>
 <li>Configure the document style using a YAML header</li>
@@ -294,15 +299,15 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <li>Add mathematical symbols and equations</li>
 </ul>
 </li>
-<li>Save and compile (i.e., “Knit”) the <strong>R</strong>Markdown document</li>
+<li>Save and compile (i.e., “Knit”) the RMarkdown document</li>
 </ul>
-<p><strong>NOTE</strong> that although we’re first learning how to build a <strong>R</strong>Markdown document from within the RStudio editor, all the text and associated <strong>R</strong>Markdown formatting could be entered into a basic text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a> for Windows 7/8/10 OS, <a href="https://macromates.com/">textmate</a> for MAC Os), or even as a MS WORD document. [<strong>NOTE:</strong> However, be careful using the latter; MS WORD carries special characters across depending on font (e.g., "" (quotes) in Times New Roman) that may not compile properly.]</p>
+<p><strong>NOTE</strong> that although we’re first learning how to build a RMarkdown document from within the RStudio editor, all the text and associated RMarkdown formatting could be entered into a basic text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a> for Windows 7/8/10 OS, <a href="https://macromates.com/">textmate</a> for MAC Os), or even as a MS WORD document. [<strong>NOTE:</strong> However, be careful using the latter; MS WORD carries special characters across depending on font (e.g., "" (quotes) in Times New Roman) that may not compile properly.]</p>
 <hr>
 </div>
 <div id="create-a-new-rmarkdown-document" class="section level2">
 <h2 class="hasAnchor">
 <a href="#create-a-new-rmarkdown-document" class="anchor"></a>Create a New RMarkdown Document</h2>
-<p>Open RStudio. You will first need to install the R package <a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><code>rmarkdown</code></a> and dependencies. Note that your version of R must be <span class="math inline">\(\geqq\)</span> 3.0. You should install the most current of RStudio as well, as it has recent features related to <strong>R</strong>Markdown.</p>
+<p>Open RStudio. You will first need to install the R package <a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><code>rmarkdown</code></a> and dependencies. Note that your version of R must be <span class="math inline">\(\geqq\)</span> 3.0. You should install the most current of RStudio as well, as it has recent features related to RMarkdown.</p>
 <p>From the upper left of the RStudio window</p>
 <ul>
 <li>Click <strong>File</strong> =&gt;</li>
@@ -310,37 +315,37 @@ Department of Wildland Ressources, Utah State University, Logan, UT 84322-5230 U
 <li>Click <strong>R Markdown</strong>
 </li>
 </ul>
-<!-- set pics directory here 
+<!-- set figures directory here 
 #![](figures/md01.png)
 #<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" height="320px" width="480px" />
---><!-- set pics directory here 
+--><!-- set figures directory here 
 NOTE;  out.extra not working in PDF / TeX output
 <div class="figure" style="text-align: center">
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document" width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;" />
+<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document" width="75%" style="background-color: #ffffff; padding:10px; display: inline-block;" />
 <p class="caption">GUI dropdown for creating a new RMarkdown document</p>
 </div>
 --><div class="figure" style="text-align: center">
-<img src="figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document." width="50%"><p class="caption">
+<img src="figures/md01.png" alt="GUI dropdown for creating a new RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for creating a new RMarkdown document.
 </p>
 </div>
-<p>This will open a GUI dialog box (Fig. @ref(fig:f01)) asking which of the three basic <strong>R</strong>Markdown documents types (i.e., HTML, PDF, MS WORD) you’d like to build. It also shows dialog boxes for <strong>Title</strong> and <strong>Author</strong>. For now, change the <strong>Title</strong> to <strong><em>Homework 1</em></strong> and <strong>Author</strong> to <strong><em>Your Name</em></strong>. Next, make sure the Document button on the upper left side is highlighted (blue color) and click on document type <strong>HTML</strong> (Fig. @ref(fig:f02)). This will open a default RStudio <strong>R</strong>Markdown document destined to be compiled in HTML format. The <strong>date</strong> of the document defaults to the date when the document is first opened.</p>
-<!-- set pics directory here 
+<p>This will open a GUI dialog box (Fig. @ref(fig:f01)) asking which of the three basic RMarkdown documents types (i.e., HTML, PDF, MS WORD) you’d like to build. It also shows dialog boxes for <strong>Title</strong> and <strong>Author</strong>. For now, change the <strong>Title</strong> to <strong><em>Homework 1</em></strong> and <strong>Author</strong> to <strong><em>Your Name</em></strong>. Next, make sure the Document button on the upper left side is highlighted (blue color) and click on document type <strong>HTML</strong> (Fig. @ref(fig:f02)). This will open a default RStudio RMarkdown document destined to be compiled in HTML format. The <strong>date</strong> of the document defaults to the date when the document is first opened.</p>
+<!-- set figures directory here 
 #![](figures/md02.png)
 #<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md02.png" height="320px" width="480px" />
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md02.png" alt="GUI dropdown for selecting document style and setting a few parameters." width="50%"><p class="caption">
+<img src="figures/md02.png" alt="GUI dropdown for selecting document style and setting a few parameters." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for selecting document style and setting a few parameters.
 </p>
 </div>
 <p>For now ignore the text in the default document. Merely highlight and delete the parts shown in blue (Fig. @ref(fig:f03)), much as you would in MS WORD document.</p>
-<!-- set pics directory here 
+<!-- set figures directory here 
 ![](figures/md03.png)
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.png" height="359px" width="480px" />
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md03.png" alt="Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines." width="50%"><p class="caption">
+<img src="figures/md03.png" alt="Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 Be a cheater! Delete the verbiage highlighted in blue and save just the top five lines.
 </p>
 </div>
@@ -349,8 +354,8 @@ Be a cheater! Delete the verbiage highlighted in blue and save just the top five
 <li>Click <strong>File</strong> =&gt;</li>
 <li>Click <strong>Save As</strong> =&gt;</li>
 </ul>
-<p>and name the file something like <strong>hmwk1.rmd</strong>, where the <strong>.rmd</strong> file extension identifies the file as a R markdown document.</p>
-<p>Close RStudio. You’ve now created and saved a <strong>R</strong>Markdown template.</p>
+<p>and name the file something like <strong>hmwk1.rmd</strong>, where the <strong>.rmd</strong> file extension identifies the file as a R markdown document. (<strong>NOTE</strong> that RStudio may default to a <strong>.Rmd</strong> extension - it matters not.)</p>
+<p>Close RStudio. You’ve now created and saved a RMarkdown template.</p>
 </div>
 <div id="open-an-existing-rmarkdown-document" class="section level2">
 <h2 class="hasAnchor">
@@ -362,26 +367,40 @@ Be a cheater! Delete the verbiage highlighted in blue and save just the top five
 </ul>
 <p>and navigate to directory and open the file. Use the <strong>hmwk1.rmd</strong> we saved from above. It will appear as:</p>
 <!-- set pics directory here 
-![](figures/md04.png)
-<img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md04.png" height="359px" width="480px" />
+![](pics/md04.png)
+<img src="pics/md04.png" height="359px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md04.png" alt="The backbone of an HTML document." width="50%"><p class="caption">
+<img src="figures/md04.png" alt="The backbone of an HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 The backbone of an HTML document.
 </p>
 </div>
-<p>You now have the backbone template of a <strong>R</strong>Markdown document (Fig. @ref(fig:f04)).</p>
+<p>You now have the backbone template of a RMarkdown document (Fig. @ref(fig:f04)).</p>
 <hr>
 </div>
 </div>
 <div id="the-building-blocks-of-a-rmarkdown-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#the-building-blocks-of-a-rmarkdown-document" class="anchor"></a>The Building Blocks of a RMarkdown Document</h1>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>The minimalist RMarkdown document consists of three parts:</p>
+<ul>
+<li>A YAML; and</li>
+<li>Formatted text.</li>
+</ul>
+<p>With these first two parts you could write a simple text letter using RMarkdown. However, this ignores the power of RMarkdown, which in the world of analysis allows us to next:</p>
+<ul>
+<li>Embed R code for execution.</li>
+</ul>
+<p>These three elements – the YAML, formatted text, and executable R code – constitute the basic RMarkdown document. Once this document is built, it can be “knit,” resulting a document not that not only includes explanatory and interpretative text but also provides a metadocument of all analytical code and output.</p>
+</div>
 <div id="the-basic-structure---the-yaml-header" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-basic-structure---the-yaml-header" class="anchor"></a>The Basic Structure - The YAML Header</h2>
-<p>All <strong>R</strong>Markdown documents begin with a <strong>YAML header</strong>, which originally meant “Yet Another Markup Language,” but has since morphed to mean “YAML Ain’t Markup Language.” The YAML header controls the format of the <strong>R</strong>Markdown document. A basic YAML for a HTML document generated from within RStudio looks like the one found in our <strong>hmwk1.rmd</strong> file:</p>
+<p>All RMarkdown documents begin with a <strong>YAML header</strong>, which originally meant “Yet Another Markup Language,” but has since morphed to mean “YAML Ain’t Markup Language.” The YAML header controls the format of the RMarkdown document. A basic YAML for a HTML document generated from within RStudio looks like the one found in our <strong>hmwk1.rmd</strong> file:</p>
 <pre><code>#### What a basic YAML looks like
 ---
 title: "Homework 1"
@@ -389,7 +408,7 @@ author: "Student R. Me"
 date: "August 15, 2019"
 output: html_document
 ---</code></pre>
-<p>Of the four YAML elements shown above, only the <strong>output:</strong> is truly needed. This YAML requests output be a <strong>html_document</strong>. Some possible, but by no means all, <strong>R</strong>Markdown output types include:</p>
+<p>Of the four YAML elements shown above, only the <strong>output:</strong> is truly needed. This YAML requests output be a <strong>html_document</strong>. Some possible, but by no means all, RMarkdown output types include:</p>
 <ul>
 <li>
 <strong>output: pdf_document</strong> (Adobe PDF)</li>
@@ -407,10 +426,12 @@ output: html_document
 <h2 class="hasAnchor">
 <a href="#the-basic-structure-the-text" class="anchor"></a>The Basic Structure – The Text</h2>
 <pre><code>####  Nothing special about adding text
-This is text.  Just type away to your heart's content .... 
+This is text.  Type away to your heart's content ...
 
-Use two hard returns to separate paragraphs (blocks) of text.</code></pre>
-<p>Click <a href="markdown_basics01.html">here</a> <a href="https://maddoor1.nr.usu.edu:45231/sharing/PTyR9X6nf">here</a> to see what the output looks like. We’ll learn more about how to configure text for bold, italics, and other text formatting features next.</p>
+There's a rudimentary spell--checker, as well as a search icon, in the toolbar of the upper left RStudio window where you compose the RMD file.
+
+You can also bring text in from elsewhere, such as cut--n--paste from a MS WORD document.  If I'm writing lots of text I often write in MS WORD and use the spell--checker there before inserting into the RMD document.</code></pre>
+<p>Click <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics01.html">here to see what the text output looks like</a>. We’ll learn more about how to configure text for bold, italics, and other text formatting features next.</p>
 </div>
 <div id="the-basic-structure-horizontal-line-separators" class="section level2">
 <h2 class="hasAnchor">
@@ -440,7 +461,7 @@ adds two lines of separators.  </code></pre>
 #### Header4
 ##### Header5
 ###### Header6</code></pre>
-<p>Examine the <a href="https://maddoor1.nr.usu.edu:45231/sharing/gnYc1CSgD">output</a>, showing both headers and line seprators. Note that by the time you’ve reached <strong>Header6</strong> the font is quite small relative to the text. You can create headers with greater than 6 <code>#</code>; however, at some point headers <span class="math inline">\(&gt;\)</span> 6 revert to the base pitch.</p>
+<p><a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics02.html">Examine the header output</a>, showing both headers and line separators. Note that by the time you’ve reached <strong>Header6</strong> the font is quite small relative to the text. You can create headers with greater than 6 <code>#</code>; however, at some point headers <span class="math inline">\(&gt;\)</span> 6 revert to the base pitch.</p>
 </div>
 <div id="the-basic-structure-bold-italics-blockquotes-and-lines-as-separators" class="section level2">
 <h2 class="hasAnchor">
@@ -463,7 +484,7 @@ word or phrase to be bolded or italicized.
 Use the &gt; (greater than) symbol to create a
 
 &gt; Blockquote of (typically pithy) text.</code></pre>
-<p>Our <strong>R</strong>Markdown <a href="https://maddoor1.nr.usu.edu:45231/sharing/DWt5dEMMC">document so far</a> includes basic text, line separators and headers to distinguish among document sections, and boldface and italics. There’s even formatting to add blockquotes that highlight text sections.</p>
+<p>Our <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics03.html">RMarkdown document so far</a> includes basic text, line separators and headers to distinguish among document sections, and boldface and italics. There’s even formatting to add blockquotes that highlight text sections.</p>
 <p>Let’s next add lists.</p>
 </div>
 <div id="the-basic-structure-the-list" class="section level2">
@@ -471,7 +492,7 @@ Use the &gt; (greater than) symbol to create a
 <a href="#the-basic-structure-the-list" class="anchor"></a>The Basic Structure – The List</h2>
 <p>Lists use the <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> (asterisk) or <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> (plus) or <code><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></code> (hyphen) for an unordered list; simply add a hard return and another <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> or <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> or <code><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></code> to create the second item in the list. For indenting, use either a tab or at least four spaces.</p>
 <p>A numbered list begins with the desired number, say 1, and followed with successive numbers.</p>
-<p>Note that <strong>R</strong>Markdown has some limitations for classical numeric listing of 1, then 1.1, then 1.1.1, etc. These are better controlled using a CSS template from within the YAML.</p>
+<p>Note that RMarkdown has some limitations for classical numeric listing of 1, then 1.1, then 1.1.1, etc. These are better controlled using a CSS template from within the YAML.</p>
 <pre><code>#### Unordered Lists
 * Build an unordered Markdown list using the * (asterisk)
 * Add a second list element
@@ -481,22 +502,22 @@ Use the &gt; (greater than) symbol to create a
 1. Build an ordered Markdown list using numbers
 2. Add a second list element
     1. at least 4 spaces (or a tab) before an ordered sub-list</code></pre>
-<p>Click <a href="https://maddoor1.nr.usu.edu:45231/sharing/Emz20Obhu">here</a> to see what list output looks like.</p>
+<p>Click <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics04.html">here to see what list output looks like</a>.</p>
 </div>
 <div id="the-basic-structure-embedding-r-code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-basic-structure-embedding-r-code" class="anchor"></a>The Basic Structure – Embedding R Code</h2>
-<p>Any R–based coding operations can be embedded into a <strong>R</strong>Markdown document and resultant output displayed. This means if you’ve crazy complex R code you can run that code from a <strong>R</strong>Markdown document and create a report containing all code, its output, plus whatever King’s English you wish to include.</p>
-<p>However, at this stage in learning how to use <strong>R</strong>Markdown, we’ll keep the R coding simple until we’ve learned how to build a basic <strong>R</strong>Markdown document. More complex operations – complete with fully formed examples – are shown below.</p>
+<p>Any R–based coding operations can be embedded into a RMarkdown document and resultant output displayed. This means if you’ve crazy complex R code you can run that code from a RMarkdown document and create a report containing all code, its output, plus whatever King’s English you wish to include.</p>
+<p>However, at this stage in learning how to use RMarkdown, we’ll keep the R coding simple until we’ve learned how to build a basic RMarkdown document. More complex operations – complete with fully formed examples – are shown below.</p>
 <p>Specifically, we will:</p>
 <ul>
 <li>Learn about the <strong>chunk</strong> for embedding code</li>
-<li>Embed and control execution of R code within a <strong>R</strong>Markdown document</li>
+<li>Embed and control execution of R code within a RMarkdown document</li>
 </ul>
 <div id="what-is-the-chunk-in-a-rmarkdown-document" class="section level3">
 <h3 class="hasAnchor">
 <a href="#what-is-the-chunk-in-a-rmarkdown-document" class="anchor"></a>What is the <strong>chunk</strong> in a RMarkdown document?</h3>
-<p><strong>chunk</strong> is the term that refers to R code to be rendered in a <strong>R</strong>Markdown document. A <strong>chunk</strong> can include one or more lines of R code implemented as a block of code, or a <strong>chunk</strong> can be executed inline and directly from within text constituting a sentence. <strong>chunk</strong>’s can be embedded directly by typing into the document, or by using the drop-down <strong>chunk</strong> icon on the toolbar.</p>
+<p><strong>chunk</strong> is the term that refers to R code to be rendered in a RMarkdown document. A <strong>chunk</strong> can include one or more lines of R code implemented as a block of code, or a <strong>chunk</strong> can be executed inline and directly from within text constituting a sentence. <strong>chunk</strong>’s can be embedded directly by typing into the document, or by using the drop-down <strong>chunk</strong> icon on the toolbar.</p>
 <p>The basic block <strong>chunk</strong> begins with <code>```{r}</code> (three backticks <code>```</code> then <code>{r}</code> with no spacing), follows with a hard returns for each line of code in the block, and ends with <code>```</code> (three backticks).</p>
 <p>An inline <strong>chunk</strong> of code begins with <code>`r</code>, follows with a single blank space, then the executable R code <code>Code2Execute</code>, and ends with <code>`</code>.</p>
 <pre><code>#### The basic R Markdown chunk as a block of code 
@@ -510,7 +531,7 @@ blah blah text `r Code2Execute` more blah blah text</code></pre>
 <div id="setting-local-chunk-options" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-local-chunk-options" class="anchor"></a>Setting local chunk options</h3>
-<p>Common options to modify output to the <strong>R</strong>Markdown document include:</p>
+<p>Common options to modify output to the RMarkdown document include:</p>
 <ul>
 <li>Naming a <strong>chunk</strong>, which is useful when searching for errors;</li>
 <li>Return results but not the code;</li>
@@ -543,13 +564,14 @@ CODE TO EXECUTE GOES HERE
 <h3 class="hasAnchor">
 <a href="#setting-global-chunk-options" class="anchor"></a>Setting global chunk options</h3>
 <p>Global options set <strong>chunk</strong> options throughout the entire document, such as the suppression of R messages and warnings. Global options should be inserted after the YAML, and before the document text begins.</p>
-<p>Two common global options are shown below: the first suppresses (the sometimes truly obnoxious R) warnings and messages, while the second sets a global working directory for the <strong>R</strong>Markdown document. <strong>NOTE</strong> that whatever <code>root.dir</code> is set to requires all subsequnet opertaions, e.g., access to data files to input, any output directories, be nested underneath that directory. Access this small vignette on changing directories within a <strong>R</strong>Markdown document if you wish to learn more.</p>
+<p>Two common global options are shown below: the first suppresses (the sometimes truly obnoxious R) warnings and messages, while the second sets a global working directory for the RMarkdown document. <strong>NOTE</strong> that whatever <code>root.dir</code> is set to requires all subsequent operations, e.g., access to data files to input, any output directories, be nested underneath that directory.</p>
 <pre><code>#### Setting global options 
 ```{r global options}
 knitr::opts_chunk$set(warning=FALSE, message=FALSE)
 knitr::opts_knit$set(root.dir = "~/MyRMarkdownDocumentDirectory")
 ```</code></pre>
-<p>Check out what an <strong>R</strong>Markdown document with code <a href="https://maddoor1.nr.usu.edu:45231/sharing/3P3IJnJct">looks like</a>.</p>
+<p>You can change to a different directory within a chunk to access data at locations other than your specified default. However, setting a path different from the default works <strong>only</strong> in the chunk where the path is changed. Once you leave that chunk, the directory defaults to the one initially specified as shown above.</p>
+<p>Check out what a <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics05.html">RMarkdown document with embedded code</a> looks like.</p>
 <hr>
 </div>
 </div>
@@ -557,50 +579,50 @@ knitr::opts_knit$set(root.dir = "~/MyRMarkdownDocumentDirectory")
 <div id="knit-the-basic-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#knit-the-basic-document" class="anchor"></a>“<strong>Knit</strong>” the Basic Document</h1>
-<p>So far we’ve seen how to develop a basic <strong>R</strong>Markdown document. However, we’ve not yet seen how to actually build the desired document type from the code. So how is it done?</p>
-<p>The process of converting the <strong>R</strong>Markdown text to the preferred document type (e.g., HTML, PDF, MS WORD) involves several steps. The process first involves the function <code>render</code> from within package <code>rmarkdown</code>, which feeds the <strong>.rmd</strong> file (what we’re now learning how to build) to package <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>. <code>knitr</code> creates a new markdown output <strong>.md</strong> which is converted to the desired document type using the function <code>pandoc</code> from package <code>knitr</code>.</p>
+<p>So far we’ve seen how to develop a basic RMarkdown document. However, we’ve not yet seen how to actually build the desired document type from the code. So how is it done?</p>
+<p>The process of converting the RMarkdown text to the preferred document type (e.g., HTML, PDF, MS WORD) involves several steps. The process first involves the function <code>render</code> from within package <code>rmarkdown</code>, which feeds the <strong>.rmd</strong> file (what we’re now learning how to build) to package <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>. <code>knitr</code> creates a new markdown output <strong>.md</strong> which is converted to the desired document type using the function <code>pandoc</code> from package <code>knitr</code>.</p>
 <p>Whew! Probably too much detail, right?</p>
 <p>Luckily, these steps have been condensed into a single dropdown command within RStudio. The process is called <strong>Knit</strong>.</p>
 <p>From within RStudio open the <strong>hmwk1.rmd</strong> template saved at the beginning. For now it should only show the YAML. Add some headers and text, some boldface and italics, a list, and even a blockquote if desired. Something similar to that shown in Fig. @ref(fig:f05) will work.</p>
-<!-- set pics directory here 
+<!-- set figures directory here 
 ![](figures/md05.png)
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md03.png" height="359px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md05.png" alt="Some simple text for a RMarkdown document." width="50%"><p class="caption">
+<img src="figures/md05.png" alt="Some simple text for a RMarkdown document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 Some simple text for a RMarkdown document.
 </p>
 </div>
 <p>Once that is done, click the <span class="math inline">\(\blacktriangledown\)</span> (carrot) by <strong>Knit</strong> and select the type of document desired. For now select <strong>HTML</strong> (Fig. @ref(fig:f06)).</p>
-<!-- set pics directory here 
+<!-- set figures directory here 
 ![](figures/md06.png)
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md06.png" height="172px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md06.png" alt='GUI dropdown for "kniting" the document.' width="50%"><p class="caption">
+<img src="figures/md06.png" alt='GUI dropdown for "kniting" the document.' width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for “kniting” the document.
 </p>
 </div>
 <p>The <strong>R Markdown</strong> panel (lower left of your RStudio panels) will scroll through output, and a new window will popup with the <strong>knitted</strong> document. Assuming no errors (we’ll deal with those in a while …) you now have a completed HTML document that can be opened in any browser. The HTML document will also be saved in your default working directory.</p>
-<!-- set pics directory here 
+<!-- set figures directory here 
 ![](figures/md07.png)
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md07.png" height="239px" width="480px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 -->
 <div class="figure" style="text-align: center">
-<img src="figures/md07.png" alt="A completed RMarkdown HTML document." width="50%"><p class="caption">
+<img src="figures/md07.png" alt="A completed RMarkdown HTML document." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 A completed RMarkdown HTML document.
 </p>
 </div>
-<p>You’re done !! You’ve built your first <strong>R</strong>Markdown document in HTML format (Fig. @ref(fig:f07)).</p>
+<p>You’re done !! You’ve built your first RMarkdown document in HTML format (Fig. @ref(fig:f07)).</p>
 <hr>
 </div>
 <div id="getting-creative-with-your-markdown-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-creative-with-your-markdown-document" class="anchor"></a>Getting Creative With Your Markdown Document</h1>
-<p>So far we’ve built a basic <strong>R</strong>Markdown document and exported it as a HTML format. Next, let’s consider some more creative aspects of <strong>R</strong>Markdown documents, including:</p>
+<p>So far we’ve built a basic RMarkdown document and exported it as a HTML format. Next, let’s consider some more creative aspects of RMarkdown documents, including:</p>
 <ul>
 <li>Links to external websites and files;</li>
 <li>Incorporation of pictures and videos;</li>
@@ -624,17 +646,17 @@ In this example, the [R-project homepage] phrase is the highlighted link to clic
 <p>Files can be a bit trickier, mostly because of file pathnames. For now, we’ll assume everything is nested under your OS home directory.</p>
 <pre><code>#### Coding to link to a file
 This is how to link a file, such as a file called [MyPDF](NameOfFile.pdf).</code></pre>
-<p>Let’s see what links look like in a <a href="https://maddoor1.nr.usu.edu:45231/sharing/l3QRGgWpq">finalized Markdown document</a> displayed in a browser.</p>
+<p>Let’s see <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics06.html">what links look like in a finalized Markdown document</a> displayed in a browser.</p>
 </div>
 <div id="links-to-external-pictures-and-video" class="section level2">
 <h2 class="hasAnchor">
 <a href="#links-to-external-pictures-and-video" class="anchor"></a>Links to external pictures and video</h2>
-<p>Coding for pictures and video is not too different from that for files, subject only only to some file–type constraints. Although work–arounds do exist, pictures embedded in <strong>R</strong>Markdown should be bitmap– rather than vector–based. Common bitmap image formats include <strong>.png</strong>, <strong>.jpg</strong>, <strong>.gif</strong>, <strong>.tif</strong>, and <strong>.bmp</strong>. In general, <strong>.png</strong> are considered excellent for web-based output (small file size, no loss in quality), although <strong>.jpg</strong> can do better for photographs, especially those rich in color. <strong>.tif</strong> formats are equally good for rich colors, but suffer from large file size.</p>
+<p>Coding for pictures and video is not too different from that for files, subject only only to some file–type constraints. Although work–arounds do exist, pictures embedded in RMarkdown should be bitmap– rather than vector–based. Common bitmap image formats include <strong>.png</strong>, <strong>.jpg</strong>, <strong>.gif</strong>, <strong>.tif</strong>, and <strong>.bmp</strong>. In general, <strong>.png</strong> are considered excellent for web-based output (small file size, no loss in quality), although <strong>.jpg</strong> can do better for photographs, especially those rich in color. <strong>.tif</strong> formats are equally good for rich colors, but suffer from large file size.</p>
 <p>You can convert among the many different image formats using an image editor. Some great freeware image editors include <a href="http://www.irfanview.com/">IrfanView</a>, <a href="https://inkscape.org/en/">InkScape</a>, <a href="http://imagemagick.org/script/index.php">ImageMagick</a>, or <a href="http://www.gimp.org/">GIMP</a>.</p>
 <div id="embedding-a-picture" class="section level3">
 <h3 class="hasAnchor">
 <a href="#embedding-a-picture" class="anchor"></a>Embedding a picture</h3>
-<p>Code to embed a picture can be of one of three types, a <strong>R</strong>Markdown-based linkage, a <a href="http://www.w3schools.com/tags/tag_img.asp">HTML–based</a> linkage, or from within a <strong>chunk</strong> using <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>.</p>
+<p>Code to embed a picture can be of one of three types, a RMarkdown-based linkage, a <a href="http://www.w3schools.com/tags/tag_img.asp">HTML–based</a> linkage, or from within a <strong>chunk</strong> using <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>.</p>
 <p>Two cautionary notes:</p>
 <ul>
 <li>When adjusting picture size based on pixels, make sure you re–scale both the width and height simultaneously.</li>
@@ -654,7 +676,7 @@ This is how to link a file, such as a file called [MyPDF](NameOfFile.pdf).</code
 <div id="the-html-version" class="section level4">
 <h4 class="hasAnchor">
 <a href="#the-html-version" class="anchor"></a>The HTML version</h4>
-<p>The HTML version merely uses the HTML <code>&lt;img /&gt;</code> code. If you wish to control the number of pixels presented (i.e., make the picture bigger or smaller) then use HTML coding. Alternatively, use one of the image editors noted above and create the desired picture size in pixels, and then use the <strong>R</strong>Markdown linkage.</p>
+<p>The HTML version merely uses the HTML <code>&lt;img /&gt;</code> code. If you wish to control the number of pixels presented (i.e., make the picture bigger or smaller) then use HTML coding. Alternatively, use one of the image editors noted above and create the desired picture size in pixels, and then use the RMarkdown linkage.</p>
 <p>Results using HTML coding will be the same as Markdown coding. Note that any caption – here, the source of the picture – must be added as a line of text below the picture. You can control the size of the picture using <code>height=</code> and <code>width=</code> options in the <code>&lt;img /&gt;</code> tag. Options for the HTML <code>&lt;img /&gt;</code> tag can be found <a href="http://www.w3schools.com/tags/tag_img.asp">here</a>.</p>
 <pre><code>#### HTML coding with defult size (pixels) of picture
 &lt;img src="PictureFilename.Type" /&gt;
@@ -673,17 +695,18 @@ Source: http://mikemclin.net/markdown-syntax-language/</code></pre>
 <p>Use of <code>knitr</code> to embed provides more control over picture characteristics. It also provides more flexibility to move among different document formats, such as <strong>LaTeX</strong>. The picture is called from within the <strong>chunk</strong> using <code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">knitr::include_graphics("PictureFilename.Type")</a></code>. Here, we use the <strong>chunk</strong> to add a caption (<code>fig.cap=""</code>), control the size of the picture using <code>out.width=""</code>, and make the picture centered using <code>fig.align="center"</code>.</p>
 <p><code>out.extra=''</code> allows for CSS control of a picture using <code>style="CSS formating here"</code>. One nice trick is to “pad” a picture with a small white (or any color) border based on pixels, i.e. <code>padding:10px</code> in this example. This elimintaes the “squished” look of HTML’s where pictures appear too close to the text above and below. <strong>NOTE</strong> that while <code>out.extra=</code> works fine in HTML formats, it does not always render correctly in PDF documents.</p>
 <pre><code>#### knitr coding with 
-```{r echo=FALSE, fig.cap="Source: http://mikemclin.net/markdown-syntax-language/", out.width = '50%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}
-knitr::include_graphics("figures/markdown_image1.png")
-```</code></pre>
-<p>Check out the <a href="https://maddoor1.nr.usu.edu:45231/sharing/3kasBhbb0">updated homwork</a> file with embedded pictures!</p>
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="figures/markdown_image1.png" alt="Source: http://mikemclin.net/markdown-syntax-language/" width="75%" style="background-color: #ffffff; padding:10px; display: inline-block;" /&gt;
+&lt;p class="caption"&gt;Source: http://mikemclin.net/markdown-syntax-language/&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>Check out the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics07.html">updated homwork file with embedded pictures</a></p>
 </div>
 </div>
 <div id="embedding-video" class="section level3">
 <h3 class="hasAnchor">
 <a href="#embedding-video" class="anchor"></a>Embedding video</h3>
 <p>Video within Markdown is restricted as of now to <a href="https://www.youtube.com/">YouTube</a> only. This will undoubtedly change over time (for example see: package <a href="https://cran.r-project.org/web/packages/vembedr/vignettes/services.html"><code>vembedr</code></a>). You will need to establish a <strong>YouTube</strong> account, and upload video into your personal <strong>My Channel</strong>. After uploading to <strong>My Channel</strong> you will receive the video’s unique identifier.</p>
-<p><strong>NOTE</strong>, however, that if you have recorded video served from elsewhere, you can simply attach a link that opens the video in your browser, much in the same way access a picture. The code below embeds a picture (often a screen–shot of the first frame of a video) that when “clicked” opens the video in your browser. This is perhaps the simplest approach to linking video to a <strong>R</strong>Markdown document.</p>
+<p><strong>NOTE</strong>, however, that if you have recorded video served from elsewhere, you can simply attach a link that opens the video in your browser, much in the same way access a picture. The code below embeds a picture (often a screen–shot of the first frame of a video) that when “clicked” opens the video in your browser. This is perhaps the simplest approach to linking video to a RMarkdown document.</p>
 <pre><code>#### RMarkdown code for a left--justified clickable image that links to a video 
 ####   width= set to X%
 [![](Path/picture.type){width=X%}](https://VideoLink)
@@ -719,8 +742,8 @@ Option 2
 <div id="data-and-other-informative-tables" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-and-other-informative-tables" class="anchor"></a>Data and Other Informative Tables</h2>
-<p>Construction of data and text tables in <strong>R</strong>Markdown can be frustrating and irritating, as well as visually unappealing when output, principally because <strong>R</strong>Markdown does not actually support tables <em>per se</em>. All forms of table construction allow for inclusion of a table description. By default they extend across the entire webpage width when in HTML format.</p>
-<p>Several variations of types of tables exist. The examples here are for simple tables only; additional methods for constructing tables based on R packages will be illustrated below when we begin to embed code into <strong>R</strong>Markdown documents. Note also that the table output from even the simple code show below will change if different CSS output control files are attached to the <strong>R</strong>Markdown document.</p>
+<p>Construction of data and text tables in RMarkdown can be frustrating and irritating, as well as visually unappealing when output, principally because RMarkdown does not actually support tables <em>per se</em>. All forms of table construction allow for inclusion of a table description. By default they extend across the entire webpage width when in HTML format.</p>
+<p>Several variations of types of tables exist. The examples here are for simple tables only; additional methods for constructing tables based on R packages will be illustrated below when we begin to embed code into RMarkdown documents. Note also that the table output from even the simple code show below will change if different CSS output control files are attached to the RMarkdown document.</p>
 <p>We will explore the different options for table constricton below, and examone ouptut from each at the end of this section.</p>
 <hr>
 <div id="the-pipe-table" class="section level3">
@@ -770,14 +793,14 @@ Default Left   Right  Center
 
 1       2        3   4
 ----------------------------</code></pre>
-<p>Compare the <a href="https://maddoor1.nr.usu.edu:45231/sharing/mGwgPPugn">different table configurations</a> arising from the <strong>pipe</strong> and <strong>line</strong> table coding. In particular, note the wrap-around text in the <strong>pipe</strong> table, and the expansion of column 4 width in the <strong>line</strong> table. Realistically, I’ve never been able to get a <strong>R</strong>Markdown table “correct” in the first try, let alone the first several tries. It often requires playing around with different width configurations until you obtain output that is visually appealing.</p>
+<p>Compare the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics08.html">different table configurations</a> arising from the <strong>pipe</strong> and <strong>line</strong> table coding. In particular, note the wrap-around text in the <strong>pipe</strong> table, and the expansion of column 4 width in the <strong>line</strong> table. Realistically, I’ve never been able to get a RMarkdown table “correct” in the first try, let alone the first several tries. It often requires playing around with different width configurations until you obtain output that is visually appealing.</p>
 </div>
 </div>
 <div id="embedding-mathematical-symbols-and-equations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#embedding-mathematical-symbols-and-equations" class="anchor"></a>Embedding Mathematical Symbols and Equations</h2>
-<p>One of the more powerful aspects of <strong>R</strong>Markdown is the ability to use mathematical symbols and build (even complex) mathematical equations, and have those portrayed in the final <strong>R</strong>Markdown document. Mathematical symbols and equations in <strong>R</strong>Markdown use TeX math, which although it relies on LaTeX syntax for the symbol or equation, is a bit different in implementation.</p>
-<p>The difference is that Tex math uses the <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> (dollar sign) symbol to start and stop various mathematical symbols used in isolation or as part of an equation while LaTeX uses the <code>\</code> (left slash) only. The implementation difference is that the <code>\</code> (left slash) symbol is an escape character in <strong>R</strong>Markdown. Within <strong>R</strong>Markdown, the first <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> must be followed by a character (not a blank space), while the last <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> requires a character on its left. The closing <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> <strong>cannot</strong> be followed by a digit.</p>
+<p>One of the more powerful aspects of RMarkdown is the ability to use mathematical symbols and build (even complex) mathematical equations, and have those portrayed in the final RMarkdown document. Mathematical symbols and equations in RMarkdown use TeX math, which although it relies on LaTeX syntax for the symbol or equation, is a bit different in implementation.</p>
+<p>The difference is that Tex math uses the <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> (dollar sign) symbol to start and stop various mathematical symbols used in isolation or as part of an equation while LaTeX uses the <code>\</code> (left slash) only. The implementation difference is that the <code>\</code> (left slash) symbol is an escape character in RMarkdown. Within RMarkdown, the first <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> must be followed by a character (not a blank space), while the last <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> requires a character on its left. The closing <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> <strong>cannot</strong> be followed by a digit.</p>
 <p>Consider the following examples:</p>
 <ul>
 <li>Sample <span class="math inline">\(\bar{x}\)</span> temperature (<span class="math inline">\(\pm\)</span> 2-SD) was 11.8 (2.3) <span class="math inline">\(^\circ\)</span>C</li>
@@ -792,8 +815,7 @@ Default Left   Right  Center
 * Pythagorean's theorem is $x^n + y^n = z^n$
 * The simple linear regression equation is: $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$</code></pre>
 <p>More complex equations, designed to be represented as stand–alone lines in a document, can also be constructed, as with the sample variance example shown next.</p>
-<p>The equation for sample variance is: <span class="math display">\[s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}\]</span></p>
-<p>In this example, the equation is centered rather than left–aligned. This was accomplished using two <code>$$</code> (dollar sign) symbols at the beginning and end of the equation rather than one <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>.</p>
+<p>The equation for sample variance is: <span class="math display">\[s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}\]</span> In this example, the equation is centered rather than left–aligned. This was accomplished using two <code>$$</code> (dollar sign) symbols at the beginning and end of the equation rather than one <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>.</p>
 <pre><code>#### LaTex coding for a centered, stand-alone equation 
 The equation for sample variance is: 
 $$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ </code></pre>
@@ -804,12 +826,12 @@ $$s^2 = \sqrt\frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})^2} {n - 1}$$ </code></pr
 <div id="embedding-and-implementing-r-code-into-a-rmarkdown-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#embedding-and-implementing-r-code-into-a-rmarkdown-document" class="anchor"></a>Embedding and Implementing R Code into a RMarkdown Document</h1>
-<p>In the first part we learned how add R code – the <strong>chunk</strong> – to a <strong>R</strong>Markdown document. Now we’ll see some examples of how to embed R code into the document, and control the execution and output of the code depending on the desired final <strong>R</strong>Markdown document.</p>
+<p>In the first part we learned how add R code – the <strong>chunk</strong> – to a RMarkdown document. Now we’ll see some examples of how to embed R code into the document, and control the execution and output of the code depending on the desired final RMarkdown document.</p>
 <div id="example-1-embedding-and-executing-r-code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-1-embedding-and-executing-r-code" class="anchor"></a>EXAMPLE #1: Embedding and Executing R Code</h2>
-<p>Let’s execute R code embedded in a <strong>R</strong>Markdown document. For an example we will use a small cross–classified data structure examining fish selection by males and females of the piscivorous osprey <strong><em>Pandion haliaetus</em></strong>. Three types of fish – bass, shad, and sunfish – were available. A simple contingency analysis will be applied to the data.</p>
-<p>This first <strong>chunk</strong> example imports a <code>.csv</code> file and examines the resulting dataframe structure. Note that output lines are preceded with <code>##</code> (two pound symbols); this helps distinguish code from output. All <strong>chunk</strong>’s in this example accept the default and return both the R code being evaluated and the output. This is so you can understand the <strong>chunk</strong> rendering process in <strong>R</strong>Markdown.</p>
+<p>Let’s execute R code embedded in a RMarkdown document. For an example we will use a small cross–classified data structure examining fish selection by males and females of the piscivorous osprey <strong><em>Pandion haliaetus</em></strong>. Three types of fish – bass, shad, and sunfish – were available. A simple contingency analysis will be applied to the data.</p>
+<p>This first <strong>chunk</strong> example imports a <code>.csv</code> file and examines the resulting dataframe structure. Note that output lines are preceded with <code>##</code> (two pound symbols); this helps distinguish code from output. All <strong>chunk</strong>’s in this example accept the default and return both the R code being evaluated and the output. This is so you can understand the <strong>chunk</strong> rendering process in RMarkdown.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># import data and examine dataframe characteristics</span></a>
 <a class="sourceLine" id="cb21-2" title="2">  f1 &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">"data/ospreypreybysex.csv"</span>, <span class="dt">header =</span> T)</a>
 <a class="sourceLine" id="cb21-3" title="3">  <span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(f1)  <span class="co"># examine dataframe structure</span></a></code></pre></div>
@@ -856,26 +878,27 @@ A $\chi^2$ analysis indicates that male and female ospreys differentially select
 species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`, 
 *p* = `r round(f3$p.value, 3)`, *df* = `r f3$parameter`).</code></pre>
 <p>We first embedded mathematical syntax to print the symbology <span class="math inline">\(\chi^2\)</span>. Next notice how inline <strong>chunk</strong> coding was used three times to extract specified information from the output of the <span class="math inline">\(\chi^2\)</span> analysis, the object <code>f3</code> we created earlier. The <code><a href="https://rdrr.io/r/base/ls.html">ls(f3)</a></code> call had returned the output objects of the analysis, of which <code>statistic</code>, <code>p.value</code>, and <code>parameter</code> represent, respectively, the values of the <span class="math inline">\(\chi^2\)</span>, <em>p</em>-value, and <em>df</em>’s. (<strong>NOTE</strong>: Selection of correct output objects by name assumes working knowledge of R analysis and outputs.) These values were extracted using standard R coding, such as <code>f3$statistic</code>. We also applied the <code><a href="https://rdrr.io/r/base/Round.html">round()</a></code> function to the extracted values to reduce the number of significant digits carried over into the sentence.</p>
-<p>There is nothing fancy here: these are basic R operations for extracting information from an analysis. We’ve merely used <strong>R</strong>Markdown syntax to extract these values and embed them into a document.</p>
+<p>There is nothing fancy here: these are basic R operations for extracting information from an analysis. We’ve merely used RMarkdown syntax to extract these values and embed them into a document.</p>
 <p>Just imagine how useful this could be when writing reports !! (And your homework …)</p>
 <hr>
 </div>
 <div id="example-3-extracting-and-presenting-tabular-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-3-extracting-and-presenting-tabular-information" class="anchor"></a>EXAMPLE #3: Extracting and Presenting Tabular Information</h2>
-<p>A repeat of something stated above regarding tables in <strong>R</strong>Markdown:</p>
+<p>A repeat of something stated above regarding tables in RMarkdown:</p>
 <blockquote>
-<p>“<em>Construction of data and text tables in <strong>R</strong>Markdown can be frustrating and irritating, as well as visually unappealing when output, principally because <strong>R</strong>Markdown does not actually support tables <strong>per se</strong>.</em>”</p>
+<p>“<em>Construction of data and text tables in RMarkdown can be frustrating and irritating, as well as visually unappealing when output, principally because RMarkdown does not actually support tables <strong>per se</strong>.</em>”</p>
 </blockquote>
-<p>Solutions do exist, but before we can produce more visually appealing tables in <strong>R</strong>Markdown, some basic understanding of format control in a <strong>R</strong>Markdown document is needed.</p>
-<p>Control of <strong>R</strong>Markdown output – and tables the document contains – can occur at two separate levels. The first is default <strong>R</strong>Markdown syntax that controls the final rendering of the document. Thus far we’ve only implemented HTML output, as specified in the YAML. Consequently, output is converted to table coding conventions associated with HTML. It is a minimalist approach.</p>
-<p>A second approach is to control output of the entire <strong>R</strong>Markdown document by using <a href="http://www.w3schools.com/css/css_intro.asp">CSS control</a>. Use of CSS control for <strong>R</strong>Markdown output is discussed in detail below under Advanced <strong>R</strong>Markdown topics, so it won’t be discussed here. Instead we’ll focus on ways to apply some R packages to create tables.</p>
-<p>(<strong>Full Disclosure:</strong> I’ve been cheating thus far; this document has CSS control, while the output you’ve clicked on and followed is <strong>R</strong>Markdown default <code>HTML</code> without any CSS control.)</p>
+<p>Solutions do exist, but before we can produce more visually appealing tables in RMarkdown, some basic understanding of format control in a RMarkdown document is needed.</p>
+<p>Control of RMarkdown output – and tables the document contains – can occur at two separate levels. The first is default RMarkdown syntax that controls the final rendering of the document. Thus far we’ve only implemented HTML output, as specified in the YAML. Consequently, output is converted to table coding conventions associated with HTML. It is a minimalist approach.</p>
+<p>A second approach is to control output of the entire RMarkdown document by using <a href="http://www.w3schools.com/css/css_intro.asp">CSS control</a>. Use of CSS control for RMarkdown output is discussed in detail below under Advanced RMarkdown topics, so it won’t be discussed here. Instead we’ll focus on ways to apply some R packages to create tables.</p>
+<p>(<strong>Full Disclosure:</strong> I’ve been cheating thus far; this document has CSS control, while the output you’ve clicked on and followed is RMarkdown default <code>HTML</code> without any CSS control.)</p>
 <div id="use-of-r-packages-for-table-control" class="section level3">
 <h3 class="hasAnchor">
-<a href="#use-of-r-packages-for-table-control" class="anchor"></a>Use of R packages for table control</h3>
+<a href="#use-of-r-packages-for-table-control" class="anchor"></a>Use of R Packages for Table Control</h3>
 <p>There are several packages in R that provide control over table construction. These include the function <code>kable</code> within package <a href="https://cran.r-project.org/web/packages/knitr/index.html"><code>knitr</code></a>, and the packages <a href="https://cran.r-project.org/web/packages/pander/index.html"><code>pander</code></a> and <a href="https://cran.r-project.org/web/packages/xtable/index.html"><code>xtable</code></a>. Here we’ll explore how these packages improve how tables looks visually, as well as how these packages and their functions can directly work with basic R code to generate tables.</p>
 <p>We will use the osprey data set (<code>f1</code>) from above. The data in the R dataframe look like this:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">  f1 <span class="co"># examine dataframe f1</span></a></code></pre></div>
 <pre><code>##   ospreysex fishspp count
 ## 1      Male Sunfish    59
 ## 2    Female Sunfish    72
@@ -895,13 +918,13 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   kable(f1, col.names = c("Sex", "Fish Species", "Frequency"), align = c("l", "c", "r"),
    caption = "Fish capture freqeuncy by osprey sex")
 ```</code></pre>
-<p>The output <code>kable</code> table from the code above <a href="https://maddoor1.nr.usu.edu:45231/sharing/EnHiSS0KH">looks like this</a>. As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.</p>
+<p>The output <code>kable</code> table from the code above <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics09.html">looks like this</a>. As mentioned above, this form of table construction in a HTML environmment spans the entire width of the browser page.</p>
 </div>
 <div id="build-a-table-using-the-package-xtable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#build-a-table-using-the-package-xtable" class="anchor"></a>Build a Table Using the Package <code>xtable</code>
 </h3>
-<p><code>xtable</code> has many of the same output options as the <code>kable</code> function, but also allows for more control of table output. A necessary option to include within the <strong>chunk</strong> for a <code>xtable</code> is <code>results="asis"</code>, which renders the results into text. Otherwise <code>xtable</code> <a href="https://maddoor1.nr.usu.edu:45231/sharing/HnRYDbeL6">returns the code</a> for HTML, or other formats such as LaTex.</p>
+<p><code>xtable</code> has many of the same output options as the <code>kable</code> function, but also allows for more control of table output. A necessary option to include within the <strong>chunk</strong> for a <code>xtable</code> is <code>results="asis"</code>, which renders the results into text. Otherwise <code>xtable</code> <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics10.html">returns the code</a> for HTML, or other formats such as LaTex.</p>
 <p>Consequently modify the <strong>chunk</strong> as:</p>
 <pre><code>#### chunk code to portray the rendered table
 ```{r, results="asis"}
@@ -913,7 +936,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
 # xtable(f1)  NOT RUN: would return a default table of LaTex code
   print(xtable(f1), type="html", include.rownames = F)  # rendered table in html format
 ```</code></pre>
-<p><strong>NOTE</strong> that <a href="https://maddoor1.nr.usu.edu:45231/sharing/KseBcOj8j">basic <code>xtable</code> output</a> includes <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code> (vertical bar) as a separator between table cells, and that the data seem “squished” in appearance. This appearance, as well as many other aspects of table appearance, can be controlled from within <code>xtable</code>. The <a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable Gallery</a> is an excellent PDF vignette full of examples on how to format tables.</p>
+<p><strong>NOTE</strong> that <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html">basic <code>xtable</code> output</a> includes <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code> (vertical bar) as a separator between table cells, and that the data seem “squished” in appearance. This appearance, as well as many other aspects of table appearance, can be controlled from within <code>xtable</code>. The <a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable Gallery</a> is an excellent PDF vignette full of examples on how to format tables.</p>
 <p>Assume you wish to change the sequential cell alignment to left, center, right. This is the option <code>align=</code> where <code>r</code>, <code>l</code>, and <code>c</code> represent right, left, and center, respectively. Assign the desired option with the initial <code>xtable</code> call and save it as an object (here, <code>tab1</code>). The apply the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper to the object. An oddity to note: <code>xtable</code> automatically includes row numbers and you must format for that column, even if your intention is to suppress row numbers the final rendering of the text with <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>.</p>
 <p>Adding “readable” column names can be done within <code>xtable</code>, but it can be ponderous. Because output from <code>xtable</code> inherits the original dataframe, it is easier to apply <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> to the <code>xtable</code> object prior to rendering using <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>.</p>
 <p>One consideration regarding formatting in <code>xtable</code>. Above, the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper was placed outside the <code>xtable()</code> call and all table syntax rendered in a single line of code. For reason(s) I cannot fully figure out, format control seemingly works best if applied and saved as an <code>xtable</code> object, and then having the object rendered from inside the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> wrapper. Attempting all formatting operations within a single call often fails.</p>
@@ -926,7 +949,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   names(tab1) &lt;- c("Sex", "Fish Species", "Frequency")  # rename columns
   print(tab1, type="html", include.rownames = F)  # rendered table in html format
 ```</code></pre>
-<p><a href="https://maddoor1.nr.usu.edu:45231/sharing/3tyzaFNSV">Compare the two outputs</a> – one without <code>results="asis"</code> and the other with some minimal formatting.</p>
+<p><a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics11.html">Compare the two outputs</a> – one without <code>results="asis"</code> and the other with some minimal formatting, including renaming of variables.</p>
 </div>
 <div id="build-a-table-using-the-package-pander" class="section level3">
 <h3 class="hasAnchor">
@@ -947,7 +970,7 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   library(pander)
   pander(f3, caption = "$\\chi^2$ test of fish capture frequency by osprey sex")
 ```</code></pre>
-<p>You can see the <code>pander</code> table outputs <a href="https://maddoor1.nr.usu.edu:45231/sharing/wjZ0kzOwT">here</a>.</p>
+<p>You can see the <code>pander</code> table outputs <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics12.html">here</a>.</p>
 <p>A (mostly complete) list of statistical analyses that <code>pander</code> can render as tables is found by loading the <code>pander</code> library and invoking <code><a href="https://rdrr.io/r/utils/methods.html">methods(pander)</a></code>. Current offerings include:</p>
 <pre><code>##  [1] pander.anova*           pander.aov*            
 ##  [3] pander.aovlist*         pander.Arima*          
@@ -1017,12 +1040,12 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   title(main = "Fish Species Capture Frequency by Osprey Sex")
   text(x = bplot1, y = c(f2[1:6]), labels = c(f2[1:6]), pos = 3)  # adds f2 counts above bars
 ```</code></pre>
-<p>… and a resultant <a href="https://maddoor1.nr.usu.edu:45231/sharing/VhYjDf5oE">barplot of the osprey fish captures by males and females</a> introduced above.</p>
+<p>… and a resultant <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics13.html">barplot of the osprey fish captures by males and females</a> introduced above.</p>
 <div id="some-options-for-rmarkdown-figures" class="section level3">
 <h3 class="hasAnchor">
-<a href="#some-options-for-rmarkdown-figures" class="anchor"></a>Some Options for RMarkdown figures</h3>
+<a href="#some-options-for-rmarkdown-figures" class="anchor"></a>Some Options for RMarkdown Figures</h3>
 <p>Two common figure <strong>chunk</strong> options are to specify figure width and height, and create an outfile version of the figure. Default figure size reflects R conventions; 480 <span class="math inline">\(\times\)</span> 480 pixels at 72dpi for bitmap-based output (i.e., <strong>.png</strong>), which translates into an approximate 6.7 <span class="math inline">\(\times\)</span> 6.7 inch size. The option <code>fig.path="PATH/"</code>, where <code>PATH</code> followed by a <code><a href="https://rdrr.io/r/base/Arithmetic.html">/</a></code> (right slash) indicates the directory for the figure.</p>
-<p><strong>IMPORTANT</strong>: The specified directory path is from the default directory for the <strong>R</strong>Markdown document. Otherwise a full path must be represented.</p>
+<p><strong>IMPORTANT</strong>: The specified directory path is from the default directory for the RMarkdown document. Otherwise a full path must be represented.</p>
 <pre><code>#### set fig size as 4X4 &amp; establish file outfile path
 ```{r, fig.width=4, fig.height=4, fig.path="outfigs/"}
 ```</code></pre>
@@ -1035,9 +1058,9 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
   CODE CODE CODE ....
   dev.off()
 ```</code></pre>
-<p><strong>NOTE</strong> there exists potential to alter figure placement by using the option <code>align="center"</code>, which uses HTML tag <code>&lt;img /&gt;</code> rather than the <strong>R</strong>Markdown <code>![]()</code> syntax. However, alignment other than left justified is not supported within HTML5, so it is best to not use alignments other than the default in HTML documents. See the CSS HTML site for details on <code>&lt;img /&gt;</code> <a href="http://www.w3schools.com/tags/tag_img.asp">tag control</a>.</p>
+<p><strong>NOTE</strong> there exists potential to alter figure placement by using the option <code>align="center"</code>, which uses HTML tag <code>&lt;img /&gt;</code> rather than the RMarkdown <code>![]()</code> syntax. However, alignment other than left justified is not supported within HTML5, so it is best to not use alignments other than the default in HTML documents. See the CSS HTML site for details on <code>&lt;img /&gt;</code> <a href="http://www.w3schools.com/tags/tag_img.asp">tag control</a>.</p>
 <p>Be careful with sizing as it sometimes clips figure output unless the width:height ratio is considered. This, however, is the same issue faced with any plot in R. If you wish global control over figure characteristics, such as a desire for all figures to be of same width and height, or a common outfile directory, these can be inserted as options under the <code>{r global_options}</code>, much as shown for <strong>warnings</strong> above.</p>
-<p>Last, do not forget it is R coding that determines characteristics of your <strong>R</strong>Markdown figure. This means any type of plot that is possible in R can be embedded into your document. <a href="https://maddoor1.nr.usu.edu:45231/sharing/OLpY3nL8p">Check out results</a> of the options for figures we discussed here.</p>
+<p>Last, do not forget it is R coding that determines characteristics of your RMarkdown figure. This means any type of plot that is possible in R can be embedded into your document. <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basics14.html">Check out results</a> of the options for figures we discussed here.</p>
 <p>The <a href="http://yihui.name/knitr/"><code>knitr</code> website</a> lists all available <strong>chunk</strong> <a href="http://yihui.name/knitr/options/">options for plots and figures</a>, including figure control for documents other than HTML output.</p>
 <hr>
 </div>
@@ -1046,43 +1069,43 @@ species while foraging ($\chi^2$ = `r round(f3$statistic, 3)`,
 <div id="a-finalized-rmarkdown-html-document" class="section level1">
 <h1 class="hasAnchor">
 <a href="#a-finalized-rmarkdown-html-document" class="anchor"></a>A Finalized RMarkdown HTML Document</h1>
-<p>Assume you have been instructed to complete a formal analysis and write-up of prey capture by male and female osprey using the data from above. The write-up would include a list of objectives, the R code used for analysis, the output, and some measure of interpretation.</p>
-<p>One possible rendition of this homework assignment is <a href="https://maddoor1.nr.usu.edu:45231/sharing/cJ2gXlNlH">here</a>.</p>
-<p>You’re done! You should now be able build a <strong>R</strong>Markdown document that integrates R coding and analysis directly into a HTML document.</p>
+<p>Assume you have been instructed to complete a formal analysis and write–up of prey capture by male and female osprey using the data from above. The write–up would include a list of objectives, the R code used for analysis, the output, and some measure of interpretation.</p>
+<p>One possible rendition of this homework assignment in HTML format is <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.html">here</a>.</p>
+<p>You’re done! You should now be able build a RMarkdown document that integrates R coding and analysis directly into a HTML document.</p>
 <hr>
 </div>
 <div id="additional-topics-for-rmarkdown-documents" class="section level1">
 <h1 class="hasAnchor">
 <a href="#additional-topics-for-rmarkdown-documents" class="anchor"></a>Additional Topics for RMarkdown Documents</h1>
-<p>As noted at the start of this document, there’s almost unlimited potential for <strong>R</strong>Markdown-based documents. If you made it through the first section of this document, you can easily create a HTML document. And if you’re in one of my classes, a <strong>R</strong>Markdown document is how I’ll be expecting your homework to be delivered to me. So experiment with different ways to document your work; that’s the best way to learn <strong>R</strong>Markdown syntax.</p>
-<p>Even with an almost unlimited potential, there are several advanced topics for <strong>R</strong>Markdown to be considered. These include, in no particular order:</p>
+<p>As noted at the start of this RMarkdown vignette, there’s almost unlimited potential for RMarkdown–based documents. If you made it through the first section of this document, you can easily create a HTML document. And if you’re in one of my classes, a RMarkdown document is how I’ll be expecting your homework to be delivered to me. So experiment with different ways to document your work; that’s the best way to learn RMarkdown syntax.</p>
+<p>Even with an almost unlimited potential, there are several advanced topics for RMarkdown to be considered. These include, in no particular order:</p>
 <ul>
-<li>Minor syntax issues to make your <strong>R</strong>Markdown life easier</li>
+<li>Minor syntax issues to make your RMarkdown life easier</li>
 <li>Use of CSS to control HTML document formatting</li>
 <li>Outputting in other document formats</li>
 </ul>
 <div id="minor-syntax-issues-to-make-your-rmarkdown-life-easier" class="section level2">
 <h2 class="hasAnchor">
-<a href="#minor-syntax-issues-to-make-your-rmarkdown-life-easier" class="anchor"></a>Minor syntax issues to make your <strong>R</strong>Markdown life easier</h2>
+<a href="#minor-syntax-issues-to-make-your-rmarkdown-life-easier" class="anchor"></a>Minor syntax issues to make your RMarkdown life easier</h2>
 <div id="setting-a-working-directory-other-than-default" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-a-working-directory-other-than-default" class="anchor"></a>Setting a working directory other than default</h3>
-<p><strong>R</strong>Markdown defaults to your R home directory, which is <code>C:\Users\USRNAME\Documents</code> in a Windows OS, <code>/Users/USRNAME</code> in a MAC OS, and <code>usr/home/USRNAME</code> on Linux builds. Depending on how you prefer to organize your workflow on a personal CPU, a default to you OS home may, or may not, be desired. It is not for me, given the co–mingling of research day–to–day work life, and teaching responsibilities on the same CPU.</p>
+<p>RMarkdown defaults to your R home directory, which is <code>C:\Users\USRNAME\Documents</code> in a Windows OS, <code>/Users/USRNAME</code> in a MAC OS, and <code>usr/home/USRNAME</code> on Linux builds. Depending on how you prefer to organize your workflow on a personal CPU, a default to you OS home may, or may not, be desired. It is not for me, given the co–mingling of research day–to–day work life, and teaching responsibilities on the same CPU.</p>
 <p>So exactly how do you “set” a home directory different from default?</p>
 <p>Because the rendering process works through package <code>knitr</code>, the working directory for <code>knitr</code> is set with the following option <code>root.dir=</code>:</p>
 <pre><code>```{r global_options, include=FALSE}
 knitr::opts_knit$set(root.dir = "~/PATH/WORK_DIR")
 ```</code></pre>
-<p>Setting the working directory occurs within the <code>{r global_options}</code>. It is best that the <strong>R</strong>Markdown document options be set immediately after the YAML. Operationally, once this directory is set any future directory changes should nested under this working directory.</p>
-<p>Although it possible trick <strong>R</strong>Markdown into changing among many different directories within different <strong>chunk</strong>s, using, for example, <code><a href="https://rdrr.io/r/base/getwd.html">setwd(DesiredPATH)</a></code>, it is generally not recommended. Use the <code>root.dir=</code> as shown above and then nest directories underneath. You can always use full paths within a <strong>chunk</strong>, but this can become tedious.</p>
+<p>Setting the working directory occurs within the <code>{r global_options}</code>. It is best that the RMarkdown document options be set immediately after the YAML. Operationally, once this directory is set any future directory changes should nested under this working directory.</p>
+<p>Although it possible trick RMarkdown into changing among many different directories within different <strong>chunk</strong>s, using, for example, <code><a href="https://rdrr.io/r/base/getwd.html">setwd(DesiredPATH)</a></code>, it is generally not recommended. Use the <code>root.dir=</code> as shown above and then nest directories underneath. You can always use full paths within a <strong>chunk</strong>, but this can become tedious.</p>
 <p><strong>NOTE</strong> that while <code><a href="https://rdrr.io/r/base/getwd.html">setwd(DesiredPath)</a></code> can be used in a <strong>chunk</strong>, it is valid for ONLY that <strong>chunk</strong> and disappears when the next <strong>chunk</strong> is evaluated.</p>
 </div>
 <div id="inserting-comments-into-a-rmarkdown-html-document" class="section level3">
 <h3 class="hasAnchor">
 <a href="#inserting-comments-into-a-rmarkdown-html-document" class="anchor"></a>Inserting comments into a RMarkdown HTML document</h3>
-<p>The standard format for a HTML comment – leading as <code>&lt;!--</code> and ending as <code>--&gt;</code> – can be inserted into a <strong>R</strong>Markdown document.</p>
-<pre><code>&lt;!-- HTML comment that will be ignored --&gt;</code></pre>
-<p>The comments below will be ignored during rendering of the <strong>R</strong>Markdown document. I often use them as metaphorical breadcrumbs to help remind me of options I have set.</p>
+<p>The standard format for a HTML comment – leading as <code>&lt;!--</code> and ending as <code>--&gt;</code> – can be inserted into a RMarkdown document.</p>
+<pre><code>&lt;!-- Any text, code, or whatever between these arrows will be ignored --&gt;</code></pre>
+<p>The comments below will be ignored during rendering of the RMarkdown document. I often use them as metaphorical breadcrumbs to help remind me of options I have set.</p>
 <pre><code>#### HTML comments as breadcrumbs
 &lt;!-- set root directory here --&gt; 
 &lt;!-- suppress R warnings --&gt; 
@@ -1094,28 +1117,28 @@ knitr::opts_chunk$set(warning=FALSE)
 <div id="rendering-and-knitting-a-rmarkdown-document-from-outside-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rendering-and-knitting-a-rmarkdown-document-from-outside-rstudio" class="anchor"></a>Rendering and knitting a RMarkdown document from outside RStudio</h3>
-<p>RStudio is by far the easiest approach for creating a <strong>R</strong>Markdown document.</p>
-<p>Even I – an acknowledged Curmudgeonly Dinosaur who prefers Vanilla R for day–to–day coding – use it. However, as noted at the start of this vignette, command line code from within Plain Vanilla R can be used as well to create a <strong>R</strong>Markdown document. I do not show how to use command line <strong>R</strong>Markdown here. Simple google searches using phrases like “command line r markdown” return numerous hits that can be explored if desired.</p>
-<p>My recomended Bottom Line, however, is to use RStudio to build <strong>R</strong>Markdown documents.</p>
+<p>RStudio is by far the easiest approach for creating a RMarkdown document.</p>
+<p>Even I – an acknowledged Curmudgeonly Dinosaur who prefers Vanilla R for day–to–day coding – use it. However, as noted at the start of this vignette, command line code from within Plain Vanilla R can be used as well to create a RMarkdown document. I do not show how to use command line RMarkdown here. Simple google searches using phrases like “command line r markdown” return numerous hits that can be explored if desired.</p>
+<p>My recomended Bottom Line, however, is to use RStudio to build RMarkdown documents.</p>
 </div>
 </div>
 <div id="stylistic-control-for-html-formatting" class="section level2">
 <h2 class="hasAnchor">
 <a href="#stylistic-control-for-html-formatting" class="anchor"></a>Stylistic Control for HTML Formatting</h2>
-<p>One of the principal ways to control <strong>R</strong>Markdown document formatting is through use of so–called templates, be it a template for HTML output, MS WORD, or PDF. In the case of HTML, this control is best implemented through use of <a href="http://www.w3schools.com/css/css_intro.asp">CSS control</a>. Not surprisingly, there already exists several “canned” CSS–type control files available for <strong>R</strong>Markdown within the RStudio environment. Although they are not represented within RStudio as CSS files <em>per se</em>, but are instead referred to as “Highlight” and “Theme,” they operate in the same fashion.</p>
-<p>For example, by now you (should) have noticed that the output of the HTML document describing how to use <strong>R</strong>Markdown differs from the example outputs. This is because my <strong>R</strong>Markdown has CSS control while the rendered examples are in the RStudio default for HTML. This default has no CSS control.</p>
+<p>One of the principal ways to control RMarkdown document formatting is through use of so–called templates, be it a template for HTML output, MS WORD, or PDF. In the case of HTML, this control is best implemented through use of <a href="http://www.w3schools.com/css/css_intro.asp">CSS control</a>. Not surprisingly, there already exists several “canned” CSS–type control files available for RMarkdown within the RStudio environment. Although they are not represented within RStudio as CSS files <em>per se</em>, but are instead referred to as “Highlight” and “Theme,” they operate in the same fashion.</p>
+<p>For example, by now you (should) have noticed that the output of the HTML document describing how to use RMarkdown differs from the example outputs. This is because my RMarkdown has CSS control while the rendered examples are in the RStudio default for HTML. This default has no CSS control.</p>
 <p>So how would change the stylistic formatting?</p>
 <div id="adding-stylistic-control-from-within-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#adding-stylistic-control-from-within-rstudio" class="anchor"></a>Adding stylistic control from within RStudio</h3>
-<p>Open and <a href="https://maddoor1.nr.usu.edu:45231/sharing/cJ2gXlNlH">examine the final <strong>R</strong>Markdown document</a> in your browser. Keep it there; it will serve as a reference as we add some stylistic control options and render different HTML documents. Next, from within RStudio <a href="https://maddoor1.nr.usu.edu:45231/sharing/A967Otm1k">open the <strong>.rmd</strong> file</a> that built the HTML output you have open in your browser. Note that it includes, at the end of its filename, <code>01</code>. This is because we’ll be making different versions of this using different stylistic formats, and the <code>01</code> will be a counter.</p>
+<p>Open and <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.html">examine the final RMarkdown document</a> in your browser. Keep it there; it will serve as a reference as we add some stylistic control options and render different HTML documents. Next, <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.rmd">download the <strong>.rmd</strong> file</a> that built the HTML output you have open in your browser. (Where this file downloads is contingent on your browser.) Note that it includes, at the end of its filename, <code>01</code>. This is because we’ll be making different versions of this using different stylistic formats, and the <code>01</code> will be a counter.</p>
 <p>Stylistic control is added in the YAML. To embed stylistic control, click the <span class="math inline">\(\blacktriangledown\)</span> (carrot) to the right of the tool symbol, and navigate the drop-down to <strong>Output Options</strong> (light blue color) (Fig. @ref(fig:f08)):</p>
 <!--
 <img src="C:/Users/tce/Documents/words/github/useR-master/vignettes/figures/md08A.png" height="178px" width="576px" />
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 --->
 <div class="figure" style="text-align: center">
-<img src="figures/md08A.png" alt="GUI dropdown for selecting output options." width="50%"><p class="caption">
+<img src="figures/md08A.png" alt="GUI dropdown for selecting output options." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for selecting output options.
 </p>
 </div>
@@ -1125,31 +1148,42 @@ GUI dropdown for selecting output options.
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 --->
 <div class="figure" style="text-align: center">
-<img src="figures/md09A.png" alt="GUI dropdown for selecting highlight and theme options." width="50%"><p class="caption">
+<img src="figures/md09A.png" alt="GUI dropdown for selecting highlight and theme options." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for selecting highlight and theme options.
 </p>
 </div>
-<p>Here is where you can add one of RStudio’s “canned” formats. First, make sure you’ve opened the <code>markdown_basicsFINAL01.rmd</code> file in RStudio. Next, follow the process above and pick a syntax from the list. I selected <strong>haddock</strong> (mostly because it is a wonderful fish for eating, not for any specific <strong>R</strong>Markdown reason). Before hitting <strong>Ok</strong> be sure you are looking at the YAML in the <code>markdown_basicsFINAL01.rmd</code>. Hit <strong>Ok</strong>, and observe how the YAML has changed. It now includes; nested under the YAML <code>output: html_document:</code> a new option called <code>highlight: hadddock</code>.</p>
+<p>Here is where you can add one of RStudio’s “canned” formats. First, make sure you’ve opened the <code>markdown_basicsFINAL01.rmd</code> file in RStudio. Next, follow the process above and pick a syntax from the list. I selected <strong>haddock</strong> (mostly because it is a wonderful fish for eating, not for any specific RMarkdown reason). Before hitting <strong>Ok</strong> be sure you are looking at the YAML in the <code>markdown_basicsFINAL01.rmd</code>. Hit <strong>Ok</strong>, and observe how the YAML has changed. It now includes; nested under the YAML <code>output: html_document:</code> a new option called <code>highlight: hadddock</code>.</p>
 <pre><code>#### YAML now includes RStudio highlight option that links to a CSS-type file
 ---
-title: "A Final **R**Markdown Document in HTML Format"
+title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
 date: 'September 10, 2019'
 output: 
   html_document: 
     highlight: haddock
 ---</code></pre>
-<p>Last, save the document as <code>02</code> version, and then knit. <a href="https://maddoor1.nr.usu.edu:45231/sharing/qlSHxRTUc">Open the version</a> <code>02</code> HTML in your browser and compare to the <code>01</code> HTML version. The first (and only) difference is the code syntax, and it is colored.</p>
-<p>Next, pick a theme (I chose cerulean, liking deep sky blues) and save the change with your chosen theme as version <code>03</code>. Once again, the YAML will change - <code>theme: cerulean</code> has been added - as will the <a href="https://maddoor1.nr.usu.edu:45231/sharing/lXb4vGt7o">knited document</a>. Once again, it differs. In this example, the YAML <code>output: html_document:</code> will now also include a <code>theme: cerulean</code>.</p>
+<p>Last, save the document as <code>02</code> version, and then knit. <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL02.html">Open the <code>02</code> HTML version</a> in your browser and compare to the <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.html"><code>01</code> HTML version</a>. The first (and only) difference is the code syntax, and it is colored.</p>
+<p>Next, pick a theme (I chose cerulean, liking deep sky blues) and save the change with your chosen theme as version <code>03</code>. Once again, the YAML will change - <code>theme: cerulean</code> has been added - as will the knited document. Once again, it differs. In this example, the YAML <code>output: html_document:</code> will now also include a <code>theme: cerulean</code>.</p>
+<pre><code>#### YAML now includes RStudio highlight and theme options
+---
+title: "A Final RMarkdown Document in HTML Format"
+author: "Student R. Me"
+date: 'September 10, 2019'
+output: 
+  html_document: 
+    highlight: haddock
+    theme: cerulean
+---</code></pre>
 <p>Try as many highlights and themes as you wish.</p>
 </div>
 <div id="adding-css-control-from-within-rstudio" class="section level3">
 <h3 class="hasAnchor">
 <a href="#adding-css-control-from-within-rstudio" class="anchor"></a>Adding CSS control from within RStudio</h3>
 <p>Much like <code>highlight:</code> and <code>theme:</code>, the <code>css:</code> call is placed within the the YAML <code>output: html_document:</code> section. An example would be <code>css: FILENAME.css</code>. <strong>NOTE</strong> you must set <code>theme: null</code> or the render will crash.</p>
-<pre><code>#### YAML now includes css: option that explicitly links to a CSS file
+<pre><code>
+#### YAML now includes css: option that explicitly links to a CSS file
 ---
-title: "A Final **R**Markdown Document in HTML Format"
+title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
 date: 'September 10, 2019'
 output: 
@@ -1158,7 +1192,7 @@ output:
     highlight: haddock
     theme: null
 ---</code></pre>
-<p>You can either build your own CSS file, obtain one from elsewhere, or obtain and modify an existing CSS file. They are relatively <a href="http://www.w3schools.com/html/html_css.asp">simple to build</a> from within any basic text editor. A great place to start for <strong>R</strong>Markdown-related CSS files is this <a href="https://github.com/jasonm23/markdown-css-themes">GitHub site</a>, which includes a dozen or so different CSS files you can use. There’s a <a href="https://jasonm23.github.io/markdown-css-themes/">companion website</a> that allows you to see differences among the RStudio styles. Check it out.</p>
+<p>You can either build your own CSS file, obtain one from elsewhere, or obtain and modify an existing CSS file. They are relatively <a href="http://www.w3schools.com/html/html_css.asp">simple to build</a> from within any basic text editor. A great place to start for RMarkdown-related CSS files is this <a href="https://github.com/jasonm23/markdown-css-themes">GitHub site</a>, which includes a dozen or so different CSS files you can use. There’s a <a href="https://jasonm23.github.io/markdown-css-themes/">companion website</a> that allows you to see differences among the RStudio styles. Check it out.</p>
 <p>Because the CSS file controls stylistic elements such as font, size, and color, it best to either not include the <code>highlight:</code> and <code>theme:</code> options within the YAML, or set them to <code>null</code>, if a CSS control is being implemented.</p>
 </div>
 </div>
@@ -1171,19 +1205,19 @@ output:
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 --->
 <div class="figure" style="text-align: center">
-<img src="figures/md10A.png" alt="GUI dropdown for PDF and MS WORD outputs." width="50%"><p class="caption">
+<img src="figures/md10A.png" alt="GUI dropdown for PDF and MS WORD outputs." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 GUI dropdown for PDF and MS WORD outputs.
 </p>
 </div>
 <div id="ms-word-format" class="section level3">
 <h3 class="hasAnchor">
 <a href="#ms-word-format" class="anchor"></a>MS WORD Format</h3>
-<p>To convert the <strong>R</strong>Markdown document to a MS WORD format simply click the <code>Knit to Word</code> on the dropdown shown above. That’s all there is to it.</p>
-<p>The <a href="https://maddoor1.nr.usu.edu:45231/sharing/kPJA8JZHv">doucment returned</a> is typically “Read–Only,” and might require saving or changing the View (i.e., View =&gt; Edit Document) so that it can be edited if desired. This is largely system dependent and can only be determined by experimentation on your part.</p>
+<p>To convert the RMarkdown document to a MS WORD format simply click the <code>Knit to Word</code> on the dropdown shown above. That’s all there is to it.</p>
+<p>The <a href="https://tedwards-github.github.io/useRfiles/rmd-files/rmd_basicsFINAL01.docx">MS WORD document returned</a> is typically “Read–Only,” and might require saving or changing the View (i.e., View =&gt; Edit Document) so that it can be edited if desired. This is largely system dependent and can only be determined by experimentation on your part.</p>
 <p>The <code>Knit</code> process does a reasonably good job of converting most figures, although occasionally you may have to return to your R code and rescale some of the plot elements, such as the <code>cex =</code> used in text labels or legends. Note below how the YAML in a <code>Knit to Word</code> document looks; output has changed from <code>html_document</code> to <code>word_document</code>.</p>
 <pre><code>#### Basic MS WORD YAML 
 ---
-title: "A Final **R**Markdown Document in HTML Format"
+title: "A Final RMarkdown Document in HTML Format"
 author: "Student R. Me"
 date:  'September 10, 2019'
 output: 
@@ -1217,7 +1251,7 @@ output:
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 --->
 <div class="figure" style="text-align: center">
-<img src="figures/md11A.png" alt="Creating a MS WORD template: accessing the Styles Section." width="50%"><p class="caption">
+<img src="figures/md11A.png" alt="Creating a MS WORD template: accessing the Styles Section." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 Creating a MS WORD template: accessing the Styles Section.
 </p>
 </div>
@@ -1227,14 +1261,14 @@ Creating a MS WORD template: accessing the Styles Section.
 out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'
 --->
 <div class="figure" style="text-align: center">
-<img src="figures/md12.png" alt="Selecting a section of MS WORD and applying a style." width="50%"><p class="caption">
+<img src="figures/md12.png" alt="Selecting a section of MS WORD and applying a style." width="50%" style="background-color: #ffffff; padding:10px; display: inline-block;"><p class="caption">
 Selecting a section of MS WORD and applying a style.
 </p>
 </div>
-<p>Repeat this process for all snippets of output that you wish to format. Once completed, save the document, giving it some sort of name like <code>word_RMarkdown_templateV01.docx</code>. The final step is to reference the MS WORD template in the YAML using the <code>reference_docx:</code> option. As the <strong>R</strong>Markdown file is processed, it uses the specified formats in the <code>reference_docx:</code>. There will be, on occasion, formats that simply will not cross–over from <strong>R</strong>Markdown to a MS WORD document, such as a system calls. You will learn what these are mostly through personal trial and error.</p>
+<p>Repeat this process for all snippets of output that you wish to format. Once completed, save the document, giving it some sort of name like <code>word_RMarkdown_templateV01.docx</code>. The final step is to reference the MS WORD template in the YAML using the <code>reference_docx:</code> option. As the RMarkdown file is processed, it uses the specified formats in the <code>reference_docx:</code>. There will be, on occasion, formats that simply will not cross–over from RMarkdown to a MS WORD document, such as a system calls. You will learn what these are mostly through personal trial and error.</p>
 <pre><code>#### MS Word YAML with reference to a WORD template
 ---
-title: "A Final **R**Markdown Document in MS WORD Format"
+title: "A Final RMarkdown Document in MS WORD Format"
 author: "Student R. Me"
 date:  'September 10, 2019'
 output: 
@@ -1242,12 +1276,12 @@ output:
     reference_docx: word-styles-reference-01.docx
 --- </code></pre>
 <p>One final note.</p>
-<p>The process to construct a MS WORD document using <strong>R</strong>Markdown is very well described in <a href="http://rmarkdown.rstudio.com/articles_docx.html">a post by R. Layton</a>, and I encourage you to check it out. He goes into much greater detail that I describe here. Remember, you need only build this MS WORD template once and then access it when you wish to use <strong>R</strong>Markdown to construct a MS WORD document. It can take a while until you are satisfied with the formatting, but once the template is constructed and saved it is very easy to build MS WORD documents that mirror your preferred HTML format.</p>
+<p>The process to construct a MS WORD document using RMarkdown is very well described in <a href="http://rmarkdown.rstudio.com/articles_docx.html">a post by R. Layton</a>, and I encourage you to check it out. He goes into much greater detail that I describe here. Remember, you need only build this MS WORD template once and then access it when you wish to use RMarkdown to construct a MS WORD document. It can take a while until you are satisfied with the formatting, but once the template is constructed and saved it is very easy to build MS WORD documents that mirror your preferred HTML format.</p>
 </div>
 <div id="pdf-format" class="section level3">
 <h3 class="hasAnchor">
 <a href="#pdf-format" class="anchor"></a>PDF format</h3>
-<p>Conversion to PDF directly from <strong>R</strong>Markdown is somewhat complex, mostly because it requires installation of TeX. There’s a separate vignette for PDF output that will walk through installation of TeX on your CPU.</p>
+<p>Conversion to PDF directly from RMarkdown is somewhat complex, mostly because it requires installation of TeX. There’s <a href="https://tedwards-github.github.io/useR/articles/0209-rmdPDFOutput.html">a separate vignette for PDF output</a> that will walk through installation of TeX on your CPU.</p>
 <div id="the-lazy-persons-approach" class="section level4">
 <h4 class="hasAnchor">
 <a href="#the-lazy-persons-approach" class="anchor"></a>The Lazy Person’s Approach</h4>
@@ -1256,11 +1290,6 @@ output:
 </div>
 </div>
 </div>
-</div>
-<div id="the-end" class="section level1">
-<h1 class="hasAnchor">
-<a href="#the-end" class="anchor"></a>The End !!</h1>
-<hr>
 </div>
   </div>
 
@@ -1285,7 +1314,8 @@ output:
 </li>
       <li>
 <a href="#the-building-blocks-of-a-rmarkdown-document">The Building Blocks of a RMarkdown Document</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#the-basic-structure---the-yaml-header">The Basic Structure - The YAML Header</a></li>
+<li><a href="#overview">Overview</a></li>
+      <li><a href="#the-basic-structure---the-yaml-header">The Basic Structure - The YAML Header</a></li>
       <li><a href="#the-basic-structure-the-text">The Basic Structure – The Text</a></li>
       <li><a href="#the-basic-structure-horizontal-line-separators">The Basic Structure – Horizontal Line Separators</a></li>
       <li><a href="#the-basic-structure-text-headers">The Basic Structure – Text Headers</a></li>
@@ -1314,12 +1344,11 @@ output:
       <li><a href="#a-finalized-rmarkdown-html-document">A Finalized RMarkdown HTML Document</a></li>
       <li>
 <a href="#additional-topics-for-rmarkdown-documents">Additional Topics for RMarkdown Documents</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#minor-syntax-issues-to-make-your-rmarkdown-life-easier">Minor syntax issues to make your <strong>R</strong>Markdown life easier</a></li>
+<li><a href="#minor-syntax-issues-to-make-your-rmarkdown-life-easier">Minor syntax issues to make your RMarkdown life easier</a></li>
       <li><a href="#stylistic-control-for-html-formatting">Stylistic Control for HTML Formatting</a></li>
       <li><a href="#other-rmarkdown-formats">Other RMarkdown Formats</a></li>
       </ul>
 </li>
-      <li><a href="#the-end">The End !!</a></li>
       </ul>
 </div>
       </div>
