@@ -28,11 +28,12 @@ urlcolor: blue
 ---
 -->
 
-<!-- set root directory here --> 
+<!-- set root directory here 
 ```{r global_options, include=FALSE}
 knitr::opts_knit$set(root.dir = "~/words/classes/baseR_ALLversions/baseR_installmiktex")
 knitr::opts_chunk$set(warning=FALSE,error=TRUE)
 ```
+--> 
 
 Last update: `r format(Sys.time(), '%d %B %Y')` (V2019.2)
 
