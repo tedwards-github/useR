@@ -72,7 +72,7 @@ Last was the integration of the various executables into distributions of TeX--b
 --->
 
 ```{r f01, echo=FALSE, fig.cap="BibTeX is a very common export format for all published articles.", out.width = '30%', fig.align="center", out.extra='style="background-color: #ffffff; padding:10px; display: inline-block;"'}
-knitr::include_graphics("figures/miktex01.png")
+knitr::include_graphics("figures/miktex01.PNG")
 ```
 
 MiKTeX, where we're headed with all this, is a distribution as well.  As is another distribution called TeX Live.  [TinyTeX](https://yihui.name/tinytex/), a recently--developed alternative to MiKTeX for interfacing with RStudio, is a subset of TeX Live which, as we discussed above, is another grouping of TeX--based commands.
